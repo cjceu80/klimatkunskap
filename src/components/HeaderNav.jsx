@@ -1,20 +1,13 @@
 import React from 'react';
 import { Navbar, Container, NavDropdown } from 'react-bootstrap';
 import { useUserAuth } from '../utils/UserAuthContext';
+import LoginNav from './LoginNav';
 
-export default function HeaderNav() {
-  const { logOut, user } = useUserAuth();
-  const handleLogout = async () => {
-    try {
-      await logOut();
-      navigate('/');
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+export default function HeaderNav({login}) {
+  
   return (
     <Navbar expand="lg" className="">
-      <Container fixed="top" className="justify-right justify-content-right">
+      <Container fixed="top" className="justify-center justify-content-center">
         <NavDropdown
           title="Meny"
           id="navbarScrollingDropdown"
@@ -23,8 +16,8 @@ export default function HeaderNav() {
           <NavDropdown.Item href="/news">Nyheter</NavDropdown.Item>
           <NavDropdown.Item href="/stats">Stats</NavDropdown.Item>
           <NavDropdown.Divider />
+          <LoginNav login={login} />
 
-          <NavDropdown.Item href="/login">Logga in</NavDropdown.Item>
         </NavDropdown>
       </Container>
     </Navbar>
@@ -33,10 +26,7 @@ export default function HeaderNav() {
 
 /*
 
-{!user ? (
- ) : (
-            <NavDropdown.Item onClick={handleLogout()}>Logga ut</NavDropdown.Item>
-          )}
+
 
 <Navbar expand="lg" className="bg-body-tertiary">
 <Container>

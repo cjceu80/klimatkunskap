@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 import GoogleButton from 'react-google-button';
 import { useUserAuth } from '../utils/UserAuthContext';
 
-export default function Login() {
+export default function Login({close}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -17,7 +17,8 @@ export default function Login() {
     setError('');
     try {
       await logIn(email, password);
-      navigate('/home');
+      //navigate('/home');
+      close();
     } catch (err) {
       setError(err.message);
     }
@@ -27,7 +28,8 @@ export default function Login() {
     e.preventDefault();
     try {
       await googleSignIn();
-      navigate('/home');
+      //navigate('/home');
+      close();
     } catch (error) {
       console.log(error.message);
     }
