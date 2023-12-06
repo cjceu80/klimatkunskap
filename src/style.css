@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+  color: black;
+  background-color: white;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.quiz_frame {
+  background-image: linear-gradient(white, #fce367);
+  
+}
+
+.sideBarMenuContainer {
+  position: fixed;
+  height: 100%;
+}
