@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import { Offcanvas, Row, Col, Container } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
+import Wave from 'react-wavify';
 import './style.css';
 //import LoginPopup from './components/LoginPopup';
 import HeaderNav from './components/HeaderNav';
 import QuizFrame from './components/QuizFrame';
 import { QuizContextProvider } from './utils/QuizContext';
 import Login from './components/Login';
+import { getQuestions, getUniques } from './utils/staticQuestions';
 
 export default function App() {
   const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
-    const handleShow = () => {console.log("hmm");setShow(true)};
+    const handleShow = () => setShow(true);
+
   return (
     <QuizContextProvider>
       <Container fluid>
@@ -29,7 +32,7 @@ export default function App() {
               </Col>
             </Row>
           </Col>
-          <Col sm={4} className="border quiz_frame" style={{height: window.innerHeight}} >
+          <Col sm={4} lg={3} className="border quiz_frame" style={{height: window.innerHeight, minWidth: "300px"}} >
             <QuizFrame login={handleShow}/>
           </Col>  
         </Row>

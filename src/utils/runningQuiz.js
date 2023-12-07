@@ -1,0 +1,7 @@
+const quiz ={
+    startTime: "",
+    questions: [
+
+    ],
+}
+
