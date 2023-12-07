@@ -9,6 +9,7 @@ import Signup from './components/Signup';
 import Welcome from './components/Welcome';
 import News from './components/News';
 import Stats from './components/Stats';
+import QuizStart from './components/QuizStart';
 import { UserAuthContextProvider } from './utils/UserAuthContext';
 
 const router = createBrowserRouter([
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
         path: '/stats',
         element: <Stats />,
       },
+      {
+        path: '/quiz',
+        element: <QuizStart />,
+      },
+      
     ],
   },
 ]);
