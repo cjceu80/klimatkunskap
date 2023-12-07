@@ -32,7 +32,28 @@ export default function App() {
               </Col>
             </Row>
           </Col>
-          <Col sm={4} lg={3} className="border quiz_frame" style={{height: window.innerHeight, minWidth: "300px"}} >
+          <Col sm={4} lg={3} className="border quiz_frame align-content-bottom justify-content-bottom" style={{ position:"relative", height: window.innerHeight, minWidth: "300px"}} >
+          <Wave fill='#a9ebf4'
+                paused={false}
+                style={{ width: "95%", height: 200, position: "absolute", bottom: 0 }}
+                options={{
+                    container: "div",
+                    height: 18,
+                    amplitude: 15,
+                    speed: 0.25,
+                    points: 3
+                }}
+            />
+            <Wave fill='#4cd6e7'
+                paused={false}
+                style={{ width: "95%", height: 200, position: "absolute", bottom: 0 }}
+                options={{
+                    height: 20,
+                    amplitude: 20,
+                    speed: 0.25,
+                    points: 3
+                }}
+            />
             <QuizFrame login={handleShow}/>
           </Col>  
         </Row>
