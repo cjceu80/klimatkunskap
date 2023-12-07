@@ -28,21 +28,3 @@ export default function HeaderNav({login}) {
   );
 }
 
-/*
-
-
-
-<Navbar expand="lg" className="bg-body-tertiary">
-<Container>
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Brand href="/">Rubrik</Navbar.Brand>
-  <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="me-auto">
-      <Nav.Link href="/news">Nyheter</Nav.Link>
-      <Nav.Link href="/stats">Stats</Nav.Link>
-      <Nav.Link href="/login">Logga in</Nav.Link>
-    </Nav>
-  </Navbar.Collapse>
-  <p>{user ? 'yay' : 'nay'}</p>
-</Container>
-);*/
