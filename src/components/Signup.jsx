@@ -4,6 +4,7 @@ import { Form, Alert } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { useUserAuth } from '../utils/UserAuthContext';
 
+//Handle the signup process.
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');

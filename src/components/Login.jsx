@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap';
 import GoogleButton from 'react-google-button';
 import { useUserAuth } from '../utils/UserAuthContext';
 
+//Render login form and handle login functionality
 export default function Login({close}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -12,6 +13,7 @@ export default function Login({close}) {
   const { logIn, googleSignIn } = useUserAuth();
   const navigate = useNavigate();
 
+  //Handle the submit function
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
@@ -24,6 +26,7 @@ export default function Login({close}) {
     }
   };
 
+  //Handles google login
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
     try {
@@ -39,7 +42,7 @@ export default function Login({close}) {
     <>
       <div className="p-4 box">
         <h2 className="mb-3">Logga in</h2>
-
+        {/* Error-code */}
         {error && <Alert variant="danger">{error}</Alert>}
 
         <Form onSubmit={handleSubmit}>
@@ -75,7 +78,7 @@ export default function Login({close}) {
         </div>
       </div>
       <div className="p-4 box mt-3 text-center">
-        Don't have an account? <Link to="/signup">Sign up</Link>
+        Har du inget konto? <Link to="/signup">Registrera konto</Link>
       </div>
     </>
   );
