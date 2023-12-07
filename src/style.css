@@ -20,6 +20,10 @@ h1 {
   
 }
 
+.info_frame {
+  background-image: linear-gradient(135deg, #CBF3F5, #86C0EC);
+}
+
 .sideBarMenuContainer {
   position: fixed;
   height: 100%;

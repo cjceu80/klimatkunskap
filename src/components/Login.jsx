@@ -38,7 +38,7 @@ export default function Login({close}) {
   return (
     <>
       <div className="p-4 box">
-        <h2 className="mb-3">Firebase/ React Auth Login</h2>
+        <h2 className="mb-3">Logga in</h2>
 
         {error && <Alert variant="danger">{error}</Alert>}
 

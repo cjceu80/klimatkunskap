@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Offcanvas, Row, Col } from 'react-bootstrap';
+import { Offcanvas, Row, Col, Container } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import './style.css';
 //import LoginPopup from './components/LoginPopup';
@@ -15,25 +15,27 @@ export default function App() {
     const handleShow = () => {console.log("hmm");setShow(true)};
   return (
     <QuizContextProvider>
-      <Row>
-        <Col className="m-3">
-          <Row>
-            <Col>
-              <HeaderNav login={handleShow} />              
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Outlet />
-            </Col>
-          </Row>
-        </Col>
-        <Col sm={4} className="border quiz_frame" style={{height: window.innerHeight}} >
-          <QuizFrame login={handleShow}/>
-        </Col>
-  
-      </Row>
-      <Offcanvas show={show} onHide={handleClose}>
+      <Container fluid>
+        <Row>
+          <Col className='info_frame'>
+            <Row>
+              <Col>
+                <HeaderNav login={handleShow} />              
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <Outlet />
+              </Col>
+            </Row>
+          </Col>
+          <Col sm={4} className="border quiz_frame" style={{height: window.innerHeight}} >
+            <QuizFrame login={handleShow}/>
+          </Col>  
+        </Row>
+      </Container>
+      <Offcanvas show={show} onHide={handleClose} placement="end">
+        <Offcanvas.Header closeButton />
         <Login close={handleClose}/>
       </Offcanvas>
     </QuizContextProvider>
