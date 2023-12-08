@@ -1,28 +1,39 @@
 import React, { useState, useContext } from 'react';
-import { Col } from 'react-bootstrap';
+import { Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 import Wave from 'react-wavify';
 
+import QuizStartFrame from './QuizStartFrame';
+import { getQuestions } from '../utils/staticQuestions';
 import { useQuiz } from '../utils/QuizContext';
 
 const WAVE_WIDTH = "94%";
+const QUIZ_BEGIN = "QuizBegin";
+const QUIZ_END = "QuizEnd";
+const QUIZ_ANSWERS = "QuizAnswers"
+const QUIZ_DATA = "quizData";
 
-export default function QuizFrame() {
-  const [ debugEnable, setDebugEnabled ] = useState(localStorage.getItem('enabled'));
+export default function QuizFrame( {setQuizViewShown}) {
+  const [ quizData, setQuizData ] = useState();
+  const [ quizViewState, setQuizViewState ] = useState("");
   const navigate = useNavigate();
 
-  function handleOnClick(e){
-    localStorage.setItem('enabled', "true")
-    setDebugEnabled("true");
-    navigate(-1);
-
+  function handleEnQuizClick(e){
+    setQuizViewShown(QUIZ_END);
+    setQuizViewState(QUIZ_END);
+    sessionStorage.getItem(QUIZ_DATA, getQuestions);
   }
 
-  function handleDebugOnClick(e){
-    localStorage.setItem('enabled', "false")
-    setDebugEnabled("false");
-    navigate("/quiz");
+  function handleBeginQuizClick(e){
+
+    setQuizViewShown("");
+    setQuizViewState("");
+  }
+
+  function handleStartQuizClick(e){
+    setQuizViewShown(QUIZ_BEGIN);
+    setQuizViewState(QUIZ_BEGIN);
   }
 
   return(
@@ -49,9 +60,10 @@ export default function QuizFrame() {
                 }}
             />
             
-            {debugEnable === "true" ? <button onClick={handleDebugOnClick}>Starta Quiz?</button> : <button onClick={handleOnClick}>Avsluta Quiz Debugg?</button>}
+            {quizViewState === "" && <Button onClick={handleStartQuizClick}>Starta Quiz?</Button>}
+            {quizViewState === QUIZ_BEGIN && <QuizStartFrame />}
+            {quizViewState === QUIZ_END && <Button onClick={handleOnClick}>Avsluta Quiz Debugg?</Button>}
           </Col>  
     
-
   )
 }
