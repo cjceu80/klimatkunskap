@@ -5,8 +5,8 @@ const CARD_HEIGHT = 500;
 
 export default function QuizStart() {
     return (
-    <Container>
-        <Row className="justify-content-md-center">
+    <Container className="d-flex flex-column h-100" >
+        <Row className="justify-content-md-center align-items-center h-100">
             <Col lg={5} xl={4} >
             <Card style={{ height: CARD_HEIGHT}}>
                 <h2>Lätt som en plätt</h2>

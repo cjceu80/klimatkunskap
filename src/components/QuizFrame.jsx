@@ -1,40 +1,54 @@
 import React, { useState, useContext } from 'react';
-import { Col, Button } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 import Wave from 'react-wavify';
 
 import QuizStartFrame from './QuizStartFrame';
+import QuizQuestion from './QuizQuestion';
 import { getQuestions } from '../utils/staticQuestions';
 import { useQuiz } from '../utils/QuizContext';
 
-const WAVE_WIDTH = "94%";
-const QUIZ_BEGIN = "QuizBegin";
-const QUIZ_END = "QuizEnd";
-const QUIZ_ANSWERS = "QuizAnswers"
+//Storage item names
 const QUIZ_DATA = "quizData";
+const QUIZ_STATUS = "quizStatus"
+
+//State names
+const QUIZ_STATUS_BEGIN = "QuizBegin";
+const QUIZ_STATUS_END = "QuizEnd";
+const QUIZ_STATUS_RUNNING = "running"
+
+const WAVE_WIDTH = "94%";
+
 
 export default function QuizFrame( {setQuizViewShown}) {
   const [ quizData, setQuizData ] = useState();
   const [ quizViewState, setQuizViewState ] = useState("");
-  const navigate = useNavigate();
-
-  function handleEnQuizClick(e){
-    setQuizViewShown(QUIZ_END);
-    setQuizViewState(QUIZ_END);
-    sessionStorage.getItem(QUIZ_DATA, getQuestions);
-  }
-
-  function handleBeginQuizClick(e){
-
-    setQuizViewShown("");
-    setQuizViewState("");
-  }
-
+  const [ questionIndex, setQuestionIndex ] = useState(-1);
+  
   function handleStartQuizClick(e){
-    setQuizViewShown(QUIZ_BEGIN);
-    setQuizViewState(QUIZ_BEGIN);
+    setQuizViewShown(QUIZ_STATUS_BEGIN);
+    setQuizViewState(QUIZ_STATUS_BEGIN);
   }
+  
+  function startQuiz(newQuizData) {
+      sessionStorage.setItem(QUIZ_STATUS, QUIZ_STATUS_RUNNING);
+      sessionStorage.setItem(QUIZ_DATA, JSON.stringify(quizData));
+      setQuizData(newQuizData);
+      setQuizViewShown(QUIZ_STATUS_RUNNING);
+      setQuizViewState(QUIZ_STATUS_RUNNING);
+      console.log(quizData);
+    }
+  
+  //Remain at the same state when refreshing and navigating
+  if (quizViewState != QUIZ_STATUS_RUNNING && sessionStorage.getItem(QUIZ_STATUS) === QUIZ_STATUS_RUNNING) {
+    setQuizViewShown(""); 
+    setQuizViewState(QUIZ_STATUS_RUNNING);
+    setQuizData(sessionStorage.getItem(QUIZ_DATA));
+  }
+
+ // if (questionIndex < 0 && Array.isArray(quizData.answers))
+ //   console.log(quizData.answers.length)
 
   return(
     <Col sm={4} lg={3} className="quiz_frame align-content-bottom justify-content-bottom" style={{ position:"relative", height: window.innerHeight, minWidth: "300px"}} >
@@ -55,15 +69,21 @@ export default function QuizFrame( {setQuizViewShown}) {
                 options={{
                     height: 20,
                     amplitude: 20,
-                    speed: 0.25,
+                    speed: 0.3,
                     points: 3
                 }}
             />
-            
-            {quizViewState === "" && <Button onClick={handleStartQuizClick}>Starta Quiz?</Button>}
-            {quizViewState === QUIZ_BEGIN && <QuizStartFrame />}
-            {quizViewState === QUIZ_END && <Button onClick={handleOnClick}>Avsluta Quiz Debugg?</Button>}
+            <Row className='h-100 justify-content-md-center align-items-center'>
+              <Col>
+                {quizViewState === "" && <Button onClick={handleStartQuizClick}>Starta Quiz?</Button>}
+                {quizViewState === QUIZ_STATUS_BEGIN && <QuizStartFrame callback={startQuiz}/>}
+                {quizViewState === QUIZ_STATUS_END && <Button onClick={handleOnClick}>Avsluta Quiz Debugg?</Button>}
+                {quizViewState === QUIZ_STATUS_RUNNING && <QuizQuestion />}
+            </Col>
+            </Row>
           </Col>  
     
   )
 }
+
+//{quizViewState === QUIZ_STATUS_RUNNING && <QuizQuestion question={quizData.questions[questionIndex]} />}
