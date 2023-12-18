@@ -1,28 +1,62 @@
 import React, { useState, useContext } from 'react';
+import { Row, Col, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+
 import Wave from 'react-wavify';
 
+import QuizStartFrame from './QuizStartFrame';
+import QuizQuestion from './QuizQuestion';
+import { getQuestions } from '../utils/staticQuestions';
 import { useQuiz } from '../utils/QuizContext';
-import { Container } from 'react-bootstrap';
 
-export default function QuizFrame() {
-  const [ debugEnable, setDebugEnabled ] = useState(localStorage.getItem('enabled'));
+//Storage item names
+const QUIZ_DATA = "quizData";
+const QUIZ_STATUS = "quizStatus"
 
-  function handleOnClick(e){
-    localStorage.setItem('enabled', "true")
-    setDebugEnabled("true");
+//State names
+const QUIZ_STATUS_BEGIN = "QuizBegin";
+const QUIZ_STATUS_END = "QuizEnd";
+const QUIZ_STATUS_RUNNING = "running"
+
+const WAVE_WIDTH = "94%";
+
+
+export default function QuizFrame( {setQuizViewShown}) {
+  const [ quizData, setQuizData ] = useState();
+  const [ quizViewState, setQuizViewState ] = useState("");
+  const [ questionIndex, setQuestionIndex ] = useState(-1);
+  
+  function handleStartQuizClick(e){
+    setQuizViewShown(QUIZ_STATUS_BEGIN);
+    setQuizViewState(QUIZ_STATUS_BEGIN);
+  }
+  
+  function startQuiz(newQuizData) {
+      sessionStorage.setItem(QUIZ_STATUS, QUIZ_STATUS_RUNNING);
+      sessionStorage.setItem(QUIZ_DATA, JSON.stringify(quizData));
+      setQuizData(newQuizData);
+      setQuizViewShown(QUIZ_STATUS_RUNNING);
+      setQuizViewState(QUIZ_STATUS_RUNNING);
+      console.log(quizData);
+    }
+  
+  //Remain at the same state when refreshing and navigating
+  if (quizViewState != QUIZ_STATUS_RUNNING && sessionStorage.getItem(QUIZ_STATUS) === QUIZ_STATUS_RUNNING) {
+    setQuizViewShown(""); 
+    setQuizViewState(QUIZ_STATUS_RUNNING);
+    setQuizData(sessionStorage.getItem(QUIZ_DATA));
   }
 
-  function handleDebugOnClick(e){
-    localStorage.setItem('enabled', "false")
-    setDebugEnabled("false");
-  }
+ // if (questionIndex < 0 && Array.isArray(quizData.answers))
+ //   console.log(quizData.answers.length)
 
   return(
-    <Container className='m-0 p-0'>
-    <Wave fill='#a9ebf4'
+    <Col sm={4} lg={3} className="quiz_frame align-content-bottom justify-content-bottom" style={{ position:"relative", height: window.innerHeight, minWidth: "300px"}} >
+          <Wave fill='#a9ebf4'
                 paused={false}
-                style={{ maxWidth: "280px", width: "100%", height: 200, position: "absolute", bottom: 0 }}
+                style={{ width: WAVE_WIDTH, height: 200, position: "absolute", bottom: 0 }}
                 options={{
+                    container: "div",
                     height: 18,
                     amplitude: 15,
                     speed: 0.25,
@@ -31,15 +65,25 @@ export default function QuizFrame() {
             />
             <Wave fill='#4cd6e7'
                 paused={false}
-                style={{ maxWidth: "280px", width: "100%", height: 200, position: "absolute", bottom: 0 }}
+                style={{ width: WAVE_WIDTH, height: 200, position: "absolute", bottom: 0 }}
                 options={{
                     height: 20,
                     amplitude: 20,
-                    speed: 0.25,
+                    speed: 0.3,
                     points: 3
                 }}
             />
-    <p>{debugEnable === "true" ? <button onClick={handleDebugOnClick}>Starta Quiz?</button> : <button onClick={handleOnClick}>Avsluta Quiz Debugg?</button>}</p>
-    </Container>
+            <Row className='h-100 justify-content-md-center align-items-center'>
+              <Col>
+                {quizViewState === "" && <Button onClick={handleStartQuizClick}>Starta Quiz?</Button>}
+                {quizViewState === QUIZ_STATUS_BEGIN && <QuizStartFrame callback={startQuiz}/>}
+                {quizViewState === QUIZ_STATUS_END && <Button onClick={handleOnClick}>Avsluta Quiz Debugg?</Button>}
+                {quizViewState === QUIZ_STATUS_RUNNING && <QuizQuestion />}
+            </Col>
+            </Row>
+          </Col>  
+    
   )
 }
+
+//{quizViewState === QUIZ_STATUS_RUNNING && <QuizQuestion question={quizData.questions[questionIndex]} />}
