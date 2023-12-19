@@ -15,6 +15,10 @@ h1 {
   font-size: 1.5rem;
 }
 
+h1, h2, h3, h4 {
+  font-family: 'Just Me Down Here',
+}
+
 .quiz_frame {
   background-image: linear-gradient(white, #fce367);
 }
@@ -31,4 +35,20 @@ h1 {
 .bgContentPortal {
   background-image: url(./components/images/Bakgrund_cleanArtboard_1.jpg);
   background-size: cover;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.half-height {
+  height: 40%;
+}
+
+.custom-card {
+  margin-bottom: 20px; /* Adjusts the margin between cards, Used on the home page*/
+}
+
+.custom-padding {/* Custom padding on full page content */
+  padding: 100px; 
 }
