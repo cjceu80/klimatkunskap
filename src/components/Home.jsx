@@ -1,19 +1,23 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import backgroundImg from "./images/BakgrundHome.jpg";
+import utforskaImg from "./images/ipad.png";
+import interageraImg from "./images/kompass.png";
+import spelaImg from "./images/gamepad.png";
 import "../style.css"; // Import external CSS file
-
+import { Link, Element, animateScroll as scroll } from "react-scroll";
 
 const Home = () => {
   const cardStyle = {
     background: "rgba(255, 255, 255, 0.7)", // 0.7 represents 70% transparency
+    borderRadius: "25px",
   };
   const cardImageStyle = {
-    maxHeight: "150px", // Adjust the height as needed
+    height: "100px", // Set a specific height for the images
+    objectFit: "contain", // Use "cover" to maintain aspect ratio and cover the entire container
   };
 
   return (
-    
     <div>
       <div
         style={{
@@ -25,47 +29,64 @@ const Home = () => {
       >
         <Container fluid className="h-100">
           <Row className="h-100 align-items-end justify-content-center">
-            <Col xs={12} className="text-center mb-4">
+            <Col xs={9} className="text-center mb-4">
               <h1>Välkommen till KlimatKunskap</h1>
+              <br />
               <p>
                 En värld där varje klick är ett steg mot att bli en
                 klimathjälte! Det här är inte bara en app, det är din biljett
                 till en spännande resa genom klimatets mysterier.
               </p>
             </Col>
-            <Col
-              xs={3}
-              className="text-center h-50 mb-3 "
-              style={{ marginRight: "40px" }}
-            >
-              <Card className="h-100 w-100 custom-card" style={cardStyle}>
-                <Card.Body>
-                  <div className="placeholder" />
-                  <Card.Title className="mb-5">Utforska</Card.Title>
-                  <Card.Img
-                    variant="top"
-                    src="images\logga7.png" //URL of the image
-                    style={cardImageStyle}
-                  />
-                  <Card.Text>
-                    Kolla runt i appen! Upptäck spännande fakta och berättelser
-                    om klimatet.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
+
+            <Link to="section1" smooth={true} duration={500}>
+              <Col
+                xs={3}
+                className="text-center h-50 mb-3 "
+                style={{ marginRight: "20px" }}
+              >
+                <Card className="h-100 w-100 custom-card" style={cardStyle}>
+                  <Card.Body>
+                    <div className="placeholder" />
+                    <Card.Title className="mb-2">Utforska</Card.Title>
+                    <Card.Img
+                      variant="top"
+                      src={utforskaImg} //URL of the image
+                      style={cardImageStyle}
+                      className="mb-2"
+                    />
+                    <Card.Text>
+                      <p>
+                        <b>Kolla runt i appen!</b>
+                        <br /> Upptäck spännande fakta och berättelser om
+                        klimatet.
+                      </p>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Link>
             <Col
               xs={3}
               className="text-center h-50 mb-3"
-              style={{ marginRight: "40px" }}
+              style={{ marginRight: "20px" }}
             >
               <Card className="h-100 w-100 custom-card" style={cardStyle}>
                 <Card.Body>
                   <div className="placeholder" />
-                  <Card.Title className="mb-5">Interagera</Card.Title>
+                  <Card.Title className="mb-2">Interagera</Card.Title>
+                  <Card.Img
+                    variant="top"
+                    src={interageraImg} //URL of the image
+                    style={cardImageStyle}
+                    className="mb-2"
+                  />
                   <Card.Text>
-                    Lär dig på ett kul sätt! Gör ditt lärande levande genom att
-                    utforska våra interaktiva diagram.
+                    <p>
+                      <b>Lär dig på ett kul sätt!</b>
+                      <br /> Gör ditt lärande levande genom att utforska våra
+                      interaktiva diagram.
+                    </p>
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -74,10 +95,19 @@ const Home = () => {
               <Card className="h-100 w-100 custom-card" style={cardStyle}>
                 <Card.Body>
                   <div className="placeholder" />
-                  <Card.Title className="mb-5">Spela och lär</Card.Title>
+                  <Card.Title className="mb-2">Spela och lär</Card.Title>
+                  <Card.Img
+                    variant="top"
+                    src={spelaImg} //URL of the image
+                    style={cardImageStyle}
+                    className="mb-2"
+                  />
                   <Card.Text>
-                    Såhär spelar du! Tryck på ‘Starta quiz’ för att börja.
-                    Försök att välja rätt svar.
+                    <p>
+                      <b>Såhär spelar du!</b>
+                      <br /> Tryck på ‘Starta quiz’ för att börja. Försök att
+                      välja rätt svar.
+                    </p>
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -86,56 +116,58 @@ const Home = () => {
         </Container>
 
         {/* Section 1 */}
-        <Container fluid className="py-5 bg-light custom-padding">
-          <Row>
-            <Col>
-              <h2>Utforska</h2>
-              <br />
-              <br />
-              <h4>Öppna Hamburgarmenyn:</h4>
-              <p>
-                Börja med att klicka på de tre strecken (☰) i övre hörnet av
-                skärmen. Detta öppnar vår hamburgarmeny, som är din huvudnyckel
-                till allt innehåll i appen.
+        <Element name="section1">
+          <Container fluid className="py-5 bg-light custom-padding">
+            <Row>
+              <Col>
+                <h2>Utforska</h2>
                 <br />
-              </p>
-              <h4>Välj en Kategori:</h4>
-              <p>
-                I menyn ser du olika kategorier som 'Hav', 'Djur', 'Väder' och
-                många fler. Varje kategori är fylld med spännande fakta och
-                aktiviteter relaterade till just det ämnet.
                 <br />
-              </p>
-              <h4>Hitta Rätt Fakta: </h4>
-              <p>
-                När du har valt en kategori, får du en lista med olika ämnen att
-                utforska. Letar du efter något specifikt? Använd sökfunktionen
-                för att snabbt hitta det du behöver.
-                <br />
-              </p>
-              <h4>Navigera till Rätt Sida: </h4>
-              <p>
-                Klicka på det ämne du vill veta mer om. Det tar dig direkt till
-                en sida fylld med information, bilder, och ibland även
-                interaktiva spel och quiz.
-                <br />
-              </p>
-              <h4>Utforska och Lär: </h4>
-              <p>
-                På varje sida kan du dyka djupt in i ämnet. Läs texter, titta på
-                bilder och videor, och delta i interaktiva aktiviteter för att
-                lära dig mer.
-                <br />
-              </p>
-              <h4>Tillbaka till Menyn: </h4>
-              <p>
-                Vill du byta ämne? Inga problem! Klicka bara på hamburgarmenyn
-                igen för att återvända till kategorierna och välja något nytt
-                att utforska.
-              </p>
-            </Col>
-          </Row>
-        </Container>
+                <h4>Öppna Hamburgarmenyn:</h4>
+                <p>
+                  Börja med att klicka på de tre strecken (☰) i övre hörnet av
+                  skärmen. Detta öppnar vår hamburgarmeny, som är din
+                  huvudnyckel till allt innehåll i appen.
+                  <br />
+                </p>
+                <h4>Välj en Kategori:</h4>
+                <p>
+                  I menyn ser du olika kategorier som 'Hav', 'Djur', 'Väder' och
+                  många fler. Varje kategori är fylld med spännande fakta och
+                  aktiviteter relaterade till just det ämnet.
+                  <br />
+                </p>
+                <h4>Hitta Rätt Fakta: </h4>
+                <p>
+                  När du har valt en kategori, får du en lista med olika ämnen
+                  att utforska. Letar du efter något specifikt? Använd
+                  sökfunktionen för att snabbt hitta det du behöver.
+                  <br />
+                </p>
+                <h4>Navigera till Rätt Sida: </h4>
+                <p>
+                  Klicka på det ämne du vill veta mer om. Det tar dig direkt
+                  till en sida fylld med information, bilder, och ibland även
+                  interaktiva spel och quiz.
+                  <br />
+                </p>
+                <h4>Utforska och Lär: </h4>
+                <p>
+                  På varje sida kan du dyka djupt in i ämnet. Läs texter, titta
+                  på bilder och videor, och delta i interaktiva aktiviteter för
+                  att lära dig mer.
+                  <br />
+                </p>
+                <h4>Tillbaka till Menyn: </h4>
+                <p>
+                  Vill du byta ämne? Inga problem! Klicka bara på hamburgarmenyn
+                  igen för att återvända till kategorierna och välja något nytt
+                  att utforska.
+                </p>
+              </Col>
+            </Row>
+          </Container>
+        </Element>
 
         {/* Section 2 */}
         <Container fluid className="py-5 custom-padding">
