@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import backgroundImg from "./images/BakgrundHome.jpg";
 import "../style.css"; // Import external CSS file
-import { GoogleFontLoader } from 'react-google-font-loader';
+
 
 const Home = () => {
   const cardStyle = {
