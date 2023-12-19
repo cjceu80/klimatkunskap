@@ -1,0 +1,55 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Just+Me+Again+Down+Here&display=swap');
+
+.feedback-container {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.feedback-content {
+    width: 80%;
+    padding: 20px;
+}
+
+.feedback-content h1 {
+    font-family: 'Just Me Again Down Here', cursive;
+    text-align: center;
+    font-size: 200%;
+}
+
+.feedback-form {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.rutRubrik {
+    display: block;
+    margin-bottom: 2px;
+}
+
+
+.input-group {
+    display: flex;
+    align-items: flex-end;
+}
+
+#feedback-input {
+    width: auto;
+    height: 100px;
+    margin-bottom: 0;
+    box-sizing: border-box;
+}
+.submit-button {
+    background-color: lightgrey;
+    color: black;
+    border: none;
+    border-radius: 28px;
+    padding: 10px 20px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
