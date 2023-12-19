@@ -8,7 +8,7 @@ export default function QuizStart() {
     <Container className="d-flex flex-column h-100" >
         <Row className="justify-content-md-center align-items-center h-100">
             <Col lg={5} xl={4} >
-            <Card style={{ height: CARD_HEIGHT}}>
+            <Card style={{ height: CARD_HEIGHT}}className="p-5">
                 <h2>Lätt som en plätt</h2>
                 <p>Perfekt för dig som precis börjat lära dig om klimatförändringar och miljöfrågor</p>
 
@@ -18,7 +18,7 @@ export default function QuizStart() {
             </Card>
             </Col>
             <Col lg={5} xl={4} >
-            <Card style={{ height: CARD_HEIGHT}}>
+            <Card style={{ height: CARD_HEIGHT}} className="p-5">
                 <h2>Svårt o hårt</h2>
                 <p>För dig som känner dig säker på dina kunskaper och vill ha en utmaning</p>
 
