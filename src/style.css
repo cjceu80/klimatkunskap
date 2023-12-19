@@ -17,14 +17,18 @@ h1 {
 
 .quiz_frame {
   background-image: linear-gradient(white, #fce367);
-  
 }
 
 .info_frame {
-  background-image: linear-gradient(135deg, #CBF3F5, #86C0EC);
+  background-image: linear-gradient(135deg, #cbf3f5, #86c0ec);
 }
 
 .sideBarMenuContainer {
   position: fixed;
   height: 100%;
+}
+
+.bgContentPortal {
+  background-image: url(./components/images/Bakgrund_cleanArtboard_1.jpg);
+  background-size: cover;
 }
