@@ -6,5 +6,11 @@ const QUIZ_STATUS = "quizStatus"
 
 export default function QuizQuestion({question})
 {
-    return (<button onClick={()=> {sessionStorage.setItem(QUIZ_DATA, null); sessionStorage.setItem(QUIZ_STATUS, null)}}></button>);
+    return (
+    
+    <>
+
+        <button onClick={()=> {sessionStorage.setItem(QUIZ_DATA, null); sessionStorage.setItem(QUIZ_STATUS, null)}}>Ok?</button>
+    </>
+    );
 }
