@@ -41,7 +41,7 @@ export default function App() {
               <Col>
                 {quizViewShown === QUIZ_STATUS_BEGIN && <QuizStart />}
                 {quizViewShown === QUIZ_STATUS_END && <QuizEnd />}
-                {(quizViewShown === "") && <Outlet />}
+                {((quizViewShown === "") || quizViewShown === QUIZ_STATUS_RUNNING) && <Outlet />}
               </Col>
             </Row>
           </Col>

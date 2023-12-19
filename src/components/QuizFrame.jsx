@@ -33,13 +33,25 @@ export default function QuizFrame( {setQuizViewShown}) {
   
   function startQuiz(newQuizData) {
       sessionStorage.setItem(QUIZ_STATUS, QUIZ_STATUS_RUNNING);
-      sessionStorage.setItem(QUIZ_DATA, JSON.stringify(quizData));
+      sessionStorage.setItem(QUIZ_DATA, JSON.stringify(newQuizData));
       setQuizData(newQuizData);
       setQuizViewShown(QUIZ_STATUS_RUNNING);
       setQuizViewState(QUIZ_STATUS_RUNNING);
       console.log(quizData);
     }
   
+  function handleCompleted()
+  {
+    sessionStorage.setItem(QUIZ_STATUS, QUIZ_STATUS_END);
+    setQuizViewShown(QUIZ_STATUS_END);
+    setQuizViewState(QUIZ_STATUS_END);
+  }
+
+  function handleCompletedClick(){
+    setQuizViewState("");
+    setQuizViewShown("");
+  }
+
   //Remain at the same state when refreshing and navigating
   if (quizViewState != QUIZ_STATUS_RUNNING && sessionStorage.getItem(QUIZ_STATUS) === QUIZ_STATUS_RUNNING) {
     setQuizViewShown(""); 
@@ -77,8 +89,8 @@ export default function QuizFrame( {setQuizViewShown}) {
               <Col>
                 {quizViewState === "" && <Button onClick={handleStartQuizClick}>Starta Quiz?</Button>}
                 {quizViewState === QUIZ_STATUS_BEGIN && <QuizStartFrame callback={startQuiz}/>}
-                {quizViewState === QUIZ_STATUS_END && <Button onClick={handleOnClick}>Avsluta Quiz Debugg?</Button>}
-                {quizViewState === QUIZ_STATUS_RUNNING && <QuizQuestion />}
+                {quizViewState === QUIZ_STATUS_END && <Button onClick={handleCompletedClick}>Avsluta Quiz Debugg?</Button>}
+                {quizViewState === QUIZ_STATUS_RUNNING && <QuizQuestion handleCompleted={handleCompleted}/>}
             </Col>
             </Row>
           </Col>  

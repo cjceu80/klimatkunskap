@@ -12,8 +12,10 @@ export function getQuestions(count){
         //Return null if no answer was found.
         if (!element.alt)
             return;
+        element.correctIndex = Math.floor(Math.random() * (element.alt.length + 1));
+        element.alt.splice(element.correctIndex, 0, element.correct);
     });
-
+    
     return resultQuestions;
 }
 
