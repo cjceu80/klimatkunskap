@@ -3,8 +3,20 @@ import React from "react";
 export default function ContentPortal() {
   return (
     <>
-      <h1>Hej o välkommen! !</h1>
-      <p>Detta är startsidan med lite smått o gott</p>
+      <div className="bgContentPortal">
+        <a href="#" className="fossiltbransle-btn">
+          Fossilt bränsle
+        </a>
+        <a href="#" className="temperaturforandring-btn">
+          Temperaturförändring
+        </a>
+        <a href="#" className="havsniva-btn">
+          Havsnivå
+        </a>
+        <a href="#" className="glaciarer-btn">
+          Glaciärer
+        </a>
+      </div>
     </>
   );
 }
