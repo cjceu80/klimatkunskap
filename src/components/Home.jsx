@@ -140,42 +140,42 @@ const Home = () => {
                     <Col >
                 <br />
                 <br />
-                <h4>Öppna Hamburgarmenyn:</h4>
+                <b>Öppna Hamburgarmenyn:</b>
                 <p>
                   Börja med att klicka på de tre strecken (☰) i övre hörnet av
                   skärmen. Detta öppnar vår hamburgarmeny, som är din
                   huvudnyckel till allt innehåll i appen.
                   
                 </p><br />
-                <h4>Välj en Kategori:</h4>
+                <b>Välj en Kategori:</b>
                 <p>
                   I menyn ser du olika kategorier som 'Hav', 'Djur', 'Väder' och
                   många fler. Varje kategori är fylld med spännande fakta och
                   aktiviteter relaterade till just det ämnet.
                   
                 </p><br />
-                <h4>Hitta Rätt Fakta: </h4>
+                <b>Hitta Rätt Fakta: </b>
                 <p>
                   När du har valt en kategori, får du en lista med olika ämnen
                   att utforska. Letar du efter något specifikt? Använd
                   sökfunktionen för att snabbt hitta det du behöver.
                   
                 </p><br />
-                <h4>Navigera till Rätt Sida: </h4>
+                <b>Navigera till Rätt Sida: </b>
                 <p>
                   Klicka på det ämne du vill veta mer om. Det tar dig direkt
                   till en sida fylld med information, bilder, och ibland även
                   interaktiva spel och quiz.
                   
                 </p><br />
-                <h4>Utforska och Lär: </h4>
+                <b>Utforska och Lär: </b>
                 <p>
                   På varje sida kan du dyka djupt in i ämnet. Läs texter, titta
                   på bilder och videor, och delta i interaktiva aktiviteter för
                   att lära dig mer.
                   
                 </p><br />
-                <h4>Tillbaka till Menyn: </h4>
+                <b>Tillbaka till Menyn: </b>
                 <p>
                   Vill du byta ämne? Inga problem! Klicka bara på hamburgarmenyn
                   igen för att återvända till kategorierna och välja något nytt
@@ -204,20 +204,20 @@ const Home = () => {
               
               <br />
               <br />
-              <h2>Upptäck Interaktiva Diagram:</h2>
+              <b>Upptäck Interaktiva Diagram:</b>
               <p>
                 I vår app hittar du massor av coola diagram som visar allt från
                 globala temperaturförändringar till hur olika djurarter påverkas
                 av klimatförändringar. Klicka, zooma och utforska för att se
                 klimatdata på ett helt nytt sätt.
               </p>
-              <h4>Delta i Quizet:</h4>
+              <b>Delta i Quizet:</b>
               <p>
                 Är du redo för en utmaning? Vårt quiz testar dina kunskaper och
                 hjälper dig att lära dig mer på ett roligt sätt. Varje fråga är
                 en chans att visa vad du kan och att lära dig något nytt.
               </p>
-              <h4>Ge Feedback:</h4>
+              <b>Ge Feedback:</b>
               <p>
                 Tycker du om en viss del av appen? Har du idéer på hur vi kan
                 göra den ännu bättre? Din feedback är viktig för oss, så tveka
@@ -245,33 +245,33 @@ const Home = () => {
               
               <br />
               <br />
-              <h4>Starta Quizet:</h4>
+              <b>Starta Quizet:</b>
               <p>
                 Klicka på 'Starta Quiz' för att sätta igång. Du är nu redo att
                 testa dina kunskaper!
                 <br />
               </p>
-              <h4>Välj Rätt Svar:</h4>
+              <b>Välj Rätt Svar:</b>
               <p>
                 För varje fråga, välj det svar du tror är rätt. Tänk noga – dina
                 val påverkar inte bara din poäng, utan också vår virtuella
                 värld!
                 <br />
               </p>
-              <h4>Vattennivån Ökar vid Fel Svar:</h4>
+              <b>Vattennivån Ökar vid Fel Svar:</b>
               <p>
                 Om du svarar fel på en fråga, kommer du att se hur vattennivån i
                 applikationen stiger. Detta är en visuell påminnelse om hur
                 viktiga våra val är för miljön.
                 <br />
               </p>
-              <h4>Håll Koll på Mätaren:</h4>
+              <b>Håll Koll på Mätaren:</b>
               <p>
                 En mätare visar hur högt vattennivån har stigit. Ditt mål är att
                 hålla den så låg som möjligt genom att svara rätt på frågorna.
                 <br />
               </p>
-              <h4>Öka Svårighetsgraden:</h4>
+              <b>Öka Svårighetsgraden:</b>
               <p>
                 Känner du dig extra modig? Testa att öka svårighetsgraden! När
                 du gör det, går quizet på tid, vilket gör spelet ännu mer
