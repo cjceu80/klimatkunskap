@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Container, NavDropdown } from 'react-bootstrap';
+import { Navbar, Container, NavDropdown, Col, Row } from 'react-bootstrap';
 import { useUserAuth } from '../utils/UserAuthContext';
 import LoginNav from './LoginNav';
 
@@ -8,12 +8,14 @@ import LoginNav from './LoginNav';
 export default function HeaderNav({login}) {
   
   return (
-    <Navbar expand="lg" className="" style={{position: "fixed", zIndex: "1000"}}>
-      <Container fixed="top" className="justify-center justify-content-center">
+    <div expand="xl" className="fixed-top" style={{zIndex: "1000", width: "inherit", paddingRight: "2em" }}>
+      <Row className="justify-end justify-content-end">
+        <Col sm={7} lg={8}>
+        </Col>
+        <Col className="justify-end justify-content-end">
         <NavDropdown
           title="Meny"
           id="navbarScrollingDropdown"
-          className="position-absolute top-0 end-0"
         >
           {/* Navigation items BEGIN */}
 
@@ -34,8 +36,9 @@ export default function HeaderNav({login}) {
           <LoginNav login={login} />
 
         </NavDropdown>
-      </Container>
-    </Navbar>
+        </Col>
+      </Row>
+    </div>
   );
 }
 

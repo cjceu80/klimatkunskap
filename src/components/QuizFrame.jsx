@@ -63,7 +63,7 @@ export default function QuizFrame( {setQuizViewShown}) {
  //   console.log(quizData.answers.length)
 
   return(
-    <Col sm={4} lg={3} className="quiz_frame align-content-bottom justify-content-bottom" style={{ position:"relative", height: window.innerHeight, minWidth: "300px"}} >
+    <Col sm={4} lg={3} className="quiz_frame align-content-bottom justify-content-bottom top-0 end-0 position-fixed" style={{height: window.innerHeight, minWidth: "300px"}} >
           <Wave fill='#a9ebf4'
                 paused={false}
                 style={{ width: WAVE_WIDTH, height: 200, position: "absolute", bottom: 0 }}
