@@ -20,7 +20,7 @@ const Home = () => {
  
 
   return (
-
+    
       <div
         style={{
           backgroundImage: `url(${backgroundImg})`,
@@ -29,7 +29,7 @@ const Home = () => {
           position: "relative",
         }}
       >
-        <Container fluid className="h-100">
+        <Container fluid className="h-100 pageContainer">
           <Row className="h-100 align-items-end justify-content-center">
             <Col xs={9} className="text-center mb-4">
               <h1>Välkommen till KlimatKunskap</h1>
@@ -123,7 +123,7 @@ const Home = () => {
 
         {/* Section 1 
         <Element name="section1">*/}
-          <Container id="section1" fluid className="py-5 bg-light custom-padding">
+          <Container id="section1" fluid className="py-5 bg-light custom-padding pageContainer">
             <Row>
               <Col>
                 <h2>Utforska</h2>
@@ -176,7 +176,7 @@ const Home = () => {
         {/*</Element>*/}
 
          {/* Section 2 */}
-        <Container id="section2" fluid className="py-5 custom-padding">
+        <Container id="section2" fluid className="py-5 custom-padding pageContainer">
           <Row>
             <Col>
               <h2>Interagera</h2>
@@ -206,7 +206,7 @@ const Home = () => {
         </Container>
 
         {/* Section 3 */}
-        <Container id="section3" fluid className="py-5 bg-light custom-padding">
+        <Container id="section3" fluid className="py-5 bg-light custom-padding pageContainer">
           <Row>
             <Col>
               <h2>Spela och Lär</h2>
