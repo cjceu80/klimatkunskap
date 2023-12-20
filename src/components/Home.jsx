@@ -188,9 +188,20 @@ const Home = () => {
 
          {/* Section 2 */}
         <Container id="section2" fluid className="py-5 custom-padding pageContainer">
+        <Row className="text-center">
+            <Col >
+            <Card.Img
+                      variant="top"
+                      src={interageraImg} //URL of the image
+                      style={cardImageStyle}
+                      className="mb-3"
+                    />
+                    <h2>Interagera</h2>
+                    </Col>
+                    </Row>
           <Row>
             <Col>
-              <h2>Interagera</h2>
+              
               <br />
               <br />
               <h2>Upptäck Interaktiva Diagram:</h2>
@@ -218,9 +229,20 @@ const Home = () => {
 
         {/* Section 3 */}
         <Container id="section3" fluid className="py-5 bg-light custom-padding pageContainer">
+        <Row className="text-center">
+            <Col >
+            <Card.Img
+                      variant="top"
+                      src={spelaImg} //URL of the image
+                      style={cardImageStyle}
+                      className="mb-3"
+                    />
+                    <h2>Spela och Lär</h2>
+                    </Col>
+                    </Row>
           <Row>
             <Col>
-              <h2>Spela och Lär</h2>
+              
               <br />
               <br />
               <h4>Starta Quizet:</h4>
