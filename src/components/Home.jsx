@@ -12,9 +12,10 @@ const Home = () => {
   const cardStyle = {
     background: "rgba(255, 255, 255, 0.7)", // 0.7 represents 70% transparency
     borderRadius: "25px",
+    marginBottom: "100px",
   };
   const cardImageStyle = {
-    height: "100px", // Set a specific height for the images
+    height: "80px", // Set a specific height for the images
     objectFit: "contain", // Use "cover" to maintain aspect ratio and cover the entire container
   };
  
@@ -25,7 +26,7 @@ const Home = () => {
         style={{
           backgroundImage: `url(${backgroundImg})`,
           backgroundSize: "cover",
-          height: "100vh",
+          height: "110vh",
           position: "relative",
         }}
       >
@@ -50,7 +51,7 @@ const Home = () => {
                 <Card className="h-100 w-100 custom-card" style={cardStyle}>
                   <Card.Body>
                     <div className="placeholder" />
-                    <Card.Title className="mb-2"><h2>Utforska</h2></Card.Title>
+                    <Card.Title className="mb-3"><h2>Utforska</h2></Card.Title>
                     <Card.Img
                       variant="top"
                       src={utforskaImg} //URL of the image
@@ -78,7 +79,7 @@ const Home = () => {
               <Card className="h-100 w-100 custom-card" style={cardStyle}>
                 <Card.Body>
                   <div className="placeholder" />
-                  <Card.Title className="mb-2"><h2>Interagera</h2></Card.Title>
+                  <Card.Title className="mb-3"><h2>Interagera</h2></Card.Title>
                   <Card.Img
                     variant="top"
                     src={interageraImg} //URL of the image
@@ -100,7 +101,7 @@ const Home = () => {
               <Card className="h-100 w-100 custom-card" style={cardStyle}>
                 <Card.Body>
                   <div className="placeholder" />
-                  <Card.Title className="mb-2"><h2>Spela och lär</h2></Card.Title>
+                  <Card.Title className="mb-3"><h2>Spela och lär</h2></Card.Title>
                   <Card.Img
                     variant="top"
                     src={spelaImg} //URL of the image
@@ -124,9 +125,19 @@ const Home = () => {
         {/* Section 1 
         <Element name="section1">*/}
           <Container id="section1" fluid className="py-5 bg-light custom-padding pageContainer">
-            <Row>
-              <Col>
-                <h2>Utforska</h2>
+            <Row className="text-center">
+            <Col >
+            <Card.Img
+                      variant="top"
+                      src={utforskaImg} //URL of the image
+                      style={cardImageStyle}
+                      className="mb-3"
+                    />
+                    <h2>Utforska</h2>
+                    </Col>
+                    </Row>
+                    <Row > 
+                    <Col >
                 <br />
                 <br />
                 <h4>Öppna Hamburgarmenyn:</h4>
