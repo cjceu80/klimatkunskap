@@ -6,7 +6,7 @@ export default function About() {
     
     <>  
      
-     <img src={logo} alt=""></img>
+    { /* <img src={logo} alt=""></img> */}
     <br/>
 
       <h1>Teamet bakom klimatkunskap applikation</h1>
