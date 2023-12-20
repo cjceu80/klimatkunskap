@@ -30,7 +30,7 @@ export default function App() {
   return (
     <QuizContextProvider>
       <Container fluid>
-        <Row>
+        <Row >
           <Col className='info_frame'>
             <Row>
               <Col>

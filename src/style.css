@@ -19,7 +19,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Just Me Down Here";
+  font-family: "Just Me Again Down Here";
 }
 
 .quiz_frame {
@@ -27,7 +27,9 @@ h4 {
 }
 
 .info_frame {
-  background-image: linear-gradient(135deg, #cbf3f5, #86c0ec);
+  /*background-image: linear-gradient(135deg, #cbf3f5, #86c0ec);*/
+  padding: 0px;
+  margin: 0px;
 }
 
 .sideBarMenuContainer {

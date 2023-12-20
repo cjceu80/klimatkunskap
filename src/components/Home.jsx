@@ -18,7 +18,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+
       <div
         style={{
           backgroundImage: `url(${backgroundImg})`,
@@ -31,7 +31,6 @@ const Home = () => {
           <Row className="h-100 align-items-end justify-content-center">
             <Col xs={9} className="text-center mb-4">
               <h1>Välkommen till KlimatKunskap</h1>
-              <br />
               <p>
                 En värld där varje klick är ett steg mot att bli en
                 klimathjälte! Det här är inte bara en app, det är din biljett
@@ -48,7 +47,7 @@ const Home = () => {
                 <Card className="h-100 w-100 custom-card" style={cardStyle}>
                   <Card.Body>
                     <div className="placeholder" />
-                    <Card.Title className="mb-2">Utforska</Card.Title>
+                    <Card.Title className="mb-2"><h2>Utforska</h2></Card.Title>
                     <Card.Img
                       variant="top"
                       src={utforskaImg} //URL of the image
@@ -56,11 +55,11 @@ const Home = () => {
                       className="mb-2"
                     />
                     <Card.Text>
-                      <p>
+                      
                         <b>Kolla runt i appen!</b>
                         <br /> Upptäck spännande fakta och berättelser om
                         klimatet.
-                      </p>
+                      
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -74,7 +73,7 @@ const Home = () => {
               <Card className="h-100 w-100 custom-card" style={cardStyle}>
                 <Card.Body>
                   <div className="placeholder" />
-                  <Card.Title className="mb-2">Interagera</Card.Title>
+                  <Card.Title className="mb-2"><h2>Interagera</h2></Card.Title>
                   <Card.Img
                     variant="top"
                     src={interageraImg} //URL of the image
@@ -82,11 +81,11 @@ const Home = () => {
                     className="mb-2"
                   />
                   <Card.Text>
-                    <p>
+                    
                       <b>Lär dig på ett kul sätt!</b>
                       <br /> Gör ditt lärande levande genom att utforska våra
                       interaktiva diagram.
-                    </p>
+                    
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -95,7 +94,7 @@ const Home = () => {
               <Card className="h-100 w-100 custom-card" style={cardStyle}>
                 <Card.Body>
                   <div className="placeholder" />
-                  <Card.Title className="mb-2">Spela och lär</Card.Title>
+                  <Card.Title className="mb-2"><h2>Spela och lär</h2></Card.Title>
                   <Card.Img
                     variant="top"
                     src={spelaImg} //URL of the image
@@ -103,11 +102,11 @@ const Home = () => {
                     className="mb-2"
                   />
                   <Card.Text>
-                    <p>
+                    
                       <b>Såhär spelar du!</b>
                       <br /> Tryck på ‘Starta quiz’ för att börja. Försök att
                       välja rätt svar.
-                    </p>
+                    
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -128,36 +127,36 @@ const Home = () => {
                   Börja med att klicka på de tre strecken (☰) i övre hörnet av
                   skärmen. Detta öppnar vår hamburgarmeny, som är din
                   huvudnyckel till allt innehåll i appen.
-                  <br />
-                </p>
+                  
+                </p><br />
                 <h4>Välj en Kategori:</h4>
                 <p>
                   I menyn ser du olika kategorier som 'Hav', 'Djur', 'Väder' och
                   många fler. Varje kategori är fylld med spännande fakta och
                   aktiviteter relaterade till just det ämnet.
-                  <br />
-                </p>
+                  
+                </p><br />
                 <h4>Hitta Rätt Fakta: </h4>
                 <p>
                   När du har valt en kategori, får du en lista med olika ämnen
                   att utforska. Letar du efter något specifikt? Använd
                   sökfunktionen för att snabbt hitta det du behöver.
-                  <br />
-                </p>
+                  
+                </p><br />
                 <h4>Navigera till Rätt Sida: </h4>
                 <p>
                   Klicka på det ämne du vill veta mer om. Det tar dig direkt
                   till en sida fylld med information, bilder, och ibland även
                   interaktiva spel och quiz.
-                  <br />
-                </p>
+                  
+                </p><br />
                 <h4>Utforska och Lär: </h4>
                 <p>
                   På varje sida kan du dyka djupt in i ämnet. Läs texter, titta
                   på bilder och videor, och delta i interaktiva aktiviteter för
                   att lära dig mer.
-                  <br />
-                </p>
+                  
+                </p><br />
                 <h4>Tillbaka till Menyn: </h4>
                 <p>
                   Vill du byta ämne? Inga problem! Klicka bara på hamburgarmenyn
@@ -242,7 +241,6 @@ const Home = () => {
           </Row>
         </Container>
       </div>
-    </div>
   );
 };
 
