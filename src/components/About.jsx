@@ -5,9 +5,10 @@ export default function About() {
   return (
     
     <>  
-     
+      <div className="Bg_image_Om_Oss">
     { /* <img src={logo} alt=""></img> */}
     <br/>
+     
 
       <h1>Teamet bakom klimatkunskap applikation</h1>
       <br/>
@@ -21,7 +22,8 @@ export default function About() {
       <p>Tillsammans strävar vi efter att göra KlimatKunskap applikation till en resurs som inte bara lär, 
         utan också inspirerar. 
         Tack för att ni är med oss på den här resan!</p>
-      
+
+        </div>
     </>
   );
 }
