@@ -5,7 +5,7 @@ import utforskaImg from "./images/ipad.png";
 import interageraImg from "./images/kompass.png";
 import spelaImg from "./images/gamepad.png";
 import "../style.css"; // Import external CSS file
-import { Link, Element, animateScroll as scroll } from "react-scroll";
+//import { Link, Element, animateScroll as scroll } from "react-scroll";
 
 const Home = () => {
   const cardStyle = {
@@ -39,7 +39,7 @@ const Home = () => {
               </p>
             </Col>
 
-            <Link to="section1" smooth={true} duration={500}>
+            
               <Col
                 xs={3}
                 className="text-center h-50 mb-3 "
@@ -65,7 +65,7 @@ const Home = () => {
                   </Card.Body>
                 </Card>
               </Col>
-            </Link>
+            
             <Col
               xs={3}
               className="text-center h-50 mb-3"
