@@ -29,21 +29,18 @@ export default function App() {
 
   return (
     <QuizContextProvider>
-      <Container fluid>
                 <HeaderNav style={{position: "fixed"}} login={handleShow} />              
                 <QuizFrame login={handleShow} setQuizViewShown={handleQuizViewShown}/>
-        <Row >
-          <Col className='info_frame'>
+      <Container fluid>
 
             <Row>
-              <Col sm={8} lg={9} style={{position: "relative"}}>
+              <Col className='info_frame' sm={8} lg={9} style={{position: "relative"}}>
                 {quizViewShown === QUIZ_STATUS_BEGIN && <QuizStart />}
                 {quizViewShown === QUIZ_STATUS_END && <QuizEnd />}
                 {((quizViewShown === "") || quizViewShown === QUIZ_STATUS_RUNNING) && <Outlet />}
               </Col>
             </Row>
-          </Col>
-        </Row>
+
       </Container>
       <Offcanvas show={show} onHide={handleClose} placement="end">
         <Offcanvas.Header closeButton />
