@@ -7,6 +7,7 @@ import spelaImg from "./images/gamepad.png";
 import "../style.css"; // Import external CSS file
 //import { Link, Element, animateScroll as scroll } from "react-scroll";
 
+
 const Home = () => {
   const cardStyle = {
     background: "rgba(255, 255, 255, 0.7)", // 0.7 represents 70% transparency
@@ -16,6 +17,7 @@ const Home = () => {
     height: "100px", // Set a specific height for the images
     objectFit: "contain", // Use "cover" to maintain aspect ratio and cover the entire container
   };
+ 
 
   return (
 
@@ -44,6 +46,7 @@ const Home = () => {
                 className="text-center h-50 mb-3 "
                 style={{ marginRight: "20px" }}
               >
+                <a href="#section1" style={{ textDecoration: "none" }}>
                 <Card className="h-100 w-100 custom-card" style={cardStyle}>
                   <Card.Body>
                     <div className="placeholder" />
@@ -63,6 +66,7 @@ const Home = () => {
                     </Card.Text>
                   </Card.Body>
                 </Card>
+                </a>
               </Col>
             
             <Col
@@ -70,6 +74,7 @@ const Home = () => {
               className="text-center h-50 mb-3"
               style={{ marginRight: "20px" }}
             >
+              <a href="#section2" style={{ textDecoration: "none" }}>
               <Card className="h-100 w-100 custom-card" style={cardStyle}>
                 <Card.Body>
                   <div className="placeholder" />
@@ -88,9 +93,10 @@ const Home = () => {
                     
                   </Card.Text>
                 </Card.Body>
-              </Card>
+              </Card></a>
             </Col>
             <Col xs={3} className="text-center h-50 mb-3">
+            <a href="#section3" style={{ textDecoration: "none" }}>
               <Card className="h-100 w-100 custom-card" style={cardStyle}>
                 <Card.Body>
                   <div className="placeholder" />
@@ -110,13 +116,14 @@ const Home = () => {
                   </Card.Text>
                 </Card.Body>
               </Card>
+              </a>
             </Col>
           </Row>
         </Container>
 
         {/* Section 1 
         <Element name="section1">*/}
-          <Container fluid className="py-5 bg-light custom-padding">
+          <Container id="section1" fluid className="py-5 bg-light custom-padding">
             <Row>
               <Col>
                 <h2>Utforska</h2>
@@ -169,7 +176,7 @@ const Home = () => {
         {/*</Element>*/}
 
          {/* Section 2 */}
-        <Container fluid className="py-5 custom-padding">
+        <Container id="section2" fluid className="py-5 custom-padding">
           <Row>
             <Col>
               <h2>Interagera</h2>
@@ -199,7 +206,7 @@ const Home = () => {
         </Container>
 
         {/* Section 3 */}
-        <Container fluid className="py-5 bg-light custom-padding">
+        <Container id="section3" fluid className="py-5 bg-light custom-padding">
           <Row>
             <Col>
               <h2>Spela och Lär</h2>
