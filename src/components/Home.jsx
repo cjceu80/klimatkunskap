@@ -30,7 +30,7 @@ const Home = () => {
           position: "relative",
         }}
       >
-        <Container fluid className="h-100 pageContainer">
+        <Container fluid className="h-100 pageContainer mb-5">
           <Row className="h-100 align-items-end justify-content-center">
             <Col xs={9} className="text-center mb-4">
               <h1>Välkommen till KlimatKunskap</h1>
@@ -124,7 +124,7 @@ const Home = () => {
 
         {/* Section 1 
         <Element name="section1">*/}
-          <Container id="section1" fluid className="py-5 bg-light custom-padding pageContainer">
+          <Container id="section1" fluid className="py-5 custom-padding pageContainer">
             <Row className="text-center">
             <Col >
             <Card.Img
@@ -228,7 +228,7 @@ const Home = () => {
         </Container>
 
         {/* Section 3 */}
-        <Container id="section3" fluid className="py-5 bg-light custom-padding pageContainer">
+        <Container id="section3" fluid className="py-5 custom-padding pageContainer">
         <Row className="text-center">
             <Col >
             <Card.Img
