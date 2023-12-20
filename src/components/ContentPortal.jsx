@@ -4,16 +4,19 @@ export default function ContentPortal() {
   return (
     <>
       <div className="bgContentPortal">
-        <a href="#" className="fossiltbransle-btn">
+        <a href="#" className="infoCardFossil">
           Fossilt bränsle
         </a>
-        <a href="#" className="temperaturforandring-btn">
+
+        <a href="#" className="infoCardTemperatur">
           Temperaturförändring
         </a>
-        <a href="#" className="havsniva-btn">
+
+        <a href="#" className="infoCardHavs">
           Havsnivå
         </a>
-        <a href="#" className="glaciarer-btn">
+
+        <a href="#" className="infoCardGlaciar">
           Glaciärer
         </a>
       </div>

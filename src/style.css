@@ -15,8 +15,11 @@ h1 {
   font-size: 1.5rem;
 }
 
-h1, h2, h3, h4 {
-  font-family: 'Just Me Down Here',
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Just Me Down Here";
 }
 
 .quiz_frame {
@@ -34,6 +37,8 @@ h1, h2, h3, h4 {
 
 .bgContentPortal {
   background-image: url(./components/images/Bakgrund_cleanArtboard_1.jpg);
+  position: relative;
+  height: 100vh;
   background-size: cover;
 }
 
@@ -49,6 +54,123 @@ h1, h2, h3, h4 {
   margin-bottom: 20px; /* Adjusts the margin between cards, Used on the home page*/
 }
 
-.custom-padding {/* Custom padding on full page content */
-  padding: 100px; 
+.custom-padding {
+  /* Custom padding on full page content */
+  padding: 100px;
+}
+
+.infoCardFossil {
+  position: absolute;
+  width: 313px;
+  height: 60px;
+  left: 146px;
+  top: 215px;
+
+  font-family: "Just Me Again Down Here";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 60px;
+  /* identical to box height */
+  text-align: center;
+  color: black;
+  text-decoration: none;
+
+  position: absolute;
+  width: 314px;
+  height: 287px;
+  left: 146px;
+  top: 197px;
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 0.7;
+  border-radius: 25px;
+}
+
+.infoCardTemperatur {
+  /* Temperaturförändring */
+
+  position: absolute;
+  width: 314px;
+  height: 34px;
+  left: 475px;
+  top: 215px;
+
+  font-family: "Just Me Again Down Here";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+
+  color: black;
+  text-decoration: none;
+
+  position: absolute;
+  width: 314px;
+  height: 287px;
+  left: 476px;
+  top: 197px;
+
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 0.7;
+  border-radius: 25px;
+}
+
+.infoCardHavs {
+  /* Havsnivå */
+
+  position: absolute;
+  width: 313px;
+  height: 49px;
+  left: 147px;
+  top: 525px;
+
+  font-family: "Just Me Again Down Here";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+
+  color: black;
+  text-decoration: none;
+
+  position: absolute;
+  width: 314px;
+  height: 286px;
+  left: 145px;
+  top: 503px;
+
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 0.7;
+  border-radius: 25px;
+}
+
+.infoCardGlaciar {
+  /* Glaciärer */
+
+  position: absolute;
+  width: 314px;
+  height: 34px;
+  left: 476px;
+  top: 525px;
+
+  font-family: "Just Me Again Down Here";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+
+  position: absolute;
+  width: 314px;
+  height: 286px;
+  left: 476px;
+  top: 503px;
+
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 0.7;
+  border-radius: 25px;
 }
