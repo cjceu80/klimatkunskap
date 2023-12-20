@@ -42,9 +42,9 @@ const Home = () => {
 
             
               <Col
-                xs={3}
-                className="text-center h-50 mb-3 "
-                style={{ marginRight: "20px" }}
+                xs={4}
+                className="text-center mb-3 "
+                style={{ marginRight: "0px" }}
               >
                 <a href="#section1" style={{ textDecoration: "none" }}>
                 <Card className="h-100 w-100 custom-card" style={cardStyle}>
@@ -55,7 +55,7 @@ const Home = () => {
                       variant="top"
                       src={utforskaImg} //URL of the image
                       style={cardImageStyle}
-                      className="mb-2"
+                      className="mb-3"
                     />
                     <Card.Text>
                       
@@ -70,9 +70,9 @@ const Home = () => {
               </Col>
             
             <Col
-              xs={3}
-              className="text-center h-50 mb-3"
-              style={{ marginRight: "20px" }}
+              xs={4}
+              className="text-center  mb-3"
+              style={{ marginRight: "0px" }}
             >
               <a href="#section2" style={{ textDecoration: "none" }}>
               <Card className="h-100 w-100 custom-card" style={cardStyle}>
@@ -83,7 +83,7 @@ const Home = () => {
                     variant="top"
                     src={interageraImg} //URL of the image
                     style={cardImageStyle}
-                    className="mb-2"
+                    className="mb-3"
                   />
                   <Card.Text>
                     
@@ -95,7 +95,7 @@ const Home = () => {
                 </Card.Body>
               </Card></a>
             </Col>
-            <Col xs={3} className="text-center h-50 mb-3">
+            <Col xs={4} className="text-center  mb-3">
             <a href="#section3" style={{ textDecoration: "none" }}>
               <Card className="h-100 w-100 custom-card" style={cardStyle}>
                 <Card.Body>
@@ -105,7 +105,7 @@ const Home = () => {
                     variant="top"
                     src={spelaImg} //URL of the image
                     style={cardImageStyle}
-                    className="mb-2"
+                    className="mb-3"
                   />
                   <Card.Text>
                     
