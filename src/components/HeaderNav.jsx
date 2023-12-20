@@ -8,7 +8,7 @@ import LoginNav from './LoginNav';
 export default function HeaderNav({login}) {
   
   return (
-    <Navbar expand="lg" className="">
+    <Navbar expand="lg" className="" style={{position: "fixed", zIndex: "1000"}}>
       <Container fixed="top" className="justify-center justify-content-center">
         <NavDropdown
           title="Meny"
