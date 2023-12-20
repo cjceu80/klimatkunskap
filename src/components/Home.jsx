@@ -115,8 +115,8 @@ const Home = () => {
           </Row>
         </Container>
 
-        {/* Section 1 */}
-        <Element name="section1">
+        {/* Section 1 
+        <Element name="section1">*/}
           <Container fluid className="py-5 bg-light custom-padding">
             <Row>
               <Col>
@@ -167,9 +167,9 @@ const Home = () => {
               </Col>
             </Row>
           </Container>
-        </Element>
+        {/*</Element>*/}
 
-        {/* Section 2 */}
+         {/* Section 2 */}
         <Container fluid className="py-5 custom-padding">
           <Row>
             <Col>

@@ -18,6 +18,10 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home />,},
       {
+        path: '/home',
+        element: <Home />,
+      },
+      {
         path: '/feedback',
         element: <Feedback />,
       },
