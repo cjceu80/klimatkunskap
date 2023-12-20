@@ -1,10 +1,19 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
+import backgroundImg from "./images/BakgrundHome.jpg";
 
 const CARD_HEIGHT = 500;
 
 export default function QuizStart() {
     return (
+        <div
+      style={{
+        backgroundImage: `url(${backgroundImg})`,
+        backgroundSize: "cover",
+        height: "100vh",
+        position: "relative",
+      }}
+    >
     <Container className="d-flex flex-column h-100" >
         <Row className="justify-content-md-center align-items-center h-100">
             <Col lg={5} xl={4} >
@@ -29,5 +38,6 @@ export default function QuizStart() {
             </Col>
         </Row>
     </Container>
+    </div>
     )
 }
