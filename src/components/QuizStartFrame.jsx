@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Button, Stack } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 import { getQuestions } from '../utils/staticQuestions';
 
@@ -15,6 +16,7 @@ const QUIZ_STATUS_RUNNING = "running"
 
 
 export default function QuizStartFrame({callback}){
+    const navigate = useNavigate();
     
     function handleStartQuizClick(){
         const quizData = {
@@ -24,6 +26,7 @@ export default function QuizStartFrame({callback}){
         }
         //console.log(quizData);
         callback(quizData);
+        navigate("/kunskapsportalen")
     }
 
     return (
