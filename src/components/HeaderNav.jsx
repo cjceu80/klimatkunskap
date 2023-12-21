@@ -1,62 +1,55 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Navbar, Container, NavDropdown, Col, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Navbar, NavDropdown, Container, Col, Row } from "react-bootstrap";
 import { useUserAuth } from "../utils/UserAuthContext";
 import LoginNav from "./LoginNav";
 import "../styles/nav.css";
 
 // Hamburger icon Unicode character
 const hamburgerIcon = "\u2630"; // Unicode character for three horizontal lines
+const closeIcon = "\u2716"; // Unicode character for a multiplication sign (X)
 
 // Dropdown menu for navigation
 export default function HeaderNav({ login }) {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <div
-      expand="x2"
       className="fixed-top"
       style={{
         zIndex: "1000",
-        width: "inherit",
-        paddingRight: "2em",
-        right: "87px",
-        top: "25px",
+        width: "100%",
       }}
     >
-      <Row className="justify-end justify-content-end">
+      <Row className="justify-content-end">
         <Col sm={7} lg={8}></Col>
-        <Col className="justify-end justify-content-end">
-        
-          <NavDropdown title={hamburgerIcon} id="navbarScrollingDropdown" drop="false">
-            {/* Navigation items BEGIN */}
-            <div className="custom-dropdown card full-height-card">
-            <NavDropdown.Item href="/">Startsida</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="/kunskapsportalen">
-              Kunskapsportalen
-            </NavDropdown.Item>
-            <NavDropdown.Item href="/kunskapsportalen">
-              Fossilt Bränsle
-            </NavDropdown.Item>
-            <NavDropdown.Item href="/kunskapsportalen">
-              Temperatur
-            </NavDropdown.Item>
-            <NavDropdown.Item href="/kunskapsportalen">
-              Havsnivå
-            </NavDropdown.Item>
-            <NavDropdown.Item href="/kunskapsportalen">
-              Glaciär
-            </NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="/omoss">Om oss</NavDropdown.Item>
-            <NavDropdown.Item href="/feedback">Ge feedback</NavDropdown.Item>
-
-            {/* Navigation items END */}
-
-            <NavDropdown.Divider />
-            <LoginNav login={login} />
-            </div>
-          </NavDropdown>
-
+        <Col className="justify-content-end">
+          <Navbar expand="lg">
+            <button className={`custom-hamburger ${isDropdownOpen ? 'open' : ''}`} onClick={toggleDropdown} aria-controls="navbarScrollingDropdown">
+              {isDropdownOpen ? closeIcon : hamburgerIcon}
+            </button>
+            <Navbar.Collapse id="navbarScrollingDropdown">
+              {isDropdownOpen && (
+                <div className="custom-dropdown card full-height-card">
+                  <NavDropdown.Item href="/">Startsida</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="/kunskapsportalen">Kunskapsportalen</NavDropdown.Item>
+                  <NavDropdown.Item href="/fossiltbraensle">Fossilt Bränsle</NavDropdown.Item>
+                  <NavDropdown.Item href="/temperatur">Temperatur</NavDropdown.Item>
+                  <NavDropdown.Item href="/havsniva">Havsnivå</NavDropdown.Item>
+                  <NavDropdown.Item href="/glaciar">Glaciär</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="/omoss">Om oss</NavDropdown.Item>
+                  <NavDropdown.Item href="/feedback">Ge feedback</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <LoginNav login={login} />
+                </div>
+              )}
+            </Navbar.Collapse>
+          </Navbar>
         </Col>
       </Row>
     </div>

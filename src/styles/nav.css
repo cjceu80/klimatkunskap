@@ -6,20 +6,34 @@
   /* Custom class for the card inside the dropdown */
   .full-height-card {
     height: 100vh;
-    width: 30vh;
-    right: 0px;
+    width: 35vh;
+    right: 292px;
     overflow-y: auto; /* Add this if you want vertical scrolling */
     position: fixed;
-    top: -88px;
+    top: 0px;
     background-color: #4CCFAE;
     font-size: x-large;
     display: grid;
     place-items: center;
     padding-top: 100px;
     padding-bottom: 100px;
+    padding-left: 30px;
   }
   
   #navbarScrollingDropdown {
     font-size: 40px;
   }
 
+  .custom-hamburger {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 3rem;
+    outline: none;
+    z-index: 2; 
+  }
+  
+  .custom-hamburger.open {
+    background: transparent;
+  }
+  
