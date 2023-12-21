@@ -28,8 +28,8 @@ export default function QuizStartFrame({callback}){
 
     return (
         <Stack>        
-            <Button onClick={handleStartQuizClick}>Lätt</Button>
-            <Button onClick={()=>sessionStorage.setItem(QUIZ_STATUS, null)}>Svår (disabled)</Button>            
+            <Button onClick={handleStartQuizClick} className="button">Lätt</Button>
+            <Button onClick={()=>sessionStorage.setItem(QUIZ_STATUS, null)} className="button">Svår (disabled)</Button>            
         </Stack>
     )
 }

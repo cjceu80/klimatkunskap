@@ -34,9 +34,9 @@ export default function QuizQuestion({handleCompleted})
         <p>{quizData.questions[quizData.answers.length].text}</p>
         <Form onSubmit={handleSubmit}>
             {quizData.questions[quizData.answers.length].alt.map((element, index) => <Form.Check type="radio" checked={selectedValue == index} onChange={() => setSelectedValue(index)} name="answer" label={element} key={index} />)}
-            <Button type="submit"  disabled={selectedValue < 0}>Nästa fråga</Button>
+            <Button type="submit"  disabled={selectedValue < 0} className="button">Nästa fråga</Button>
         </Form>
-        <button onClick={()=> {sessionStorage.setItem(QUIZ_DATA, null); sessionStorage.setItem(QUIZ_STATUS, null)}}>Debug... Avbryt</button>
+        <button onClick={()=> {sessionStorage.setItem(QUIZ_DATA, null); sessionStorage.setItem(QUIZ_STATUS, null)}} className="button">Debug... Avbryt</button>
     </>
     );
 }
