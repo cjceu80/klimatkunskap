@@ -51,11 +51,13 @@ border-radius: 25px;
   background-image: linear-gradient(white, #fce367);
 }
 
+/*
 .info_frame {
   background-image: linear-gradient(135deg, #cbf3f5, #86c0ec);
   padding: 0px;
   margin: 0px;
 }
+*/
 
 .sideBarMenuContainer {
   position: fixed;
@@ -68,18 +70,29 @@ border-radius: 25px;
   height: 100vh;
   background-size: cover;
 }
-/*
+
 .Bg_image_Om_Oss{
-  background-image: url(./components/Pictures/havsnivåArtboard\ 1\ copy-50.jpg);
+  background-image: url(./components/images/Bakgrund_cleanArtboard_1.jpg);
   position: relative;
   height: 100vh;
   background-size: cover;
-}*/
+}
+
 .Om_Oss_content{
   width: 80%;
   padding: 20px;
+  
 }
 
+.Om_Oss-container {
+ /* background-color: white;*/
+  /*font-family: Arial, sans-serif;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
 
 .infoCardFossil {
   position: absolute;

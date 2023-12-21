@@ -1,15 +1,23 @@
 import React from 'react';
 import logo from './Pictures/logga7.png';
 
+
+
 export default function About() {
+
+
   return (
     
     <>  
-      <div className="Bg_image_Om_Oss">
-    { /* <img src={logo} alt=""></img> */}
-    <br/>
+    
+   <div className="Om_Oss-container">
+   
+   <div className="Om_Oss_content">
+   <div className="Bg_image_Om_Oss">
+           { /* <img src={logo} alt=""></img> */}
+           <br/>
      
-<div className="Om_Oss_content">
+   
       <h1>Teamet bakom klimatkunskap applikation</h1>
       <br/>
 
@@ -24,6 +32,8 @@ export default function About() {
         Tack för att ni är med oss på den här resan!</p>
         </div>
         </div>
-    </>
+        </div>
+        
+   </>
   );
 }
