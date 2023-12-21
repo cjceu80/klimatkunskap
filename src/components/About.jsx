@@ -9,7 +9,7 @@ export default function About() {
     { /* <img src={logo} alt=""></img> */}
     <br/>
      
-<div className="Om_Oss_text">
+<div className="Om_Oss_content">
       <h1>Teamet bakom klimatkunskap applikation</h1>
       <br/>
 
