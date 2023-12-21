@@ -87,7 +87,7 @@ export default function QuizFrame( {setQuizViewShown}) {
             />
             <Row className='h-100 justify-content-md-center align-items-center px-2'>
               <Col>
-                {quizViewState === "" && <Button onClick={handleStartQuizClick}>Starta Quiz?</Button>}
+                {quizViewState === "" && <Button onClick={handleStartQuizClick} className="button">Starta Quiz?</Button>}
                 {quizViewState === QUIZ_STATUS_BEGIN && <QuizStartFrame callback={startQuiz}/>}
                 {quizViewState === QUIZ_STATUS_END && <Button onClick={handleCompletedClick}>Avsluta Quiz Debugg?</Button>}
                 {quizViewState === QUIZ_STATUS_RUNNING && <QuizQuestion handleCompleted={handleCompleted}/>}

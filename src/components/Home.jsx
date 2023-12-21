@@ -25,6 +25,7 @@ const Home = () => {
         backgroundSize: "cover",
         height: "110vh",
         position: "relative",
+
       }}
     >
       <Container fluid className="h-100 pageContainer mb-5">
