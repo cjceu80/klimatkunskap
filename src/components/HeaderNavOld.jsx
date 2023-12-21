@@ -5,19 +5,16 @@ import { useUserAuth } from "../utils/UserAuthContext";
 import LoginNav from "./LoginNav";
 import "../styles/nav.css";
 
-// Hamburger icon Unicode character
-const hamburgerIcon = "\u2630"; // Unicode character for three horizontal lines
-
-// Dropdown menu for navigation
+//Dropdown menu for navigation
 export default function HeaderNav({ login }) {
   return (
     <div
-      expand="x2"
+      expand="xl"
       className="fixed-top"
-      style={{
-        zIndex: "1000",
-        width: "inherit",
-        paddingRight: "2em",
+      style={{ 
+        zIndex: "1000", 
+        width: "inherit", 
+        paddingRight: "2em", 
         right: "87px",
         top: "25px",
       }}
@@ -25,10 +22,9 @@ export default function HeaderNav({ login }) {
       <Row className="justify-end justify-content-end">
         <Col sm={7} lg={8}></Col>
         <Col className="justify-end justify-content-end">
-        
-          <NavDropdown title={hamburgerIcon} id="navbarScrollingDropdown" drop="false">
+          <NavDropdown title="Meny" id="navbarScrollingDropdown">
             {/* Navigation items BEGIN */}
-            <div className="custom-dropdown card full-height-card">
+
             <NavDropdown.Item href="/">Startsida</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="/kunskapsportalen">
@@ -54,9 +50,7 @@ export default function HeaderNav({ login }) {
 
             <NavDropdown.Divider />
             <LoginNav login={login} />
-            </div>
           </NavDropdown>
-
         </Col>
       </Row>
     </div>
