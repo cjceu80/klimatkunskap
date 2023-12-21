@@ -41,9 +41,9 @@ margin: 20px;
 width: 191px;
 height: 54px;
 left: 30px;
+color: white;
 
-
-background: #24B38D;
+background: #24B38D !important;
 border-radius: 25px;
 }
 
