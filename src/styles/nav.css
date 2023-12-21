@@ -8,7 +8,7 @@
     height: 100vh;
     width: 35vh;
     right: 292px;
-    overflow-y: auto; /* Add this if you want vertical scrolling */
+    overflow-y: auto;
     position: fixed;
     top: 0px;
     background-color: #4CCFAE;
