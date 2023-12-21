@@ -23,11 +23,3 @@
     font-size: 40px;
   }
 
-  .custom-dropdown {
-    /* Add your custom styles here to override Bootstrap styles */
-    /* For example: */
-    background-color: #fff; /* Set background color */
-    border: 1px solid #ccc; /* Set border */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
-    /* ... add more styles as needed ... */
-  }
