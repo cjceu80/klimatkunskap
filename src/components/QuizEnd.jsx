@@ -1,5 +1,5 @@
 import React from "react";
-import backgroundImg from "./images/BakgrundHome.jpg";
+import backgroundImg from "./images/Bakgrund_cleanArtboard_1.jpg";
 import { Container, Row, Col, Card } from "react-bootstrap";
 
 export default function QuizEnd() {
