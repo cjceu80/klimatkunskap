@@ -34,7 +34,7 @@ export default function App() {
       <Container fluid>
 
             <Row>
-              <Col className='info_frame' sm={8} lg={9} style={{position: "relative"}}>
+              <Col className='info_frame' xs={7} sm={8} lg={9} style={{position: "relative"}}>
                 {quizViewShown === QUIZ_STATUS_BEGIN && <QuizStart />}
                 {quizViewShown === QUIZ_STATUS_END && <QuizEnd />}
                 {((quizViewShown === "") || quizViewShown === QUIZ_STATUS_RUNNING) && <Outlet />}
