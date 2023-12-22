@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Stats() {
+export default function Information() {
   return (
     <>
       <h1>Numbahs!</h1>

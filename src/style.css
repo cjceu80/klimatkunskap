@@ -62,15 +62,16 @@ border-radius: 25px;
   height: 100%;
 }
 
+/*två likadana? Göra en gemensam kan vara en idé*/
 .bgContentPortal {
-  background-image: url(./components/images/Bakgrund_cleanArtboard_1.jpg);
+  background-image: url(./images/Bakgrund_cleanArtboard_1.jpg);
   position: relative;
   height: 100vh;
   background-size: cover;
 }
 
 .Bg_image_Om_Oss{
-  background-image: url(./components/images/Bakgrund_cleanArtboard_1.jpg);
+  background-image: url(./images/Bakgrund_cleanArtboard_1.jpg);
   position: relative;
   height: 100vh;
   background-size: cover;

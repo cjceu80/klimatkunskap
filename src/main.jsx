@@ -8,6 +8,7 @@ import ContentPortal from './components/ContentPortal';
 import About from './components/About';
 import Feedback from './components/Feedback';
 import QuizStart from './components/QuizStart';
+import Information from './components/Information';
 import { UserAuthContextProvider } from './utils/UserAuthContext';
 
 const router = createBrowserRouter([
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
         element: <Feedback />,
       },
       {
-        path: '/kunskapsportalen',
+        path: '/kunskapsportalen/',
         element: <ContentPortal />,
       },
       {
