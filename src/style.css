@@ -51,13 +51,11 @@ border-radius: 25px;
   background-image: linear-gradient(white, #fce367);
 }
 
-/*
+/*Det är detta som tar bort den vita marginalen på sidorna!*/
 .info_frame {
-  background-image: linear-gradient(135deg, #cbf3f5, #86c0ec);
   padding: 0px;
   margin: 0px;
 }
-*/
 
 .sideBarMenuContainer {
   position: fixed;
