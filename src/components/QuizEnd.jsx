@@ -1,5 +1,5 @@
 import React from "react";
-import backgroundImg from "./images/Bakgrund_cleanArtboard_1.jpg";
+import backgroundImg from "../images/Bakgrund_cleanArtboard_1.jpg";
 import { Container, Row, Col, Card } from "react-bootstrap";
 
 const QUIZ_DATA = "quizData";

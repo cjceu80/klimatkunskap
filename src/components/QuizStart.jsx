@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import backgroundImg from "./images/BakgrundHome.jpg";
+import backgroundImg from "../images/BakgrundHome.jpg";
 
 const CARD_HEIGHT = 500;
 
