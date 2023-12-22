@@ -15,6 +15,10 @@ export default function QuizQuestion({handleCompleted})
         quizData.answers.push(selectedValue);
         sessionStorage.setItem(QUIZ_DATA,JSON.stringify(quizData));
         setSelectedValue(-1);
+        if (quizData.answers.length==quizData.questions.length)
+    {
+        handleCompleted();
+    }
     }
 
     const [selectedValue, setSelectedValue] = useState(-1);
@@ -22,11 +26,7 @@ export default function QuizQuestion({handleCompleted})
 
     console.log(quizData.answers);
     console.log(quizData.questions);
-    if (quizData.answers.length==quizData.questions.length)
-    {
-        handleCompleted();
-        return;
-    }
+ 
 
     return (    
     <>
