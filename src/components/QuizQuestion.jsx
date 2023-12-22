@@ -16,17 +16,13 @@ export default function QuizQuestion({handleCompleted})
         sessionStorage.setItem(QUIZ_DATA,JSON.stringify(quizData));
         setSelectedValue(-1);
         if (quizData.answers.length==quizData.questions.length)
-    {
-        handleCompleted();
-    }
+        {
+            handleCompleted();
+        }
     }
 
     const [selectedValue, setSelectedValue] = useState(-1);
     const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
-
-    console.log(quizData.answers);
-    console.log(quizData.questions);
- 
 
     return (    
     <>

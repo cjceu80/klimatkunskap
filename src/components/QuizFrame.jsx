@@ -18,7 +18,7 @@ const QUIZ_STATUS_BEGIN = "QuizBegin";
 const QUIZ_STATUS_END = "QuizEnd";
 const QUIZ_STATUS_RUNNING = "running"
 
-const WAVE_WIDTH = "94%";
+const WAVE_WIDTH = "100%";
 
 
 export default function QuizFrame( {setQuizViewShown}) {
@@ -66,7 +66,7 @@ export default function QuizFrame( {setQuizViewShown}) {
     <Col xs={5} sm={4} lg={3} className="quiz_frame align-content-bottom justify-content-bottom top-0 end-0 position-fixed" style={{height: window.innerHeight}} >
           <Wave fill='#a9ebf4'
                 paused={false}
-                style={{ width: WAVE_WIDTH, height: 200, position: "absolute", bottom: 0 }}
+                style={{ width: WAVE_WIDTH, height: 400, position: "absolute", bottom: 0 }}
                 options={{
                     container: "div",
                     height: 18,
@@ -77,7 +77,7 @@ export default function QuizFrame( {setQuizViewShown}) {
             />
             <Wave fill='#4cd6e7'
                 paused={false}
-                style={{ width: WAVE_WIDTH, height: 200, position: "absolute", bottom: 0 }}
+                style={{ width: WAVE_WIDTH, height: 400, position: "absolute", bottom: 0 }}
                 options={{
                     height: 20,
                     amplitude: 20,
