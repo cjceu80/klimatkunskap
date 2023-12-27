@@ -37,7 +37,6 @@ export default function QuizFrame( {setQuizViewShown}) {
       setQuizData(newQuizData);
       setQuizViewShown(QUIZ_STATUS_RUNNING);
       setQuizViewState(QUIZ_STATUS_RUNNING);
-      console.log(quizData);
     }
   
   function handleCompleted()

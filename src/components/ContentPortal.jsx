@@ -12,7 +12,7 @@ export default function ContentPortal() {
           Temperaturförändring
         </a>
 
-        <a href="#" className="infoCardHavs">
+        <a href="/kunskapsportalen/kategori/havsniva" className="infoCardHavs">
           Havsnivå
         </a>
 
