@@ -70,18 +70,20 @@ border-radius: 25px;
   background-size: cover;
 }
 
-.Bg_image_Om_Oss{
+.Bg_image_Om_Oss {
   background-image: url(./images/Bakgrund_cleanArtboard_1.jpg);
   position: relative;
   height: 100vh;
   background-size: cover;
+  padding: 60px;
 }
 
+/*
 .Om_Oss_content{
   width: 80%;
   padding: 20px;
   
-}
+}*/
 
 .Om_Oss-container {
  /* background-color: white;*/
