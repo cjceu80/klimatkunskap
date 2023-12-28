@@ -4,10 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import Home from './components/Home';
-import ContentPortal from './components/ContentPortal';
 import About from './components/About';
 import Feedback from './components/Feedback';
-import QuizStart from './components/QuizStart';
 import MainContent, { loader as contentLoader} from './components/MainContent';
 import { UserAuthContextProvider } from './utils/UserAuthContext';
 

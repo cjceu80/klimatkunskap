@@ -1,13 +1,10 @@
 import React, { useState, useContext } from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
 
 import Wave from 'react-wavify';
 
 import QuizStartFrame from './QuizStartFrame';
 import QuizQuestion from './QuizQuestion';
-import { getQuestions } from '../utils/staticQuestions';
-import { useQuiz } from '../utils/QuizContext';
 
 //Storage item names
 const QUIZ_DATA = "quizData";
@@ -22,9 +19,7 @@ const WAVE_WIDTH = "100%";
 
 
 export default function QuizFrame( {setQuizViewShown}) {
-  const [ quizData, setQuizData ] = useState();
   const [ quizViewState, setQuizViewState ] = useState("");
-  const [ questionIndex, setQuestionIndex ] = useState(-1);
   
   function handleStartQuizClick(e){
     setQuizViewShown(QUIZ_STATUS_BEGIN);

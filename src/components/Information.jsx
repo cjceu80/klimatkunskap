@@ -1,11 +1,9 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
 import { Container } from "react-bootstrap";
 import InformationCard from './InformationCard';
 import backgroundImg from "../images/BakgrundHome.jpg";
 
 export default function Information(props) {
-  const loaderData = useLoaderData();
   const pageData = props.data;
 
   return (
@@ -16,8 +14,8 @@ export default function Information(props) {
       position: "relative",
 
     }}>
-    <Container fluid className="h-100 pageContainer mb-5" >
-      <h1>{pageData.name}</h1>
+    <Container fluid className="h-100 pageContainer mb-5 p-0" >
+      <h1 className='text-center pt-3'>{pageData.name}</h1>
       {pageData.cards.map((card, index) => <InformationCard cardData={card} key={card.caption + index} index={index} />)}
     </Container>
     </div>
