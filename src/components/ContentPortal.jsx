@@ -26,7 +26,7 @@ export default function ContentPortal() {
               xs={6}
               md={4}
               className="text-center mb-3 pt-5"
-              style={{ marginLeft: "100px" }}
+              style={{ marginLeft: "200px" }}
             >
               <a href="#" style={{ textDecoration: "none" }}>
                 <Card className="h-100 w-100 custom-card" style={cardStyle}>
@@ -76,7 +76,7 @@ export default function ContentPortal() {
               xs={6}
               md={4}
               className="text-center mb-3 pt-3"
-              style={{ marginLeft: "100px" }}
+              style={{ marginLeft: "200px" }}
             >
               <a href="#" style={{ textDecoration: "none" }}>
                 <Card className="h-100 w-100 custom-card" style={cardStyle}>
