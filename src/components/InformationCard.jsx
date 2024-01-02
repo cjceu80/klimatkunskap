@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardImg, Col, Row } from "react-bootstrap";
 
+
 export default function InformationCard(props)
 {
     //check for what side to align with
@@ -9,6 +10,12 @@ export default function InformationCard(props)
     let mdAlign = 9;
     let xlAlign = { span: 6, offset: 1};
     //Changing to the right align values if that is the case
+    const cardStyle = {
+        background: "rgba(255, 255, 255, 0.7)", // 0.7 represents 70% transparency
+        borderRadius : "25px",
+        marginBottom: "100px",
+      };
+
     if (alignRight){
         mdAlign = { span: 9, offset: 3 };
         xlAlign = { span: 6, offset: 5 };
@@ -17,7 +24,7 @@ export default function InformationCard(props)
     return (
         <Row className="my-3">
             <Col md={mdAlign} xl={xlAlign} className="my-3">
-                <Card className={`px-3 ${alignRight && "text-end"}`}>
+                <Card className={`px-3 ${alignRight && "text-end"}`} style={cardStyle}>
                     <Row>
                         {(props.cardData.image && alignRight) && <Col className="d-flex align-items-center" md={props.cardData.imageWidth}><CardImg className="" src={props.cardData.image} style={{maxWidth: 300}} /></Col>}
                         <Col>

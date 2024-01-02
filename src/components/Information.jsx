@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container } from "react-bootstrap";
 import InformationCard from './InformationCard';
-import backgroundImg from "../images/BakgrundHome.jpg";
+import backgroundImg from "../images/bakgrunder/havsniva.jpg";
+import "../style.css"; 
 
 export default function Information(props) {
   const pageData = props.data;
@@ -10,12 +11,13 @@ export default function Information(props) {
     <div style={{
       backgroundImage: `url(${backgroundImg})`,
       backgroundSize: "cover",
-      height: "110vh",
+      
       position: "relative",
 
     }}>
     <Container fluid className="h-100 pageContainer mb-5 p-0" >
       <h1 className='text-center pt-3'>{pageData.name}</h1>
+      <div className='contentPaddingTop'></div>
       {pageData.cards.map((card, index) => <InformationCard cardData={card} key={card.caption + index} index={index} />)}
     </Container>
     </div>

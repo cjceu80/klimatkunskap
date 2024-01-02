@@ -97,3 +97,7 @@ h4 {
   padding-left: 80px;
   padding-right: 80px;
 }
+
+.contentPaddingTop {
+  padding-top: 500px;
+}
