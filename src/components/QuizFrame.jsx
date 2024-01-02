@@ -19,6 +19,7 @@ const WAVE_WIDTH = "100%";
 
 
 export default function QuizFrame( {setQuizViewShown}) {
+  const [ quizData, setQuizData ] = useState();
   const [ quizViewState, setQuizViewState ] = useState("");
   
   function handleStartQuizClick(e){
