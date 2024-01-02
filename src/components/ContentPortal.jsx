@@ -26,7 +26,7 @@ export default function ContentPortal() {
               xs={6}
               md={4}
               className="text-center mb-3 pt-5"
-              style={{ marginRight: "0px" }}
+              style={{ marginLeft: "100px" }}
             >
               <a href="#" style={{ textDecoration: "none" }}>
                 <Card className="h-100 w-100 custom-card" style={cardStyle}>
@@ -76,7 +76,7 @@ export default function ContentPortal() {
               xs={6}
               md={4}
               className="text-center mb-3 pt-3"
-              style={{ marginRight: "0px" }}
+              style={{ marginLeft: "100px" }}
             >
               <a href="#" style={{ textDecoration: "none" }}>
                 <Card className="h-100 w-100 custom-card" style={cardStyle}>
@@ -121,22 +121,6 @@ export default function ContentPortal() {
             </Col>
           </Row>
         </Container>
-        {/* <div className="bgContentPortal">
-        {/* <a href="#" className="infoCardFossil">
-          Fossilt bränsle
-        </a>
-
-        <a href="#" className="infoCardTemperatur">
-          Temperaturförändring
-        </a>
-
-        <a href="/kunskapsportalen/kategori/havsniva" className="infoCardHavs">
-          Havsnivå
-        </a>
-
-        <a href="#" className="infoCardGlaciar">
-          Glaciärer
-        </a> */}
       </div>
     </>
   );
