@@ -7,7 +7,6 @@ import { useUserAuth } from '../utils/UserAuthContext';
 export default function LoginNav({login}) {
     const { logOut, user } = useUserAuth();
     const navigate = useNavigate();
-  
     //Hanle the logout functionality
     const handleLogout = async () => {
         try {
@@ -21,7 +20,7 @@ export default function LoginNav({login}) {
     //Reder Login or Logout depending on auth status.
     return !user ? <NavDropdown.Item onClick={login}>Logga in</NavDropdown.Item> : 
     <>        
-        <Dropdown.Header>Användarnamn</Dropdown.Header>
+        <Dropdown.Header>{user.email}</Dropdown.Header>
         <NavDropdown.Item onClick={()=>handleLogout()}>Logga ut</NavDropdown.Item>
     </>;
 }

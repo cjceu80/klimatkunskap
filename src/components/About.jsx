@@ -11,9 +11,9 @@ export default function About() {
     <>  
     
    <div className="Om_Oss-container">
-   
-   <div className="Om_Oss_content">
    <div className="Bg_image_Om_Oss">
+   <div className="Om_Oss_content">
+  
            { /* <img src={logo} alt=""></img> */}
            <br/>
      

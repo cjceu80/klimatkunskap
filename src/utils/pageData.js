@@ -1,5 +1,11 @@
-export function getPageData(){
 
+
+
+export function getPageData(category){
+ const data = pageData.find((val) => val.id === category);
+    if (!data)
+        return null;
+    return data;
 }
 
 const pageData = [
@@ -8,10 +14,14 @@ const pageData = [
         name: "Havsnivå",
         cards: [
             {
+                image: "/src/images/facepalm-facepalm-through-head_small.png",
+                imageWidth: 3,
                 caption: "Varför blir havsnivån högre?",
                 paragraphs: ["Havet blir högre på grund av varmare klimat. Isar smälter och vattnet i haven blir större.","I Stockholm höjs landet fortfarande mer än havet, så det känns som om havet sjunker jämfört med landet."]
             },
             {
+                image: "/src/images/facepalm-facepalm-through-head_small.png",
+                imageWidth: 2,
                 caption: "Påverkar global uppvärmning?",
                 paragraphs: ["Global uppvärmning påverkar havet genom att höja vattennivån när det blir varmare. Smältande isar från Grönland och Antarktis bidrar också till detta.","Geografiska skillnader och landhöjd skapar variationer i havsnivån över olika regioner i världen."]
             },

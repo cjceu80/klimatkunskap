@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React from 'react';
 import { Button, Stack } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
@@ -17,6 +17,7 @@ const QUIZ_STATUS_RUNNING = "running"
 
 export default function QuizStartFrame({callback}){
     const navigate = useNavigate();
+    
     
     function handleStartQuizClick(){
         const quizData = {

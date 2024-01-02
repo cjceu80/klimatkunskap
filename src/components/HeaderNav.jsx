@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Navbar, NavDropdown, Container, Col, Row } from "react-bootstrap";
-import { useUserAuth } from "../utils/UserAuthContext";
 import LoginNav from "./LoginNav";
 import "../styles/nav.css";
 
