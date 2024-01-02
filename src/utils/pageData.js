@@ -14,7 +14,7 @@ const pageData = [
         name: "Havsnivå",
         cards: [
             {
-                image: "/src/images/havsniva/VattenVagor.png",
+                image: "../src/images/havsniva/VattenVagor.png",
                 imageWidth: 3,
                 caption: "Varför blir havsnivån högre?",
                 paragraphs: ["Havet blir högre på grund av varmare klimat. Isar smälter och vattnet i haven blir större.","I Stockholm höjs landet fortfarande mer än havet, så det känns som om havet sjunker jämfört med landet."]

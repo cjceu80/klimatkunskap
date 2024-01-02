@@ -19,12 +19,12 @@ export default function InformationCard(props)
             <Col md={mdAlign} xl={xlAlign} className="my-3">
                 <Card className={`px-3 ${alignRight && "text-end"}`}>
                     <Row>
-                        {(props.cardData.image && alignRight) && <Col className="d-flex align-items-center" md={props.cardData.imageWidth}><CardImg className="" src="/src/images/facepalm-facepalm-through-head_small.png" style={{maxWidth: 300}} /></Col>}
+                        {(props.cardData.image && alignRight) && <Col className="d-flex align-items-center" md={props.cardData.imageWidth}><CardImg className="" src={props.cardData.image} style={{maxWidth: 300}} /></Col>}
                         <Col>
                             <h3 className="p-3">{props.cardData.caption}</h3>
                             {props.cardData.paragraphs && props.cardData.paragraphs.map((value, index) => <p className="px-3" key={index}>{value}</p>)}
                         </Col>
-                        {(props.cardData.image && !alignRight) && <Col className="d-flex align-items-center" md={props.cardData.imageWidth}><CardImg className="" src="/src/images/facepalm-facepalm-through-head_small.png" style={{maxWidth: 300}} /></Col>}
+                        {(props.cardData.image && !alignRight) && <Col className="d-flex align-items-center" md={props.cardData.imageWidth}><CardImg className="" src={props.cardData.image} style={{maxWidth: 300}} /></Col>}
                     </Row>
                 </Card>
             </Col>
