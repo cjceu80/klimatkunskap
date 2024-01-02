@@ -16,6 +16,7 @@ export default function Information(props) {
 
     }}>
     <Container fluid className="h-100 pageContainer mb-5 p-0" >
+      <div className='contentPaddingTop'></div>
       <h1 className='text-center pt-3'>{pageData.name}</h1>
       <div className='contentPaddingTop'></div>
       {pageData.cards.map((card, index) => <InformationCard cardData={card} key={card.caption + index} index={index} />)}
