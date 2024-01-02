@@ -45,33 +45,30 @@ export function getUniques(dataArray, count){
 }
 
 const questions = [
-    {text: "Hur många skruvar är det i ölandsbron?",
-    correct: "för många",
+    {text: "Varför blir havsnivån högre?",
+    correct: "Isarna smälter och vattnet i haven stiger",
     alt: [
-        "mer än 25000",
-        "mindre än 2000"
+        " Havet stiger när isarna blir kallare och sjunker",
+        "Fiskarnas bajs i havet värmer vattnet"
     ]},
-    {text: "Klimatförändringarna är...?",
-    correct: "katastrofala",
+    {text: "Hur påverkar global uppvärmning havsnivån?",
+    correct: "När det blir varmare, smälter isarna och vattnet i haven höjs",
     alt: [
-        "störande",
-        "överskattade",
-        "coola"
+        "Global uppvärmning gör havsnivån lägre",
+        "Global uppvärmning påverkar inte havsnivån alls",
     ]},
-    {text: "Klimatförändringarna är INTE...?",
-    correct: "katastrofala",
+    {text: "Vem har information om höjningar i havsnivån för Sverige?",
+    correct: "SMHI (Sveriges meteorologiska och hydrologiska institut)a",
     alt: [
-        "störande",
-        "överskattade",
-        "coola"
+        "NOAA (National Oceanic and Atmospheric Administration)",
+        "Naturvårdsverket",
     ]},
-    {text: "Om 100 år är jorden hur gammal?",
-    correct: "5 miljarder årish",
+    {text: "Hur mycket har havsnivån stigit mellan 1980 och 2020 enligt diagrammet",
+    correct: "Havsnivån har ökat med ?? mm under den perioden",
     alt: [
-        "gammal som gatan",
-        "drygt gammal",
-        "som min lärare",
-        "2 miljoner år",
-        "6 tusen år"
+        "Havsnivån har minskat med ?? mm under den perioden",
+        "Ingen förändring har skett",
+        "Havsnivån har ökat med ?? mm under den perioden",
+        "Havsnivån har ökat med ?? mm under den perioden",
     ]},
 ]
