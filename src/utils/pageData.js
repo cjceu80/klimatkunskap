@@ -66,7 +66,7 @@ const pageData = [
     
 
     {
-        id: "temperatur",
+        id: "Temperatur",
         name: "Temperaturförändring",
         
         cards: [
