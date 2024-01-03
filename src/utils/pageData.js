@@ -12,6 +12,11 @@ const pageData = [
     {
         id: "havsniva",
         name: "Havsnivå",
+        bakground: [
+            {
+                image: "/src/images/bakgrunder/havsniva.jpg"
+            }
+        ],
         cards: [
             {
                 image: "/src/images/havsniva/VattenVagor.png",
@@ -68,7 +73,11 @@ const pageData = [
     {
         id: "Temperatur",
         name: "Temperaturförändring",
-        
+        bakground: [
+            {
+                image: "/src/images/bakgrunder/temp.jpg"
+            }
+        ],
         cards: [
             {  image:"",
                 image: "",
