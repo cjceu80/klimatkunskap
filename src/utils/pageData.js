@@ -61,5 +61,61 @@ const pageData = [
                 links: {},
             }
         ]        
+    },
+
+    
+
+    {
+        id: "Temperatur",
+        name: "Temperaturförändring",
+        
+        cards: [
+            {  image:"",
+                image: "",
+                imageWidth: 3,
+                caption: "Förändras temperaturen?",
+                paragraphs: ["Har du någonsin undrat om temperaturen förändras på vår planet? Låt oss utforska detta tillsammans!"],
+                image:"",
+            },
+            {
+                image: "",
+                imageWidth: 3,
+                caption: "Tydliga budskap från temperaturforskningen",
+                paragraphs: ["Global medeltemperatur har ökat snabbare sedan 1970 än under de senaste 2 000 åren och är idag på en nivå som antagligen inte setts på 125 000 år.","Koncentrationen av växthusgaser, särskilt koldioxid, har ökat till nivåer utan motsvarighet på minst 800 000 år, med en ökning på cirka 50 procent jämfört med förindustriell tid, huvudsakligen på grund av fossila bränslen och förändrad markanvändning."]
+            },
+            {
+                image: "",
+                imageWidth: 2,
+                caption: "Extremväder",
+                paragraphs: ["Mycket talar för att till exempel skyfallen kommer att bli kraftigare i framtiden. Extrem nederbörd som faller under en kort tid kan ge problem med översvämningar."]
+            },
+            {
+                
+                imageWidth: 3,
+                caption: "Nämen se här!",
+                paragraphs: ["Diagrammet visar avvikelser i förhållande till temperaturgenomsnittet för perioden 1850-1900.","Global genomsnittlig yttemperatur i förhållande till genomsnittet 1850-1900 (Celisius)"],
+                image: "/src/images/havsniva/DiagramPilUppat.png",
+                
+
+            },
+            
+            {
+                image: "/src/images/havsniva/DiagramPilUppat.png",
+                imageWidth: 3,
+                caption: "Diagram!",
+                graphdata: ""
+            },
+            {
+                image: "/src/images/havsniva/ideLampa.png",
+                imageWidth: 2,
+                caption: "Såg du?",
+                paragraphs: ["I diagrammet kan man se "]
+            },
+            {
+                caption: "Vill du veta mer?",
+                paragraphs: ["Länklista..."],
+                links: {},
+            }
+        ]        
     }
 ]

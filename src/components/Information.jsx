@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from "react-bootstrap";
 import InformationCard from './InformationCard';
 import backgroundImg from "../images/bakgrunder/havsniva.jpg";
+
 import "../style.css"; 
 
 export default function Information(props) {
