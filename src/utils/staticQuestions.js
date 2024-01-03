@@ -71,4 +71,29 @@ const questions = [
         "Havsnivån har ökat med ?? mm under den perioden",
         "Havsnivån har ökat med ?? mm under den perioden",
     ]},
-]
+    {text: "Varför är kol viktigt för jordens temperatur?",
+    correct: "Kol finns i koldioxid, en växthusgas som fångar värme nära jorden.",
+    alt: [
+        " Kol har ingen påverkan på jordens temperatur.",
+        "Kol gör att jorden blir kallare."
+    ]},
+    {text: "Vad är skillnaden mellan vädret och klimatet?",
+    correct: "Vädret är kortvariga händelser, medan klimatet är genomsnittet över lång tid, 30 år eller mer.",
+    alt: [
+        "Det finns ingen skillnad mellan vädret och klimatet.",
+        "Vädret och klimatet är samma sak och kan användas utbytbart.",
+    ]},
+    {text: "Var kommer luftföroreningar ifrån?",
+    correct: "Luftföroreningar orsakas av fasta och flytande partiklar samt vissa gaser från källor som bil- och lastbilsavgaser, fabriker, damm, pollen, mögelsporer, vulkaner och skogsbränder.",
+    alt: [
+        "Luftföroreningar är naturliga och har ingen mänsklig påverkan.",
+        "Luftföroreningar uppstår endast från fabriker och inte andra källor.",
+    ]},
+    {text: "Vilken temperatur krävs för att marken ska anses som permafrost?",
+    correct: "Marken måste vara helt frusen vid 32°F (0°C) eller kallare i minst två år i sträck för att betraktas som permafrost.",
+    alt: [
+        " Permafrost kan uppstå vid varma temperaturer över 50°F (10°C).",
+        "Marken behöver bara vara frusen i en månad för att vara permafrost.",     
+    ]},
+
+]    
