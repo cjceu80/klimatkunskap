@@ -4,6 +4,7 @@ import fossiltImg from "../images/fossil-fuel 1.svg";
 import meltingImg from "../images/melting 1.svg";
 import waterlevelImg from "../images/water-level 1.svg";
 import temperatureImg from "../images/temperature 1.svg";
+
 import "../style.css";
 
 export default function ContentPortal() {
