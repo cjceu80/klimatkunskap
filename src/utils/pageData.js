@@ -47,7 +47,7 @@ const pageData = [
                 image: "/src/images/havsniva/DiagramPilUppat.png",
                 imageWidth: 3,
                 caption: "Diagram!",
-                graphdata: ""
+                graph: 0
             },
             {
                 image: "/src/images/havsniva/ideLampa.png",
@@ -66,7 +66,7 @@ const pageData = [
     
 
     {
-        id: "Temperatur",
+        id: "temperatur",
         name: "Temperaturförändring",
         
         cards: [
@@ -103,7 +103,7 @@ const pageData = [
                 image: "/src/images/havsniva/DiagramPilUppat.png",
                 imageWidth: 3,
                 caption: "Diagram!",
-                graphdata: ""
+                graph: 0
             },
             {
                 image: "/src/images/havsniva/ideLampa.png",
