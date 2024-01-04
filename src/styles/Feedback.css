@@ -45,11 +45,14 @@
     box-sizing: border-box;
 }
 .submit-button {
-    background-color: lightgrey;
-    color: black;
-    border: none;
-    border-radius: 28px;
-    padding: 10px 20px;
-    cursor: pointer;
-    box-sizing: border-box;
+    font-family: "Just Me Again Down Here";
+    font-size: xx-large;
+    margin: 20px;
+    width: 191px;
+    height: 54px;
+    left: 30px;
+    color: white;
+  
+    background: #24b38d !important;
+    border-radius: 25px;
 }
