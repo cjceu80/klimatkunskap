@@ -22,6 +22,16 @@ export default function InformationCard(props)
         xlAlign = { span: 6, offset: 5 };
     }
 
+    if (props.cardData.graph && !alignRight){
+        mdAlign = 10;
+        xlAlign = {span:8, offset: 2}     
+    }
+    else if (props.cardData.graph && alignRight)
+    {
+        mdAlign = { span: 10, offset: 2 };
+        xlAlign = { span: 8, offset: 3 };
+    }
+
     return (
         <Row className="my-3">
             <Col md={mdAlign} xl={xlAlign} className="my-3">
