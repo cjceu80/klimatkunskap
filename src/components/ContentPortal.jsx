@@ -4,6 +4,7 @@ import fossiltImg from "../images/fossil-fuel 1.svg";
 import meltingImg from "../images/melting 1.svg";
 import waterlevelImg from "../images/water-level 1.svg";
 import temperatureImg from "../images/temperature 1.svg";
+
 import "../style.css";
 
 export default function ContentPortal() {
@@ -52,7 +53,7 @@ export default function ContentPortal() {
               className="text-center mb-3 pt-5"
               style={{ marginRight: "0px" }}
             >
-              <a href="/kunskapsportalen/?kategori=Temperatur" style={{ textDecoration: "none" }}>
+              <a href="/kunskapsportalen/?kategori=temperatur" style={{ textDecoration: "none" }}>
                 <Card className="h-100 w-100 custom-card" style={cardStyle}>
                   <Card.Body className="h-100">
                     <div className="placeholder" />
