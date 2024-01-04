@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardImg, Col, Row } from "react-bootstrap";
+import Graph from "./graphs/Graph";
 
 
 export default function InformationCard(props)
@@ -33,6 +34,7 @@ export default function InformationCard(props)
                         </Col>
                         {(props.cardData.image && !alignRight) && <Col className="d-flex align-items-center" md={props.cardData.imageWidth}><CardImg className="" src={props.cardData.image} style={{maxWidth: 300}} /></Col>}
                     </Row>
+                    {props.cardData.graph && <Graph category={props.category} />}
                 </Card>
             </Col>
         </Row>

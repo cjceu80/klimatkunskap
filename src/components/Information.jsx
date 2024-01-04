@@ -20,7 +20,7 @@ export default function Information(props) {
       <div className='contentPaddingTop'></div>
       <h1 className='text-center pt-3'>{pageData.name}</h1>
       <div className='contentPaddingTop'></div>
-      {pageData.cards.map((card, index) => <InformationCard cardData={card} key={card.caption + index} index={index} />)}
+      {pageData.cards.map((card, index) => <InformationCard category={pageData.id} cardData={card} key={card.caption + index} index={index} />)}
     </Container>
     </div>
   );
