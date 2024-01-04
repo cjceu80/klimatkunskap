@@ -2,20 +2,20 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { ResponsiveLine } from "@nivo/line";
 
-import { getFormatedData } from "../../utils/Dataset2_Global_Temp";
-import { getTotalData } from "../../utils/Dataset1_Global_Emissions";
+import { getFormatedDataFrom } from "../../utils/Dataset2_Global_Temp";
+import { getFormatedData } from "../../utils/Dataset3_Glaciers";
 
-export default function Temperature(){
-        const data = [getFormatedData(), getTotalData()];
-
+export default function Glaciers(){
+        const data = [getFormatedData(), getFormatedDataFrom(1945)];
+        console.log(data)
     return(
         <Row>
             <Col style={{height: 400}}>
             <ResponsiveLine
       data={data}
       margin={{ top: 10, right: 160, bottom: 50, left: 60 }}
-      xScale={{ type: 'linear', stacked: false, min: 1880, max: 2010 }}
-      yScale={{ type: 'linear', stacked: false, min: "auto", max: "auto" }}
+      xScale={{ type: 'linear', stacked: false, min: 1945, max: 2010 }}
+      yScale={{ type: 'linear', stacked: false, min: 0.3, max: "auto" }}
       yFormat=" >-.1f"
       curve="monotoneX"
       axisTop={null}
@@ -25,13 +25,13 @@ export default function Temperature(){
         tickPadding: 5,
         tickRotation: 0,
         format: '.2f',
-        legend: 'Utsläpp',
+        legend: 'Glaciärernas storlek',
         
         legendPosition: 'middle',
         legendOffset: 50,
       }}
       axisBottom={{
-        tickValues: [1900, 1920, 1940, 1960, 1980, 2000],
+        tickValues: [1945, 1960, 1980, 1980, 2000, 2020],
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
