@@ -47,7 +47,7 @@ const pageData = [
                 image: "/src/images/havsniva/DiagramPilUppat.png",
                 imageWidth: 3,
                 caption: "Diagram!",
-                graph: 0
+                graph: true
             },
             {
                 image: "/src/images/havsniva/ideLampa.png",
@@ -103,7 +103,7 @@ const pageData = [
                 image: "/src/images/havsniva/DiagramPilUppat.png",
                 imageWidth: 3,
                 caption: "Diagram!",
-                graph: 0
+                graph: true
             },
             {
                 image: "/src/images/havsniva/ideLampa.png",
