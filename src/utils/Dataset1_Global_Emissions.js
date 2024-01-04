@@ -10,7 +10,12 @@ export function getYearData(year) {
 
   for (const [key, value] of Object.entries(rawYear)) {
     if (key != 'Year' && key != 'Total' && key != 'Per Capita') {
-      let yearValue = { id: key, label: key, value: value };
+      let translated = key;
+      if (key === 'Gas Flaring') translated = "Avbränning";
+      else if (key === 'Gas Fuel') translated = "Gas";
+      else if (key === 'Liquid Fuel') translated = "Flytande";
+      else if (key === 'Solid Fuel') translated = "Kol";
+      let yearValue = { id: translated, label: translated, value: value };
       newData.push(yearValue);
     }
   }

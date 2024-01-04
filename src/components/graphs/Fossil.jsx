@@ -18,7 +18,7 @@ export default function Fossil(){
     return (
         <>
         <Row>
-                {<p className="my-0 py-0 fs-6">Totalt koldioxisutsläpp år {selectedYear}</p>}
+                {<p className="my-0 py-0 fs-6">Totalt koldioxisutsläpp år {selectedYear} i ton.</p>}
             <Col style={{height: 40}}>
                 <ResponsiveBarCanvas
                     data={fossil.getYearTotal(selectedYear)}
@@ -48,7 +48,7 @@ export default function Fossil(){
         </Row>
 
         <Row>
-                <p className="my-0 py-0 fs-6">Koldioxisutsläpp per källa år {selectedYear}</p>
+                <p className="my-0 py-0 fs-6">Koldioxisutsläpp per källa i ton.</p>
             <Col style={{height: 400}}>
 
 
