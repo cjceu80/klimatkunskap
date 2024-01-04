@@ -22,12 +22,12 @@ export default function ContentPortal() {
     <>
       <div className="bgContentPortal">
         <Container fluid className="h-100 pageContainer mb-5">
-          <Row>
+          <Row className="align-items-end justify-content-center">
             <Col
               xs={6}
-              md={4}
+              md={6}
               className="text-center mb-3 pt-5"
-              style={{ marginLeft: "200px" }}
+              style={{ marginLeft: "0px" }}
             >
               <a href="/kunskapsportalen/?kategori=fossilt" style={{ textDecoration: "none" }}>
                 <Card className="h-100 w-100 custom-card" style={cardStyle}>
@@ -49,7 +49,7 @@ export default function ContentPortal() {
 
             <Col
               xs={6}
-              md={4}
+              md={6}
               className="text-center mb-3 pt-5"
               style={{ marginRight: "0px" }}
             >
@@ -72,12 +72,12 @@ export default function ContentPortal() {
             </Col>
           </Row>
 
-          <Row>
+          <Row className="align-items-end justify-content-center">
             <Col
               xs={6}
-              md={4}
+              md={6}
               className="text-center mb-3 pt-3"
-              style={{ marginLeft: "200px" }}
+              style={{ marginLeft: "0px" }}
             >
               <a href="/kunskapsportalen/?kategori=havsniva" style={{ textDecoration: "none" }}>
                 <Card className="h-100 w-100 custom-card" style={cardStyle}>
@@ -99,7 +99,7 @@ export default function ContentPortal() {
 
             <Col
               xs={6}
-              md={4}
+              md={6}
               className="text-center mb-3 pt-3"
               style={{ marginRight: "0px" }}
             >
