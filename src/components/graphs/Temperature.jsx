@@ -1,12 +1,13 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { ResponsiveLine } from "@nivo/line";
-import { getFormatedData } from "../../utils/Dataset4_Sea_Level";
-import { getFormatedData as getTempData } from "../../utils/Dataset2_Global_Temp";
 
-export default function SeaLevel(){
-    const data = [getFormatedData(), getTempData()];
-    
+import { getFormatedData } from "../../utils/Dataset2_Global_Temp";
+import { getTotalData } from "../../utils/Dataset1_Global_Emissions";
+
+export default function Temperature(){
+        const data = [getFormatedData(), getTotalData()];
+    console.log(data);
     return(
         <Row>
             <Col style={{height: 400}}>
@@ -19,12 +20,12 @@ export default function SeaLevel(){
       curve="monotoneX"
       axisTop={null}
       axisRight={{
-        tickValues: [0, 0.50, 1.00, 1.50, 2.00, 2.50],
+        tickValues: [100],
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
         format: '.2f',
-        legend: 'Temperaturökning i grader C',
+        legend: 'Utsläpp',
         
         legendPosition: 'middle',
         legendOffset: 50,
@@ -45,7 +46,7 @@ export default function SeaLevel(){
         tickPadding: 5,
         tickRotation: 0,
         format: '.2f',
-        legend: 'havsnivåns förändring i decimeter (10cm)',
+        legend: 'Temperaturökning i grader C',
         legendOffset: -50,
         legendPosition: 'middle',
       }}

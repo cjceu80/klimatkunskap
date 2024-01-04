@@ -24,7 +24,7 @@ export default function InformationCard(props)
 
     if (props.cardData.graph && !alignRight){
         mdAlign = 10;
-        xlAlign = {span:8, offset: 2}     
+        xlAlign = {span:8, offset: 1}     
     }
     else if (props.cardData.graph && alignRight)
     {

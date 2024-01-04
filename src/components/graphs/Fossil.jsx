@@ -54,7 +54,7 @@ export default function Fossil(){
 
                 <ResponsivePieCanvas
                     data={data}
-                    margin={{ top: 0, right: 80, bottom: 0, left: 80 }}
+                    margin={{ top: 25, right: 80, bottom: 20, left: 80 }}
                     innerRadius={0.5}
                     padAngle={0.7}
                     cornerRadius={3}

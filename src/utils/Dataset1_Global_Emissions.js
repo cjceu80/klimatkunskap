@@ -3,6 +3,13 @@ export function getRawYearData(year) {
   return data.find((dataYear) => dataYear.Year == year);
 }
 
+export function getTotalData(){
+  let newData = [];
+  data.forEach((value)=> { value.Year >= 1880 && newData.push( {x: value.Year, y: value.Total / 4000})})
+
+  return { id: "Utsläpp", data: newData}
+}
+
 export function getYearData(year) {
   const rawYear = data.find((dataYear) => dataYear.Year == year);
   if (!rawYear) return;
