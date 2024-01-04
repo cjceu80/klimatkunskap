@@ -52,7 +52,7 @@ const pageData = [
                 image: "/src/images/havsniva/DiagramPilUppat.png",
                 imageWidth: 3,
                 caption: "Diagram!",
-                graphdata: ""
+                graph: 0
             },
             {
                 image: "/src/images/havsniva/ideLampa.png",
@@ -68,10 +68,8 @@ const pageData = [
         ]        
     },
 
-    
-
     {
-        id: "Temperatur",
+        id: "temperatur",
         name: "Temperaturförändring",
         bakground: [
             {
@@ -79,24 +77,25 @@ const pageData = [
             }
         ],
         cards: [
-            {  image:"",
-                image: "",
-                imageWidth: 3,
+            {  
+                
                 caption: "Förändras temperaturen?",
                 paragraphs: ["Har du någonsin undrat om temperaturen förändras på vår planet? Låt oss utforska detta tillsammans!"],
-                image:"",
-            },
-            {
-                image: "",
+                image:"/src/images/Temperatur_fara_bild_4.jpg",
                 imageWidth: 3,
-                caption: "Tydliga budskap från temperaturforskningen",
-                paragraphs: ["Global medeltemperatur har ökat snabbare sedan 1970 än under de senaste 2 000 åren och är idag på en nivå som antagligen inte setts på 125 000 år.","Koncentrationen av växthusgaser, särskilt koldioxid, har ökat till nivåer utan motsvarighet på minst 800 000 år, med en ökning på cirka 50 procent jämfört med förindustriell tid, huvudsakligen på grund av fossila bränslen och förändrad markanvändning."]
             },
             {
-                image: "",
-                imageWidth: 2,
+                
+                caption: "Tydliga budskap från temperaturforskningen",
+                paragraphs: ["Global medeltemperatur har ökat snabbare sedan 1970 än under de senaste 2 000 åren och är idag på en nivå som antagligen inte setts på 125 000 år.","Koncentrationen av växthusgaser, särskilt koldioxid, har ökat till nivåer utan motsvarighet på minst 800 000 år, med en ökning på cirka 50 procent jämfört med förindustriell tid, huvudsakligen på grund av fossila bränslen och förändrad markanvändning."],
+                image: "/src/images/climate-change-Bild_1.png",
+                imageWidth: 5,
+            },
+            {
                 caption: "Extremväder",
-                paragraphs: ["Mycket talar för att till exempel skyfallen kommer att bli kraftigare i framtiden. Extrem nederbörd som faller under en kort tid kan ge problem med översvämningar."]
+                paragraphs: ["Mycket talar för att till exempel skyfallen kommer att bli kraftigare i framtiden. Extrem nederbörd som faller under en kort tid kan ge problem med översvämningar."],
+                image: "/src/images/Extrem_väder_bild_3.jpg",
+                imageWidth: 4,
             },
             {
                 
@@ -112,7 +111,7 @@ const pageData = [
                 image: "/src/images/havsniva/DiagramPilUppat.png",
                 imageWidth: 3,
                 caption: "Diagram!",
-                graphdata: ""
+                graph: 0
             },
             {
                 image: "/src/images/havsniva/ideLampa.png",

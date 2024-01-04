@@ -10,7 +10,7 @@ export default function Information(props) {
 
   return (
     <div style={{
-      backgroundImage: `url(${backgroundImg})`,
+      backgroundImage: `url(/src/images/bakgrunder/${pageData.id}.jpg)`,
       backgroundSize: "cover",
       
       position: "relative",
