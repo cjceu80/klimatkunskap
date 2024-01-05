@@ -38,8 +38,10 @@ export default function InformationCard(props) {
                         {(props.cardData.image && alignRight) && <Col className="d-flex align-items-center" md={props.cardData.imageWidth}><CardImg className="" src={props.cardData.image} style={{ maxWidth: 300 }} /></Col>}
                         <Col>
                             <h3 className="p-3">{props.cardData.caption}</h3>
+                            {/* Goes through the paragraphs and inserts them one per new <p> */}
                             {props.cardData.paragraphs && props.cardData.paragraphs.map((value, index) => <p className="px-3" key={index}>{value}</p>)}
                             <p>
+                            {/* Goes through the links and inserts them one per new line */}
                             {props.cardData.links && (
                                 <div>
                                     {props.cardData.links.map((link, index) => (
