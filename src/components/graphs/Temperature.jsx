@@ -35,7 +35,6 @@ export default function Temperature(){
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            format: '.2f',
             legend: 'år',
             legendOffset: 33,
             legendPosition: 'middle',
