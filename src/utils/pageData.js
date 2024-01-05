@@ -4,14 +4,9 @@ export function getPageData(category) {
   return data;
 }
 
-
-
 // Database for contentpage contents
 const pageData = [
-  
-
-// HAVSNIVÅ
-
+  // HAVSNIVÅ
 
   {
     id: "havsniva",
@@ -63,7 +58,7 @@ const pageData = [
         caption: "Nämen se här!",
         paragraphs: [
           "Nedan ser du ett diagram på hur havsnivån varit sedan 1880-talet fram tills idag.",
-          "Havsnivåförändringen(mörkröda linjen) visas i skalan till vänster i decimeter.", 
+          "Havsnivåförändringen(mörkröda linjen) visas i skalan till vänster i decimeter.",
           "Temperaturförändringen (den orangea linjen) visas i skalan till höger.",
           "Nere i x-axeln så ser du alla år.",
           "Du kan klicka i diagrammet för att se värden för ett speciellt år.",
@@ -73,9 +68,7 @@ const pageData = [
         imageWidth: 3,
         caption: "Diagram!",
         graph: true,
-        paragraphs: [
-
-        ],
+        paragraphs: [],
       },
       {
         image: "/src/images/havsniva/ideLampa.png",
@@ -87,10 +80,7 @@ const pageData = [
       },
       {
         caption: "Vill du veta mer?",
-        paragraphs: [
-          "Källor: SMHI, Stockholms Stad",
-          "Länklista",
-        ],
+        paragraphs: ["Källor: SMHI, Stockholms Stad", "Länklista"],
         links: [
           {
             label: "Framtida medelvattenstånd - SMHI",
@@ -105,9 +95,7 @@ const pageData = [
     ],
   },
 
-
-// TEMPERATUR
-
+  // TEMPERATUR
 
   {
     id: "temperatur",
@@ -182,9 +170,7 @@ const pageData = [
     ],
   },
 
-
-// FOSSILT BRÄNSLE
-
+  // FOSSILT BRÄNSLE
 
   {
     id: "fossilt",
@@ -211,6 +197,18 @@ const pageData = [
           "Fossila bränslen är energikällor som kol, olja och naturgas. De bildades från växter och djur som levde för miljontals år sedan. Idag använder vi dem för att driva bilar, producera elektricitet och mycket mer!",
         ],
       },
+
+      {
+        image: "",
+        imageWidth: 7,
+        caption: "Vad kan fossila bränslen orsaka?",
+        paragraphs: [
+          "Förutom att orsaka klimatförändringar har användningen av fossila bränslen även andra negativa konsekvenser för miljön.",
+          "Utvinningen och förbränningen av dessa bränslen kan leda till mark- och vattenföroreningar.",
+          "Oljeutsläpp i havet och kolgruvdrift är exempel på verksamheter som kan ha förödande effekter på ekosystem och djurliv.",
+        ],
+      },
+
       {
         image: "/src/images/fossil/globaluppvarmning.png",
         imageWidth: 4,
@@ -254,9 +252,6 @@ const pageData = [
       },
     ],
   },
-  
 
-// Glaciär
-
-
+  // Glaciär
 ];
