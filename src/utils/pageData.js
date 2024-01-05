@@ -205,7 +205,7 @@ const pageData = [
         paragraphs: [
           "Förutom att orsaka klimatförändringar har användningen av fossila bränslen även andra negativa konsekvenser för miljön.",
           "Utvinningen och förbränningen av dessa bränslen kan leda till mark- och vattenföroreningar.",
-          "Oljeutsläpp i havet och kolgruvdrift är exempel på verksamheter som kan ha förödande effekter på ekosystem och djurliv.",
+          "Oljeutsläpp i havet och kolgruvdrift är exempel på verksamheter som kan ha förstörande effekter på ekosystem och djurliv.",
         ],
       },
 
@@ -253,5 +253,5 @@ const pageData = [
     ],
   },
 
-  // Glaciär
+  // Glaciär  
 ];
