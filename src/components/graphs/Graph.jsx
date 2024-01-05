@@ -8,7 +8,7 @@ export default function Graph(props){
 
     return(
         <>
-            {(props.category === "fossil") && <Fossil />}
+            {(props.category === "fossilt") && <Fossil />}
             {(props.category === "havsniva") && <SeaLevel />}
             {(props.category === "temperatur") && <Temperature />}
             {(props.category === "glaciar") && <Glaciers />}

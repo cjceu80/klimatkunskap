@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Card, CardImg, Col, Row } from "react-bootstrap";
 import Graph from "./graphs/Graph";
 
@@ -40,22 +41,20 @@ export default function InformationCard(props) {
                             <h3 className="p-3">{props.cardData.caption}</h3>
                             {/* Goes through the paragraphs and inserts them one per new <p> */}
                             {props.cardData.paragraphs && props.cardData.paragraphs.map((value, index) => <p className="px-3" key={index}>{value}</p>)}
-                            <p>
+
                             {/* Goes through the links and inserts them one per new line */}
                             {props.cardData.links && (
-                                <div>
+                                <div className="pb-2">
                                     {props.cardData.links.map((link, index) => (
                                         <React.Fragment key={index}>
                                             <a href={link.url} target="_blank" rel="noopener noreferrer">
                                                 {link.label}
                                             </a>
-                                            <br />
                                         </React.Fragment>
                                     ))}
                                 </div>
                             )}
 
-                            </p>
 
                         </Col>
                         {(props.cardData.image && !alignRight) && <Col className="d-flex align-items-center" md={props.cardData.imageWidth}><CardImg className="" src={props.cardData.image} style={{ maxWidth: 300 }} /></Col>}
