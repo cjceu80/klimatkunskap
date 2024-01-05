@@ -29,7 +29,7 @@ export default function InformationCard(props) {
 
 
     return (
-        <Row className="my-3">
+        <Row className="">
             <Col md={mdAlign} xl={xlAlign} className="my-3">
                 <Card className={`px-3 ${alignRight && "text-end"}`} style={cardStyle}>
                     <Row>
@@ -46,7 +46,9 @@ export default function InformationCard(props) {
                                         <React.Fragment key={index}>
                                             <a href={link.url} target="_blank" rel="noopener noreferrer">
                                                 {link.label}
+                                                
                                             </a>
+                                            <br></br>
                                         </React.Fragment>
                                     ))}
                                 </div>

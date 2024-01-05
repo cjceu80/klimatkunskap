@@ -16,7 +16,7 @@ export default function Information(props) {
       position: "relative",
 
     }}>
-    <Container fluid className="h-100 pageContainer mb-5 p-0" >
+    <Container fluid className="h-100 pageContainer mb-0 p-0" >
       <div className='contentPaddingTop'></div>
       <h1 className='text-center pt-3'>{pageData.name}</h1>
       <div className='contentPaddingTop'></div>
