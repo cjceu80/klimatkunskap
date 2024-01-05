@@ -54,27 +54,42 @@ const pageData = [
         imageWidth: 3,
         caption: "Nämen se här!",
         paragraphs: [
-          "Nedan ser du ett diagram på hur havsnivån varit sedan 1880-talet fram tills idag. Till vänster ser du stapeln för havsnivån och nere i liggande axeln ser du åren.",
+          "Nedan ser du ett diagram på hur havsnivån varit sedan 1880-talet fram tills idag.",
+          "Havsnivåförändringen(mörkröda linjen) visas i skalan till vänster i decimeter.", 
+          "Temperaturförändringen (den orangea linjen) visas i skalan till höger.",
+          "Nere i x-axeln så ser du alla år.",
+          "Du kan klicka i diagrammet för att se värden för ett speciellt år.",
         ],
       },
       {
-        image: "/src/images/havsniva/DiagramPilUppat.png",
         imageWidth: 3,
         caption: "Diagram!",
         graph: true,
+        paragraphs: [
+
+        ],
       },
       {
         image: "/src/images/havsniva/ideLampa.png",
         imageWidth: 2,
         caption: "Såg du?",
         paragraphs: [
-          "I diagrammet kan man se hur mycket havsnivån stigit. Mellan 1980 och 2020 så har havsnivån stigit med t.ex. ????mm. Det är sedan dina föräldrar var född tills idag, galet va?",
+          "I diagrammet kan man se hur mycket havsnivån stigit. Mellan 1980 och 2010 så har havsnivån stigit med t.ex. 0,8dm. Det är sedan dina föräldrar var född tills idag, galet va?",
         ],
       },
       {
         caption: "Vill du veta mer?",
         paragraphs: ["Länklista"],
-        links: {},
+        links: [
+          {
+            label: "Framtida medelvattenstånd - SMHI",
+            url: "https://www.smhi.se/klimat/stigande-havsnivaer/framtida-medelvattenstand-1.165493",
+          },
+          {
+            label: "Landhöjning och vattenstånd - SMHI",
+            url: "https://www.smhi.se/kunskapsbanken/oceanografi/vattenstand-och-klimat/landhojning-och-havsvatttenstand-1.3437",
+          },
+        ],
       },
     ],
   },

@@ -71,6 +71,7 @@ const questions = [
         "Havsnivån har ökat med ?? mm under den perioden",
         "Havsnivån har ökat med ?? mm under den perioden",
     ]},
+    //Jag hittar inte svar till f;ljande 4 fr[gor p[ inneh[llssidan - Jonas
     {text: "Varför är kol viktigt för jordens temperatur?",
     correct: "Kol finns i koldioxid, en växthusgas som fångar värme nära jorden.",
     alt: [
