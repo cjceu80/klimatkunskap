@@ -101,3 +101,7 @@ h4 {
 .contentPaddingTop {
   padding-top: 225px;
 }
+
+.zOnTop {
+  z-index: 10 !important;
+}
