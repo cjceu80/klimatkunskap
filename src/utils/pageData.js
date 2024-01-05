@@ -4,7 +4,15 @@ export function getPageData(category) {
   return data;
 }
 
+
+
+// Database for contentpage contents
 const pageData = [
+  
+
+// HAVSNIVÅ
+
+
   {
     id: "havsniva",
     name: "Havsnivå",
@@ -79,7 +87,10 @@ const pageData = [
       },
       {
         caption: "Vill du veta mer?",
-        paragraphs: ["Länklista"],
+        paragraphs: [
+          "Källor: SMHI, Stockholms Stad",
+          "Länklista",
+        ],
         links: [
           {
             label: "Framtida medelvattenstånd - SMHI",
@@ -93,6 +104,10 @@ const pageData = [
       },
     ],
   },
+
+
+// TEMPERATUR
+
 
   {
     id: "temperatur",
@@ -153,10 +168,23 @@ const pageData = [
       {
         caption: "Vill du veta mer?",
         paragraphs: ["Länklista..."],
-        links: {},
+        links: [
+          {
+            label: "",
+            url: "",
+          },
+          {
+            label: "",
+            url: "",
+          },
+        ],
       },
     ],
   },
+
+
+// FOSSILT BRÄNSLE
+
 
   {
     id: "fossilt",
@@ -213,8 +241,22 @@ const pageData = [
       {
         caption: "Vill du veta mer?",
         paragraphs: ["Länklista"],
-        links: {},
+        links: [
+          {
+            label: "",
+            url: "",
+          },
+          {
+            label: "",
+            url: "",
+          },
+        ],
       },
     ],
   },
+  
+
+// Glaciär
+
+
 ];
