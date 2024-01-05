@@ -22,17 +22,14 @@ export default function InformationCard(props) {
         xlAlign = { span: 6, offset: 5 };
     }
 
-    if (props.cardData.graph && !alignRight) {
-        mdAlign = 10;
-        xlAlign = { span: 8, offset: 1 }
-    }
-    else if (props.cardData.graph && alignRight) {
-        mdAlign = { span: 10, offset: 2 };
-        xlAlign = { span: 8, offset: 3 };
+    if (props.cardData.graph) {
+        mdAlign = 12;
+        xlAlign = { span: 10, offset: 1 }
     }
 
+
     return (
-        <Row className="my-3">
+        <Row className="">
             <Col md={mdAlign} xl={xlAlign} className="my-3">
                 <Card className={`px-3 ${alignRight && "text-end"}`} style={cardStyle}>
                     <Row>
@@ -49,7 +46,9 @@ export default function InformationCard(props) {
                                         <React.Fragment key={index}>
                                             <a href={link.url} target="_blank" rel="noopener noreferrer">
                                                 {link.label}
+                                                
                                             </a>
+                                            <br></br>
                                         </React.Fragment>
                                     ))}
                                 </div>
