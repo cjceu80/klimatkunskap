@@ -28,7 +28,10 @@ export default function ContentPortal() {
               className="text-center mb-3 pt-5"
               style={{ marginLeft: "0px" }}
             >
-              <a href="/kunskapsportalen/?kategori=fossilt" style={{ textDecoration: "none" }}>
+              <a
+                href="/kunskapsportalen/?kategori=fossilt"
+                style={{ textDecoration: "none" }}
+              >
                 <Card className="h-100 w-100 custom-card" style={cardStyle}>
                   <Card.Body className="h-100">
                     <div className="placeholder" />
@@ -52,7 +55,10 @@ export default function ContentPortal() {
               className="text-center mb-3 pt-5"
               style={{ marginRight: "0px" }}
             >
-              <a href="/kunskapsportalen/?kategori=temperatur" style={{ textDecoration: "none" }}>
+              <a
+                href="/kunskapsportalen/?kategori=temperatur"
+                style={{ textDecoration: "none" }}
+              >
                 <Card className="h-100 w-100 custom-card" style={cardStyle}>
                   <Card.Body className="h-100">
                     <div className="placeholder" />
@@ -78,7 +84,10 @@ export default function ContentPortal() {
               className="text-center mb-3 pt-3"
               style={{ marginLeft: "0px" }}
             >
-              <a href="/kunskapsportalen/?kategori=havsniva" style={{ textDecoration: "none" }}>
+              <a
+                href="/kunskapsportalen/?kategori=havsniva"
+                style={{ textDecoration: "none" }}
+              >
                 <Card className="h-100 w-100 custom-card" style={cardStyle}>
                   <Card.Body className="h-100">
                     <div className="placeholder" />
@@ -102,7 +111,10 @@ export default function ContentPortal() {
               className="text-center mb-3 pt-3"
               style={{ marginRight: "0px" }}
             >
-              <a href="/kunskapsportalen/?kategori=/glaciar" style={{ textDecoration: "none" }}>
+              <a
+                href="/kunskapsportalen/?kategori=/glaciar"
+                style={{ textDecoration: "none" }}
+              >
                 <Card className="h-100 w-100 custom-card" style={cardStyle}>
                   <Card.Body className="h-100">
                     <div className="placeholder" />
