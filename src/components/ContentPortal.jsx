@@ -18,7 +18,7 @@ export default function ContentPortal() {
   };
 
   return (
-    <>
+    
       <div className="bgContentPortal">
         <Container fluid className="h-100 pageContainer mb-5">
           <Row className="align-items-end justify-content-center">
@@ -122,6 +122,6 @@ export default function ContentPortal() {
           </Row>
         </Container>
       </div>
-    </>
+      
   );
 }
