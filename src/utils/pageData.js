@@ -253,5 +253,5 @@ const pageData = [
     ],
   },
 
-  // Glaciär
+  // Glaciär  
 ];
