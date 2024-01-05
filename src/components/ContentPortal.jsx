@@ -11,7 +11,6 @@ export default function ContentPortal() {
   const cardStyle = {
     background: "rgba(255, 255, 255, 0.7)", // 0.7 represents 70% transparency
     borderRadius: "25px",
-    marginBottom: "100px",
   };
   const cardImageStyle = {
     height: "80px", // Set a specific height for the images
