@@ -42,6 +42,7 @@ export default function QuizEnd() {
               </Col>
               <Col lg={5} xl={4} >
               <Card className="p-5" style={cardStyle}>
+                <p>Om du loggar in kan du spara eller dela ditt resultat</p>
                   <h2>Logga in</h2>
                   <p></p>
               </Card>
