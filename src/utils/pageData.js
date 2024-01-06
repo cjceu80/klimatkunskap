@@ -1,8 +1,11 @@
+import { Link } from 'react-router-dom';
+
 export function getPageData(category) {
   const data = pageData.find((val) => val.id === category);
   if (!data) return null;
   return data;
 }
+
 
 // Database for contentpage contents
 const pageData = [
@@ -253,4 +256,85 @@ const pageData = [
   },
 
   // Glaciär  
+
+  {
+    id: "glaciar",
+    name: "Glaciär",
+    bakground: [
+      {
+        image: "/src/images/bakgrunder/glaciar.jpg",
+      },
+    ],
+    cards: [
+      {
+        image: "/src/images/Glaciar/natural-disaster-5545300_1280.png",
+        imageWidth: 3,
+        caption: "Välkommen till Glaciärernas Värld!",
+        paragraphs: [
+          "Har du någonsin undrat varför glaciärer är så viktiga för vår planet? Och varför pratar alla om att de smälter?",
+          "Låt oss utforska detta tillsammans!",
+        ],
+      },
+      {
+        image: "/src/images/Glaciar/polar-bear-6733146_1280.jpg",
+        imageWidth: 3,
+        caption: "Vad är en glaciär?",
+        paragraphs: [
+          "En glaciär är en stor massa av is som rör sig väldigt långsamt. Tänk på det som en frusen flod! Glaciärer finns på varje kontinent, till och med i Afrika.",
+        ],
+      },
+      {
+        image: "/src/images/Glaciar/earth-5545293_1280.png",
+        imageWidth: 2,
+        caption: "Varför smälter glaciärerna? ",
+        paragraphs: [
+          "Glaciärer smälter när temperaturen på jorden ökar. Detta händer på grund av något som kallas för växthuseffekten, där gaser från fossila bränslen (som bensin och kol) fångar värme i vår atmosfär.",
+        ],
+      },
+      {
+        image: "/src/images/Glaciar/natural-disaster-5545297_1280.png",
+        imageWidth: 3,
+        caption: "Varför är detta ett problem?",
+        paragraphs: [
+          "När glaciärer smälter, ökar havsnivån eftersom allt det smälta vattnet hamnar i havet. Detta kan leda till översvämningar i kustområden. Dessutom är glaciärer som jordens kylskåp, de hjälper till att hålla vår planet sval.",
+        ],
+      },
+      {
+        image: "/src/images/havsniva/DiagramPilUppat.png",
+        imageWidth: 3,
+        caption: "Nämen se här!",
+        paragraphs: [
+          "Nedan ser du ett diagram på hur glaciärernas massa succesivt sjunker med tiden.",
+        ],
+      },
+      {
+        imageWidth: 3,
+        caption: "Diagram!",
+        graph: true,
+        paragraphs: [],
+      },
+      {
+        image: "/src/images/havsniva/ideLampa.png",
+        imageWidth: 2,
+        caption: "Såg du?",
+        paragraphs: [
+          "I diagrammet kan man se hur glaciärernas storlek minskar. Mellan 1945 och 2010 så har glaciärernas storlek minskat samtidigt som temperaturen har ökat. Det är sedan dina föräldrars föräldrar var födda tills idag, galet va?",
+        ],
+      },
+      {
+        caption: "Vill du veta mer om vad som händer när glaciärer smälter?",
+        paragraphs: ["Glaciärerna smälter pga. temperaturskillnader"],
+        links: [
+          {
+            label: "Läs mer om temperaturskillnader",
+            to: "/kunskapsportalen/?kategori=temperatur",
+          },
+          {
+            label: "Landhöjning och vattenstånd - SMHI",
+            url: "https://www.smhi.se/kunskapsbanken/oceanografi/vattenstand-och-klimat/landhojning-och-havsvatttenstand-1.3437",
+          },
+        ],
+      },
+    ],
+  },
 ];

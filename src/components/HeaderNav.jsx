@@ -39,7 +39,7 @@ export default function HeaderNav({ login }) {
                   <NavDropdown.Item href="/kunskapsportalen/?kategori=fossilt">Fossilt Bränsle</NavDropdown.Item>
                   <NavDropdown.Item href="/kunskapsportalen/?kategori=temperatur">Temperatur</NavDropdown.Item>
                   <NavDropdown.Item href="/kunskapsportalen/?kategori=havsniva">Havsnivå</NavDropdown.Item>
-                  <NavDropdown.Item href="/kunskapsportalen/?kategori=/glaciar">Glaciär</NavDropdown.Item>
+                  <NavDropdown.Item href="/kunskapsportalen/?kategori=glaciar">Glaciär</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="/omoss">Om oss</NavDropdown.Item>
                   <NavDropdown.Item href="/feedback">Ge feedback</NavDropdown.Item>

@@ -111,7 +111,7 @@ export default function ContentPortal() {
             style={{ marginRight: "0px" }}
           >
             <a
-              href="/kunskapsportalen/?kategori=/glaciar"
+              href="/kunskapsportalen/?kategori=glaciar"
               style={{ textDecoration: "none" }}
             >
               <Card className="h-100 w-100 custom-card" style={cardStyle}>
