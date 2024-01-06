@@ -72,7 +72,7 @@ export default function QuizEnd() {
           </Col>
           <Col lg={5} xl={4}>
             <Col xs={3} className="text-center mb-4">
-              <img src={rightImage} alt="Right Image" style={{ width: "100%" }} />
+              <img src={rightImage} alt="Right Image" style={{ width: "100%",marginRight:"-400px" }} />
             </Col>
             <Card className="p-5" style={cardStyle}>
               <h4>Om du loggar in kan du spara eller dela ditt resultat</h4>
