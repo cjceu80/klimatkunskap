@@ -75,6 +75,33 @@ const questions = [
       "Havsnivån har ökat med ?? mm under den perioden",
     ],
   },
+
+  //glaciär
+
+  {
+    text: "Vad är en glaciär?",
+    correct: "En stor massa av is som rör sig väldigt långsamt",
+    alt: [
+      " En stor massa av sten som rör sig fram och tillbaka",
+      "Små isbitar som rör sig fort och smälter långsamt",
+    ],
+  },
+  {
+    text: "Var finns glaciärer?",
+    correct: "På varje kontinent, till och med i Afrika",
+    alt: [
+      "Endast i antarktis",
+      "Glaciärerna har smält så idag finns inga glaciärer",
+    ],
+  },
+  {
+    text: "Vilka är de två huvudsakliga konsekvenserna av smältande glaciärer?",
+    correct: "Ökning av havsnivån och översvämningar i kustområden",
+    alt: [
+      "Minskning av havsnivån och torka uppstår på nordpolen",
+      "Världen tvingas bygga fler badplatser och båttrafiken kommer att ersätta biltrafiken",
+    ],
+  },
   //Jag hittar inte svar till f;ljande 4 fr[gor p[ inneh[llssidan - Jonas
   {
     text: "Varför är kol viktigt för jordens temperatur?",
