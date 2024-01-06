@@ -46,11 +46,11 @@ export default function QuizEnd() {
             <h1>Bra jobbat!</h1>
             <p>Du fick {correctCount} av {quizData.questions.length} rätt!</p>
           </Col>
-          <Col lg={5} xl={4}>
+          <Col lg={5} xl={5}>
             <Col xs={3} className="text-center mb-4">
               <img src={leftImage} alt="Left Image" style={{ width: "100%" }} />
             </Col>
-            <Card style={cardStyle} className="p-5">
+            <Card style={cardStyle} className="p-4">
               <Form.Group controlId="formEmail">
                <h4><Form.Label>Din e-post</Form.Label></h4>
                 <Form.Control
@@ -58,11 +58,12 @@ export default function QuizEnd() {
                   placeholder="Skriv din e-post här"
                   value={email}
                   onChange={handleEmailChange}
+                  style={{ marginBottom: "5px" }} 
                 />
               </Form.Group>
               <Button
                 variant="success"
-                style={{ borderRadius: "10px" }}
+                style={{ borderRadius: "50px" , marginBottom: "-15px"}}
                 onClick={handleSendResult}
               >
                 <h4>Skicka resultat</h4>
@@ -70,16 +71,19 @@ export default function QuizEnd() {
               <p></p>
             </Card>
           </Col>
-          <Col lg={5} xl={4}>
-            <Col xs={3} className="text-center mb-4">
-              <img src={rightImage} alt="Right Image" style={{ width: "100%", marginRight:"-400px" }} />
+          
+          <Col lg={5} xl={5}>
+          <Col xs={2} className="text-center mb-4">
+              <img src={rightImage} alt="Right Image" style={{ width: "100%", marginRight:"-600px",  }} />
             </Col>
-            <Card className="p-5" style={cardStyle}>
+            <Card className="p-4" style={cardStyle}>
               <h4>Om du loggar in kan du spara eller dela ditt resultat</h4>
+              
               <Button
                 variant="success"
-                style={{ borderRadius: "10px" }}
+                style={{ borderRadius: "50px", marginBottom: "-1px" }}
                 onClick={QUIZ_DATA}
+                
               >
                 <h4>Logga in</h4>
               </Button>
