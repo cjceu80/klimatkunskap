@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Stack } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-import { getQuestions } from '../utils/staticQuestions';
+import { getQuestions } from '../../utils/staticQuestions';
 
 //Storage item names
 const QUIZ_DATA = "quizData";
