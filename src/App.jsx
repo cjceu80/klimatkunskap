@@ -5,7 +5,7 @@ import "./style.css";
 import logoImg from "./images/logga7.png";
 
 import HeaderNav from "./components/HeaderNav";
-import QuizFrame from "./components/QuizFrame";
+import QuizFrame from "./components/quiz/QuizFrame";
 import { QuizContextProvider } from "./utils/QuizContext";
 import Login from "./components/Login";
 import QuizStart from "./components/QuizStart";
