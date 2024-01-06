@@ -1,9 +1,11 @@
 import React from "react";
 import backgroundImg from "../images/Bakgrund_cleanArtboard_1.jpg";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col, Card, Button, Form} from "react-bootstrap";
+import leftImage from "../images/bakgrunder/fyrverkerier.png"; //  left image path
+import rightImage from "../images/bakgrunder/trad.png"; // Replace with your right image path
+
 
 const QUIZ_DATA = "quizData";
-
 
 export default function QuizEnd() {
     const cardStyle = {
@@ -28,24 +30,49 @@ export default function QuizEnd() {
       >
       <Container className="d-flex flex-column h-100" >
           <Row className="justify-content-md-center align-items-center h-100">
+
+          
+
           <Col xs={9} className="text-center mb-4">
             <h1>Bra jobbat!</h1>
-            <p>
+            <p> 
               Du fick {correctCount} av {quizData.questions.length} rätt!
             </p>
           </Col>
               <Col lg={5} xl={4} >
-              <Card style={cardStyle}className="p-5">
-                  <h2>Skicka resultat</h2>
+
+              <Col xs={3} className="text-center mb-4">
+                <img src={leftImage} alt="Left Image" style={{ width: "100%" }} />
+            </Col>
+
+                <Card style={cardStyle}className="p-5">
+  
+                  <Button variant="success" style={{ borderRadius: '10px' }}  onClick={QUIZ_DATA}>
+                     <h4>Skicka resultat</h4>
+                  </Button>
+             
                   <p></p>
               </Card>
               </Col>
               <Col lg={5} xl={4} >
+
+              <Col xs={3} className="text-center mb-4">
+            <img src={rightImage} alt="Right Image" style={{ width: "100%", marginRight:"-400px" }} />
+          </Col>
               <Card className="p-5" style={cardStyle}>
-                <p>Om du loggar in kan du spara eller dela ditt resultat</p>
-                  <h2>Logga in</h2>
+              
+
+
+                <h4>Om du loggar in kan du spara eller dela ditt resultat</h4>
+
+                  <Button variant="success" style={{ borderRadius: '10px' }}  onClick={QUIZ_DATA}>
+              <h4>Logga in</h4>
+              </Button>
+
                   <p></p>
               </Card>
+
+              
               </Col>
           </Row>
       </Container>
