@@ -1,6 +1,7 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 import { useUserAuth } from "../utils/UserAuthContext";
+import React, { useState } from "react";
 
 //Redirect if not logged in
 const ProtectedRoute = ({ children }) => {

@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NavDropdown, Dropdown } from 'react-bootstrap';
 import { useUserAuth } from '../utils/UserAuthContext';
+import React, { useState } from "react";
 
 //Login option item in dropdown menu
 export default function LoginNav({login}) {
