@@ -1,17 +1,19 @@
-import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
-import backgroundImg from "../images/BakgrundHome.jpg";
+import React from "react"; // Importera React-biblioteket
+import { Container, Row, Col, Card } from "react-bootstrap"; // Importera några grundläggande komponenter från React Bootstrap-biblioteket
+import backgroundImg from "../images/BakgrundHome.jpg"; // Importera bakgrundsbild
 
-const CARD_HEIGHT = 500;
+const CARD_HEIGHT = 400; // Konstant för höjden på kortet
 
+// Funktion som representerar starten av quiz-komponenten
 export default function QuizStart() {
     const cardStyle = {
         background: "rgba(255, 255, 255, 0.7)", // 0.7 represents 70% transparency
         borderRadius: "25px",
-        height: "400px",
+        height: "400px", 
         
       };
     return (
+      // Huvudcontainer med bakgrundsbild och layoutstilar
         <div
       style={{
         backgroundImage: `url(${backgroundImg})`,

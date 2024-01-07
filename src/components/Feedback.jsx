@@ -26,8 +26,10 @@ const Feedback = () => {
                         value={feedback}
                         onChange={handleFeedbackChange}
                         placeholder="Skriv här..."
+                        rows={6} 
+                        cols={50} 
                     />
-                    <button onClick={handleSubmit} className="submit-button">Skicka</button>
+                    <button onClick={handleSubmit} style={{ borderRadius: "50px" ,  margin:"5px"}} className="submit-button">Skicka</button>
                     </div>
                 </div>
             </main>
