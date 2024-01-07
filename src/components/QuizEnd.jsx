@@ -83,8 +83,11 @@ export default function QuizEnd() {
                 variant="success"
                 style={{ borderRadius: "50px", marginBottom: "-1px" }}
                 onClick={QUIZ_DATA}
-                
               >
+                {/*^^^^ onClick ovan behöver ge en funktion. Här får den en string och gnäller*/}
+
+
+
                 <h4>Logga in</h4>
               </Button>
               <p></p>

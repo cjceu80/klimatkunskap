@@ -19,21 +19,32 @@ export default function QuizStartFrame({callback}){
     const navigate = useNavigate();
     
     
-    function handleStartQuizClick(){
+    function handleStartEasyQuizClick(){
         const quizData = {
             questions: getQuestions(10),
             answers: [],
-            startTime: new Date().valueOf(),  
+            endTime: -1,  
         }
-        //console.log(quizData);
+        
+        callback(quizData);
+        navigate("/kunskapsportalen")
+    }
+
+    function handleStartHardQuizClick(){
+        const quizData = {
+            questions: getQuestions(15),
+            answers: [],
+            endTime: new Date().valueOf() + 60000,  
+        }
+        
         callback(quizData);
         navigate("/kunskapsportalen")
     }
 
     return (
         <Stack>        
-            <Button onClick={handleStartQuizClick} className="button">Lätt</Button>
-            <Button onClick={()=>sessionStorage.setItem(QUIZ_STATUS, null)} className="button">Svår (disabled)</Button>            
+            <Button onClick={handleStartEasyQuizClick} className="button">Lätt</Button>
+            <Button onClick={handleStartHardQuizClick} className="button">Svår</Button>            
         </Stack>
     )
 }

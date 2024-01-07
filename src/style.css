@@ -105,3 +105,5 @@ h4 {
 .zOnTop {
   z-index: 10 !important;
 }
+.wave {
+-webkit-transition: height 1000ms ease-in-out;}
