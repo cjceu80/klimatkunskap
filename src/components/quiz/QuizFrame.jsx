@@ -5,7 +5,6 @@ import Wave from 'react-wavify';
 
 import QuizStartFrame from './QuizStartFrame';
 import QuizQuestion from './QuizQuestion';
-import CountdownTimer from './CountdownTimer';
 
 //Storage item names
 const QUIZ_DATA = "quizData";

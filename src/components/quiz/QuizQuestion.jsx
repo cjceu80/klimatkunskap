@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import { Button, Form } from "react-bootstrap";
 
-import CountdownTimer from "./CountdownTimer";
 
 //Storage item names
 const QUIZ_DATA = "quizData";

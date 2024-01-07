@@ -106,4 +106,4 @@ h4 {
   z-index: 10 !important;
 }
 .wave {
--webkit-transition: height 1000ms ease-in-out;}
+transition: height 1000ms ease-in-out;}
