@@ -9,7 +9,7 @@ const Feedback = () => {
     };
 
     const handleSubmit = () => {
-        // Här kan du lägga till logik för att skicka feedbacken till en server eller hantera den på något annat sätt
+        // lägg till logik för att skicka feedbacken till en server eller hantera den på något annat sätt
         alert('Feedback skickad:' + feedback);
     };
 
