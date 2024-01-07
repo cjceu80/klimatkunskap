@@ -26,8 +26,8 @@ const Feedback = () => {
                         value={feedback}
                         onChange={handleFeedbackChange}
                         placeholder="Skriv här..."
-                        rows={6} // Justera antalet rader efter behov
-                        cols={50} // Justera antalet kolumner efter behov
+                        rows={6} 
+                        cols={50} 
                     />
                     <button onClick={handleSubmit} style={{ borderRadius: "50px" ,  margin:"5px"}} className="submit-button">Skicka</button>
                     </div>
