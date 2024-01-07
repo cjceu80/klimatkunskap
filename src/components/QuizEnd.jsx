@@ -96,9 +96,8 @@ export default function QuizEnd() {
               <Button
                 variant="success"
                 style={{ borderRadius: "50px", marginBottom: "-1px" }}
-                onClick={QUIZ_DATA} // Placeholder for login action
+                onClick={()=>null} // Placeholder not causing issues
               >
-                {/*^^^^ onClick ovan behöver ge en funktion. Här får den en string och gnäller*/}
 
 
 
