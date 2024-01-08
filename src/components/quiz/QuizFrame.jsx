@@ -21,8 +21,8 @@ const WAVE_WIDTH = "100%";
 export default function QuizFrame({ setQuizViewShown }) {
   const [quizData, setQuizData] = useState();
   const [quizViewState, setQuizViewState] = useState("");
-  const [waterLevel, setWaterLevel] = useState(200);
   const [seconds, setSeconds] = useState(null);
+  const [waterLevel, setWaterLevel] = useState(handleWaterLevel);
 
 
   function handleStartQuizClick(e) {
@@ -50,13 +50,19 @@ export default function QuizFrame({ setQuizViewShown }) {
   }
 
   function handleWaterLevel() {
+    let sec;
+    if (seconds == null) {
+      console.log("its null")
+      const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
+      sec = Math.trunc((quizData.endTime - new Date().valueOf() ) / 1000);}
+    else sec = seconds;
     
     const base = 200;
     
     const step = (window.innerHeight - base) / 60;
   
 
-    return (200 + ((60 - seconds) * step))
+    return (200 + ((60 - sec) * step))
   }
 
   //     console.log(window.innerHeight);
@@ -74,18 +80,17 @@ export default function QuizFrame({ setQuizViewShown }) {
     
   useEffect(() => {
   // Exit early if countdown is finished
-  //setWaterLevel(handleWaterLevel());
   setWaterLevel(handleWaterLevel());
   if (seconds <= 0) {
   return;
   }
   
-  // Set up the timer
+  // Timer setup
   const timer = setInterval(() => {
   setSeconds((prevSeconds) => prevSeconds - 1);
   }, 1000);
   
-  // Clean up the timer
+  // Timer clean up
   return () => clearInterval(timer);
   }, [seconds]);
 

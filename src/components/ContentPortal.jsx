@@ -19,8 +19,8 @@ export default function ContentPortal() {
 
   return (
     <div className="bgContentPortal">
-      <Container fluid className="h-100 pageContainer mb-5">
-        <Row className="align-items-end justify-content-center">
+      <Container fluid className="h-100 pageContainer mb-5 align-items-center">
+        <Row style={{paddingTop: 100}} className="flex align-items-center">
           <Col
             xs={6}
             md={6}

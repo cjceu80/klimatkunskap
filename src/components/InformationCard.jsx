@@ -43,7 +43,7 @@ export default function InformationCard(props) {
                             {props.cardData.links && (
                                 <div className="pb-2">
                                     {props.cardData.links.map((link, index) => (
-                                        <React.Fragment key={index}>
+                                        <React.Fragment key={index+link}>
                                             <a href={link.url} target="_blank" rel="noopener noreferrer">
                                                 {link.label}
                                                 

@@ -98,10 +98,7 @@ export default function QuizEnd() {
                 style={{ borderRadius: "50px", marginBottom: "-1px" }}
                 onClick={()=>null} // Placeholder not causing issues
               >
-
-
-
-                <h4>Logga in</h4>
+               <h4>Logga in</h4>
               </Button>
               <p></p>
             </Card>
