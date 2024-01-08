@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Just+Me+Again+Down+Here&display=swap');
 
 .feedback-container {
-    background-color: white;
+    background-image: url('../images/bakgrunder/waterfall1.0_Rityta 1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -12,6 +15,9 @@
 }
 
 .feedback-content {
+    background-color: white;
+    border-radius: 6px;
+    border: solid 1px;
     width: 80%;
     padding: 20px;
 }
