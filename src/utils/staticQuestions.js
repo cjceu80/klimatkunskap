@@ -139,4 +139,32 @@ const questions = [
       "Marken behöver bara vara frusen i en månad för att vara permafrost.",
     ],
   },
+
+  //Fossil
+  {
+    text: "Vad bildades fossila bränslen från?",
+    correct: "Från växter och djur som levde för miljontals år sen",
+    alt: ["Från plast och syntetiska material", "Metaller och mineraler"],
+  },
+
+  {
+    text: "Vad har användningen av fossila bränslen för konsekvenser?",
+    correct: "Det kan leda till mark- och vattenföroreningar.",
+    alt: [
+      "Det kan orsaka ökad syrehalt i atmosfären",
+      "Det kan förbättrad luftkvalitet",
+    ],
+  },
+
+  {
+    text: "Vad för sorts gas släpper man ut i luften vid förbränning av fossila bränslen?",
+    correct: "Koldioxid",
+    alt: ["Vätegas", "Rent syre"],
+  },
+
+  {
+    text: "Vad bidrar användningen av fossila bränslen till?",
+    correct: "Växthuseffekten",
+    alt: ["Minskad luftförorening", "Minskad koldioxidhalt i atmosfären"],
+  },
 ];

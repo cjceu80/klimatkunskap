@@ -1,11 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export function getPageData(category) {
   const data = pageData.find((val) => val.id === category);
   if (!data) return null;
   return data;
 }
-
 
 // Database for contentpage contents
 const pageData = [
@@ -188,7 +187,7 @@ const pageData = [
         imageWidth: 4,
         caption: "Välkommen till Fossiltbränsle-sidan",
         paragraphs: [
-          "Vet du vad fossila bränslen är och varför de är viktiga för vår planet och samtidigt skadliga? Låt oss dyka in i denna spännande värld!.",
+          "Vet du vad fossila bränslen är och varför de är viktiga för vår planet och samtidigt skadliga? Låt oss dyka in i denna spännande värld!",
         ],
       },
       {
@@ -201,8 +200,8 @@ const pageData = [
       },
 
       {
-        image: "",
-        imageWidth: 7,
+        image: "/src/images/fossil/miljoskydd.png",
+        imageWidth: 5,
         caption: "Vad kan fossila bränslen orsaka?",
         paragraphs: [
           "Förutom att orsaka klimatförändringar har användningen av fossila bränslen även andra negativa konsekvenser för miljön.",
@@ -255,7 +254,7 @@ const pageData = [
     ],
   },
 
-  // Glaciär  
+  // Glaciär
 
   {
     id: "glaciar",
