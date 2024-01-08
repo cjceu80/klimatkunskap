@@ -56,11 +56,15 @@ export default function QuizFrame({ setQuizViewShown }) {
     let sec;
     if (seconds == null) {
       const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
-      if (quizData === null)
+      //console.log("handleWaterLevel quizData");
+      //console.log(quizData);
+      if (quizData == null)
         return 200;
-      sec = Math.trunc((quizData.endTime - new Date().valueOf() ) / 1000);}
-    else sec = seconds;
-    
+      sec = Math.trunc((quizData.endTime - new Date().valueOf() ) / 1000);
+    }
+      else sec = seconds;
+
+      
     const base = 200;
     
     const step = (window.innerHeight - base) / 60;
@@ -71,7 +75,9 @@ export default function QuizFrame({ setQuizViewShown }) {
 
   function timeOut(){
     const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
-    if (quizData === null)
+    console.log("timeOut quizData");
+    console.log(quizData);
+    if (!quizData)
       return false;
     if (Math.trunc((quizData.endTime - new Date().valueOf()) ) <= 0)
       return true;
