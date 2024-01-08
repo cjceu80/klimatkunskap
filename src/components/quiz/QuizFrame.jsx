@@ -39,7 +39,10 @@ export default function QuizFrame({ setQuizViewShown }) {
   }
 
   function handleCompleted() {
-    sessionStorage.setItem(QUIZ_STATUS, QUIZ_STATUS_END);
+    setWaterLevel(200);
+    //quizData.endTime = -1;
+    //sessionStorage.setItem(QUIZ_STATUS, QUIZ_STATUS_END);
+    //sessionStorage.setItem(QUIZ_DATA, JSON.stringify(quizData));
     setQuizViewShown(QUIZ_STATUS_END);
     setQuizViewState(QUIZ_STATUS_END);
   }
@@ -52,8 +55,9 @@ export default function QuizFrame({ setQuizViewShown }) {
   function handleWaterLevel() {
     let sec;
     if (seconds == null) {
-      console.log("its null")
       const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
+      if (quizData === null)
+        return 200;
       sec = Math.trunc((quizData.endTime - new Date().valueOf() ) / 1000);}
     else sec = seconds;
     
@@ -65,58 +69,65 @@ export default function QuizFrame({ setQuizViewShown }) {
     return (200 + ((60 - sec) * step))
   }
 
-  //     console.log(window.innerHeight);
-
-
-
-  //Remain at the same state when refreshing and navigating
-  if (quizViewState != QUIZ_STATUS_RUNNING && sessionStorage.getItem(QUIZ_STATUS) === QUIZ_STATUS_RUNNING) {
-    setQuizViewShown("");
-    setQuizViewState(QUIZ_STATUS_RUNNING);
-    setQuizData(sessionStorage.getItem(QUIZ_DATA));
+  function timeOut(){
+    const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
+    if (quizData === null)
+      return false;
+    if (Math.trunc((quizData.endTime - new Date().valueOf()) ) <= 0)
+      return true;
+    return false;
   }
-
     
-    
-  useEffect(() => {
-  // Exit early if countdown is finished
-  setWaterLevel(handleWaterLevel());
-  if (seconds <= 0) {
-  return;
-  }
   
-  // Timer setup
-  const timer = setInterval(() => {
-  setSeconds((prevSeconds) => prevSeconds - 1);
+  useEffect(() => {
+    // Exit early if countdown is finished
+    setWaterLevel(handleWaterLevel());
+    if (timeOut()) {
+      handleCompleted()
+      return;
+    }
+    if (seconds <= 0) {
+      handleCompleted();
+      return;
+    }
+    
+    // Timer setup
+    const timer = setInterval(() => {
+      setSeconds((prevSeconds) => prevSeconds - 1);
   }, 1000);
   
   // Timer clean up
   return () => clearInterval(timer);
-  }, [seconds]);
+}, [seconds]);
 
   function getWaterLevel() {
     if (quizViewState ===QUIZ_STATUS_RUNNING)
-      return waterLevel;
-    return 200;
-  }
+    return waterLevel;
+  return 200;
+}
 
+//Remain at the same state when refreshing and navigating
+if (quizViewState != QUIZ_STATUS_RUNNING && sessionStorage.getItem(QUIZ_STATUS) === QUIZ_STATUS_RUNNING) {
+  setQuizViewShown("");
+  setQuizViewState(QUIZ_STATUS_RUNNING);
+  setQuizData(sessionStorage.getItem(QUIZ_DATA));
+}
 
-  if (quizViewState ===QUIZ_STATUS_RUNNING && seconds == null)
-  {
-      const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
-      setSeconds(Math.trunc((quizData.endTime - new Date().valueOf() ) / 1000));
-  }
+if (quizViewState ===QUIZ_STATUS_RUNNING && seconds == null)
+{
+  const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
+  setSeconds(Math.trunc((quizData.endTime - new Date().valueOf() ) / 1000));
+}
 
-    // Format the remaining time (e.g., “00:05:10” for 5 minutes and 10 seconds)
-    function formatTime(timeInSeconds) {
-    const roundedTime = Math.round(timeInSeconds)
+// Format the remaining time (e.g., “00:05:10” for 5 minutes and 10 seconds)
+function formatTime(timeInSeconds) {
+  const roundedTime = Math.round(timeInSeconds)
     const minutes = Math.floor(roundedTime / 60)
     .toString()
     .padStart(2, "0");
     const seconds = (roundedTime % 60).toString().padStart(2, "0");
     return `${minutes}:${seconds}`;
     };
-    
 
   return (
     <Col xs={5} sm={4} lg={3} className="quiz_frame align-content-bottom justify-content-bottom top-0 end-0 position-fixed" style={{ height: window.innerHeight }} >
@@ -126,7 +137,7 @@ export default function QuizFrame({ setQuizViewShown }) {
           {quizViewState === QUIZ_STATUS_BEGIN && <QuizStartFrame callback={startQuiz}  />}
           {quizViewState === QUIZ_STATUS_END && <Button onClick={handleCompletedClick}>Avsluta Quiz Debugg?</Button>}
           {(quizViewState === QUIZ_STATUS_RUNNING && seconds > 0) && <p>{formatTime(seconds)}</p>}
-          {quizViewState === QUIZ_STATUS_RUNNING && <QuizQuestion handleCompleted={handleCompleted} handleWaterLevel={handleWaterLevel}/>}
+          {quizViewState === QUIZ_STATUS_RUNNING && <QuizQuestion handleCompleted={handleCompleted} />}
         </Col>
       </Row>
       <Wave

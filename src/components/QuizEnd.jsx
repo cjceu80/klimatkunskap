@@ -22,9 +22,9 @@ export default function QuizEnd() {
 
   // Calculate the number of correct answers
   let correctCount = 0;
-  quizData.answers.forEach(
-    (val, index) => val == quizData.questions[index].correctIndex && correctCount++
-  );
+ // quizData.answers.forEach(
+   // (val, index) => val == quizData.questions[index].correctIndex && correctCount++
+ // );
 
   // Define the email state using the useState hook
   const [email, setEmail] = useState("");
@@ -55,7 +55,7 @@ export default function QuizEnd() {
           {/* Left column for result display */}
           <Col xs={9} className="text-center mb-4">
             <h1>Bra jobbat!</h1>
-            <p>Du fick {correctCount} av {quizData.questions.length} rätt!</p>
+            <p>Du fick {correctCount} av {/*quizData.questions.length*/} rätt!</p>
           </Col>
 
           {/* Center column for email input and result submission */}

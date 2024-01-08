@@ -8,7 +8,7 @@ const QUIZ_STATUS = "quizStatus"
 
 const QUIZ_STATUS_END = "QuizEnd";
 
-export default function QuizQuestion({handleCompleted, handleWaterLevel})
+export default function QuizQuestion({handleCompleted})
 { 
 
     function handleSubmit(e) {   
@@ -16,7 +16,7 @@ export default function QuizQuestion({handleCompleted, handleWaterLevel})
         quizData.answers.push(selectedValue);
         sessionStorage.setItem(QUIZ_DATA,JSON.stringify(quizData));
         setSelectedValue(-1);
-        if (quizData.answers.length==quizData.questions.length)
+        if (quizData.answers.length>=quizData.questions.length)
         {
             handleCompleted();
         }
@@ -25,6 +25,7 @@ export default function QuizQuestion({handleCompleted, handleWaterLevel})
     const [selectedValue, setSelectedValue] = useState(-1);
     const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
 
+    sessionStorage.setItem(QUIZ_DATA, null); sessionStorage.setItem(QUIZ_STATUS, null)
    // {quizData.endTime != -1 && <CountdownTimer handleWaterLevel={handleWaterLevel} initialSeconds={120}/>}
 
     return (    
