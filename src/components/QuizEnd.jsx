@@ -18,7 +18,13 @@ export default function QuizEnd() {
   };
 
   // Retrieve quiz data from sessionStorage
-  const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
+  try {
+    const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
+    
+  } catch (error) {
+    
+    
+  }
 
   // Calculate the number of correct answers
   let correctCount = 0;

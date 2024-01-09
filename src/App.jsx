@@ -28,6 +28,10 @@ export default function App() {
   const handleShow = () => setShow(true);
   const handleQuizViewShown = (val) => setQuizViewShown(val);
 
+  function determineQuizState() {
+
+  }
+
   return (
     <div>
       <img
