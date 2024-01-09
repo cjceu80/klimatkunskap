@@ -18,10 +18,16 @@ const QUIZ_STATUS_RUNNING = "running"
 const WAVE_WIDTH = "100%";
 
 
+//debugReset();
+function debugReset(){
+  sessionStorage.setItem(QUIZ_STATUS, "");
+  sessionStorage.setItem(QUIZ_DATA, null)
+}
+
 export default function QuizFrame({ setQuizViewShown }) {
   const [quizData, setQuizData] = useState();
   const [quizViewState, setQuizViewState] = useState("");
-  const [seconds, setSeconds] = useState(null);
+  const [seconds, setSeconds] = useState();
   const [waterLevel, setWaterLevel] = useState(handleWaterLevel);
 
 
@@ -39,12 +45,19 @@ export default function QuizFrame({ setQuizViewShown }) {
   }
 
   function handleCompleted() {
+    console.log("Handle Completed recieved")
+    console.log(`quizViewState = ${quizViewState}`)
+
+    setQuizData(sessionStorage.getItem(QUIZ_DATA))
+
+    console.log(quizData)
+
     if (quizViewState)
     setWaterLevel(200);
     //quizData.endTime = -1;
     sessionStorage.setItem(QUIZ_STATUS, QUIZ_STATUS_END);
-    sessionStorage.setItem(QUIZ_DATA, JSON.stringify(quizData));
-    setQuizViewShown("");
+   // sessionStorage.setItem(QUIZ_DATA, JSON.stringify(quizData));
+    setQuizViewShown(QUIZ_STATUS_END);
     setQuizViewState("");
   }
 
@@ -129,16 +142,18 @@ export default function QuizFrame({ setQuizViewShown }) {
 }, [seconds]);
 
 //Remain at the same state when refreshing and navigating
-if (quizViewState != QUIZ_STATUS_RUNNING && sessionStorage.getItem(QUIZ_STATUS) === QUIZ_STATUS_RUNNING) {
+const quizStatus = sessionStorage.getItem(QUIZ_STATUS);
+if (quizViewState != QUIZ_STATUS_RUNNING && quizStatus === QUIZ_STATUS_RUNNING) {
   setQuizViewShown("");
   setQuizViewState(QUIZ_STATUS_RUNNING);
   setQuizData(sessionStorage.getItem(QUIZ_DATA));
 
   if (!quizData || quizData.endTime - new Date().valueOf() < -10000)
   {
-    setQuizViewShown("");
+    setQuizViewShown(QUIZ_STATUS_END);
     setQuizViewState("");
   }
+
 }
 
 if (quizViewState ===QUIZ_STATUS_RUNNING && seconds == null)
@@ -152,6 +167,7 @@ if (quizViewState ===QUIZ_STATUS_RUNNING && seconds == null)
     <Col xs={5} sm={4} lg={3} className="quiz_frame align-content-bottom justify-content-bottom top-0 end-0 position-fixed" style={{ height: window.innerHeight }} >
       <Row className='h-100 justify-content-md-center align-items-center px-2'>
         <Col className='zOnTop'>
+          <Button onClick={()=>{sessionStorage.clear(QUIZ_DATA); sessionStorage.clear(QUIZ_STATUS);}}>debug</Button>
           {(quizViewState === "") && <Button onClick={handleStartQuizClick} className="button">Starta Quiz?</Button>}
           {quizViewState === QUIZ_STATUS_BEGIN && <QuizStartFrame callback={startQuiz}  />}
           {/*quizViewState === QUIZ_STATUS_END && <Button onClick={handleCompletedClick}>Avsluta Quiz Debugg?</Button>*/}

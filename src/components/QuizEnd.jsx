@@ -8,6 +8,8 @@ import rightImage from "../images/bakgrunder/trad.png"; // right image path
 // Define a constant for storing quiz data in sessionStorage
 const QUIZ_DATA = "quizData";
 
+const QUIZ_STATUS = "quizStatus"
+
 // Define the functional component QuizEnd
 export default function QuizEnd() {
   // Define the style for the result card
@@ -18,19 +20,13 @@ export default function QuizEnd() {
   };
 
   // Retrieve quiz data from sessionStorage
-  try {
-    const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
-    
-  } catch (error) {
-    
-    
-  }
+  const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));;
 
   // Calculate the number of correct answers
   let correctCount = 0;
- // quizData.answers.forEach(
-   // (val, index) => val == quizData.questions[index].correctIndex && correctCount++
- // );
+  quizData.answers.forEach(
+    (val, index) => val == quizData.questions[index].correctIndex && correctCount++
+  );
 
   // Define the email state using the useState hook
   const [email, setEmail] = useState("");
@@ -45,6 +41,10 @@ export default function QuizEnd() {
     // Add code to handle sending results and email (placeholder: log to console)
     console.log("Resultat skickat till:", email);
   };
+
+  sessionStorage.setItem(QUIZ_STATUS, "")
+
+
 
   // JSX structure for rendering the QuizEnd component
   return (
@@ -61,7 +61,7 @@ export default function QuizEnd() {
           {/* Left column for result display */}
           <Col xs={9} className="text-center mb-4">
             <h1>Bra jobbat!</h1>
-            <p>Du fick {correctCount} av {/*quizData.questions.length*/} rätt!</p>
+            <p>Du fick {correctCount} av {quizData.questions.length} rätt!</p>
           </Col>
 
           {/* Center column for email input and result submission */}

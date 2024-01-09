@@ -13,19 +13,36 @@ export default function QuizQuestion({handleCompleted})
 
     function handleSubmit(e) {   
         e.preventDefault();   
+
+        console.log("HandleSubmit in QuizQuestion");
+        console.log(quizData);
+        console.log(`selectedValue = ${selectedValue}`)
+
         quizData.answers.push(selectedValue);
-        sessionStorage.setItem(QUIZ_DATA,JSON.stringify(quizData));
+
+        console.log(`answers = ${quizData.answers}`)
+
+        sessionStorage.setItem(QUIZ_DATA, JSON.stringify(quizData));
         setSelectedValue(-1);
+
+        const debug = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
+        console.log(debug);
+        console.log(debug.answers);
         if (quizData.answers.length>=quizData.questions.length)
         {
+            console.log(`Sending handleComplete answers=${quizData.answers.length} questions=${quizData.questions.length}`);
             handleCompleted();
         }
     }
 
+    console.log("Question Begin Render")
+
     const [selectedValue, setSelectedValue] = useState(-1);
     const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
 
-    sessionStorage.setItem(QUIZ_DATA, null); sessionStorage.setItem(QUIZ_STATUS, null)
+    console.log(quizData);
+
+    //sessionStorage.setItem(QUIZ_DATA, null); sessionStorage.setItem(QUIZ_STATUS, null)
    // {quizData.endTime != -1 && <CountdownTimer handleWaterLevel={handleWaterLevel} initialSeconds={120}/>}
 
     return (    

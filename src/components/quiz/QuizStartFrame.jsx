@@ -17,6 +17,8 @@ const QUIZ_STATUS_RUNNING = "running"
 
 export default function QuizStartFrame({callback}){
     const navigate = useNavigate();
+
+    console.log("StartFrame Begin Render")
     
     
     function handleStartEasyQuizClick(){
@@ -26,6 +28,9 @@ export default function QuizStartFrame({callback}){
             endTime: -1,  
         }
         
+        console.log("Easy started");
+        console.log(quizData);
+
         callback(quizData);
         navigate("/kunskapsportalen")
     }
@@ -37,6 +42,9 @@ export default function QuizStartFrame({callback}){
             endTime: new Date().valueOf() + 60000,  
         }
         
+        console.log("Hard started");
+        console.log(quizData);
+
         callback(quizData);
         navigate("/kunskapsportalen")
     }
