@@ -29,6 +29,11 @@ export default function App() {
   const handleQuizViewShown = (val) => setQuizViewShown(val);
 
   function determineQuizState() {
+    const quizData = setQuizData(JSON.parse(sessionStorage.getItem(QUIZ_DATA)));
+    if (!quizData || quizData.endTime - new Date().valueOf() < -10000)
+      {
+        setQuizViewShown(QUIZ_STATUS_END);
+      }
 
   }
 

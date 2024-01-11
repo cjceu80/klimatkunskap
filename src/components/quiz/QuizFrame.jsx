@@ -40,17 +40,19 @@ export default function QuizFrame({ setQuizViewShown }) {
     sessionStorage.setItem(QUIZ_STATUS, QUIZ_STATUS_RUNNING);
     sessionStorage.setItem(QUIZ_DATA, JSON.stringify(newQuizData));
     setQuizData(newQuizData);
+    setSeconds(60);
     setQuizViewShown(QUIZ_STATUS_RUNNING);
     setQuizViewState(QUIZ_STATUS_RUNNING);
   }
 
   function handleCompleted() {
-    console.log("Handle Completed recieved")
-    console.log(`quizViewState = ${quizViewState}`)
+    //console.log("Handle Completed recieved")
+    //console.log(`quizViewState = ${quizViewState}`)
+    sessionStorage.setItem(QUIZ_STATUS, QUIZ_STATUS_END)
+    setQuizData(JSON.parse(sessionStorage.getItem(QUIZ_DATA)))
+  
 
-    setQuizData(sessionStorage.getItem(QUIZ_DATA))
-
-    console.log(quizData)
+    //console.log(quizData)
 
     if (quizViewState)
     setWaterLevel(200);
@@ -66,105 +68,104 @@ export default function QuizFrame({ setQuizViewShown }) {
     setQuizViewShown("");
   }
 
-  function handleWaterLevel() {
-    let sec;
-    if (seconds == null) {
-      try {
-        setQuizData( JSON.parse(sessionStorage.getItem(QUIZ_DATA)));
-        
-      } catch (error) {
-        return 200;
+ function handleWaterLevel() {
+  let sec;
+  if (seconds == null) {{
+      const tmpQizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA))
+      if (tmpQizData != null)
+        setQuizData(tmpQizData);
       }
-      //console.log("handleWaterLevel quizData");
-      //console.log(quizData);
-      if (quizData == null)
-        return 200;
+
+
+    if (sessionStorage.getItem(QUIZ_STATUS) == "")
+      return 200;
+
+    try {
       sec = Math.trunc((quizData.endTime - new Date().valueOf() ) / 1000);
+          
+    } catch (error) {
+      sec = seconds;
     }
-      else sec = seconds;
-
       
-    const base = 200;
+  }
+  else {sec = seconds;}
+
+  const base = 200;
     
-    const step = (window.innerHeight - base) / 60;
+  const step = (window.innerHeight - base) / 60;
   
 
-    return (200 + ((60 - sec) * step))
-  }
+  return (200 + ((60 - sec) * step))
+}
 
-  function timeOut(){
-    /*const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
-    console.log("timeOut quizData");
-    console.log(quizData);*/
-    if (!quizData)
-      return false;
-    if (Math.trunc((quizData.endTime - new Date().valueOf()) ) <= 0)
-      return true;
-    return false;
-  }
-  
-  
-  function getWaterLevel() {
-    if (quizViewState ===QUIZ_STATUS_RUNNING)
+function getWaterLevel() {
+
+  if (quizViewState === QUIZ_STATUS_RUNNING)
     return waterLevel;
   return 200;
 }
 
 // Format the remaining time (e.g., “00:05:10” for 5 minutes and 10 seconds)
-  function formatTime(timeInSeconds) {
+function formatTime(timeInSeconds) {
   const roundedTime = Math.round(timeInSeconds)
-    const minutes = Math.floor(roundedTime / 60)
+  const minutes = Math.floor(roundedTime / 60)
     .toString()
     .padStart(2, "0");
-    const seconds = (roundedTime % 60).toString().padStart(2, "0");
-    return `${minutes}:${seconds}`;
-    };
+  const seconds = (roundedTime % 60).toString().padStart(2, "0");
+  return `${minutes}:${seconds}`;
+};
 
-  useEffect(() => {
-    // Exit early if countdown is finished
-    setWaterLevel(handleWaterLevel());
-    if (timeOut()) {
-      handleCompleted()
-      return;
-    }
-    if (seconds <= 0) {
-      handleCompleted();
-      return;
-    }
     
-    // Timer setup
-    const timer = setInterval(() => {
-      setSeconds((prevSeconds) => prevSeconds - 1);
-  }, 1000);
-  
-  // Timer clean up
-  return () => clearInterval(timer);
-}, [seconds]);
-
 //Remain at the same state when refreshing and navigating
 const quizStatus = sessionStorage.getItem(QUIZ_STATUS);
 if (quizViewState != QUIZ_STATUS_RUNNING && quizStatus === QUIZ_STATUS_RUNNING) {
   setQuizViewShown("");
   setQuizViewState(QUIZ_STATUS_RUNNING);
-  setQuizData(sessionStorage.getItem(QUIZ_DATA));
-
+  setQuizData(JSON.parse(sessionStorage.getItem(QUIZ_DATA)));
+  
   if (!quizData || quizData.endTime - new Date().valueOf() < -10000)
   {
-    setQuizViewShown(QUIZ_STATUS_END);
+    //setQuizViewShown(QUIZ_STATUS_END);
     setQuizViewState("");
   }
-
+  
 }
-
-if (quizViewState ===QUIZ_STATUS_RUNNING && seconds == null)
+    
+if (quizViewState === QUIZ_STATUS_RUNNING && (seconds == null || isNaN(seconds)) )
 {
   const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
   setSeconds(Math.trunc((quizData.endTime - new Date().valueOf() ) / 1000));
 }
+    
+useEffect(() => {
+  // Exit early if countdown is finished
+  setWaterLevel(handleWaterLevel());
+  
+  //if (seconds <= 0 ) {
+    if (sessionStorage.getItem(QUIZ_STATUS) !== QUIZ_STATUS_RUNNING){
 
+    return;
+  }
 
-  return (
-    <Col xs={5} sm={4} lg={3} className="quiz_frame align-content-bottom justify-content-bottom top-0 end-0 position-fixed" style={{ height: window.innerHeight }} >
+  if (seconds<=0){
+    handleCompleted()
+    return;
+  }
+  
+  // Timer setup
+  const timer = setInterval(() => {
+    setSeconds((prevSeconds) => prevSeconds - 1);
+  }, 1000);
+
+// Timer clean up
+  return () => clearInterval(timer);
+  }, [seconds]
+);
+    
+    let style = { width: WAVE_WIDTH, transition: "height 1000ms", position: "absolute", bottom: 0, height: getWaterLevel() };
+ 
+    return (
+      <Col xs={5} sm={4} lg={3} className="quiz_frame align-content-bottom justify-content-bottom top-0 end-0 position-fixed" style={{ height: window.innerHeight }} >
       <Row className='h-100 justify-content-md-center align-items-center px-2'>
         <Col className='zOnTop'>
           <Button onClick={()=>{sessionStorage.clear(QUIZ_DATA); sessionStorage.clear(QUIZ_STATUS);}}>debug</Button>
@@ -177,11 +178,12 @@ if (quizViewState ===QUIZ_STATUS_RUNNING && seconds == null)
       </Row>
       <Wave
       className='wave'
+      id='wave'
       fill='#a9ebf4'
-        paused={false}
-        style={{ width: WAVE_WIDTH, transition: "height 1000ms", height: getWaterLevel(), position: "absolute", bottom: 0 }}
-        options={{
-          container: "div",
+      paused={false}
+      style={style}
+      options={{
+        container: "div",
           height: 18,
           amplitude: 15,
           speed: 0.25,
@@ -191,7 +193,7 @@ if (quizViewState ===QUIZ_STATUS_RUNNING && seconds == null)
       <Wave
       className='wave' fill='#4cd6e7'
         paused={false}
-        style={{ width: WAVE_WIDTH, height: getWaterLevel(), position: "absolute", bottom: 0 }}
+        style={style}
         options={{
           height: 20,
           amplitude: 20,
