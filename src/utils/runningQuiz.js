@@ -1,7 +1,0 @@
-const quiz ={
-    startTime: "",
-    questions: [
-
-    ],
-}
-
