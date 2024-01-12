@@ -113,12 +113,12 @@ const questions = [
     ],
   },
   {
-    text: "Vad är skillnaden mellan vädret och klimatet?",
+    text: "Varför har koncentrationen av växthusgaser ökat?",
     correct:
-      "Vädret är kortvariga händelser, medan klimatet är genomsnittet över lång tid, 30 år eller mer.",
+      "Koncentrationen har ökat främst på grund av fossila bränslen och förändrad markanvändning.",
     alt: [
-      "Det finns ingen skillnad mellan vädret och klimatet.",
-      "Vädret och klimatet är samma sak och kan användas utbytbart.",
+      "Koncentrationen har minskat under de senaste åren.",
+      "Koncentrationen har ökat på grund av naturliga processer.",
     ],
   },
   {
