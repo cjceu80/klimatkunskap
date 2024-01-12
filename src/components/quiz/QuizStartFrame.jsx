@@ -3,6 +3,7 @@ import { Button, Stack } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 import { getQuestions } from '../../utils/staticQuestions';
+import { tempDiff } from '../../utils/dynamicQuestions';
 
 //Storage item names
 const QUIZ_DATA = "quizData";
@@ -30,18 +31,20 @@ export default function QuizStartFrame({callback}){
         
         console.log("Easy started");
         console.log(quizData);
+        sessionStorage.setItem("hard", "false")
 
         callback(quizData);
         navigate("/kunskapsportalen")
     }
 
     function handleStartHardQuizClick(){
+        tempDiff();
         const quizData = {
             questions: getQuestions(15),
             answers: [],
-            endTime: new Date().valueOf() + 60000,  
+            endTime: new Date().valueOf() + 60000,
         }
-        
+        sessionStorage.setItem("hard", "true")
         console.log("Hard started");
         console.log(quizData);
 

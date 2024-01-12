@@ -8,35 +8,36 @@ const QUIZ_STATUS = "quizStatus"
 
 const QUIZ_STATUS_END = "QuizEnd";
 
-export default function QuizQuestion({handleCompleted})
+export default function QuizQuestion({handleCompleted, seconds, setSeconds})
 { 
-
+    const [selectedValue, setSelectedValue] = useState(-1);
+    const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
+    
     function handleSubmit(e) {   
         e.preventDefault();   
-
-        //console.log("HandleSubmit in QuizQuestion");
-        //console.log(quizData);
-        //console.log(`selectedValue = ${selectedValue}`)
-
+        
+        console.log("nice try")
+            console.log(sessionStorage.getItem("hard"))
+            console.log(selectedValue)
+            console.log(quizData.questions[quizData.answers.length].correctIndex)
+        
+        if (sessionStorage.getItem("hard") === "true" && selectedValue != quizData.questions[quizData.answers.length].correctIndex)
+        {
+            const tmpTime = seconds - 10;
+            setSeconds(tmpTime)
+        }
         quizData.answers.push(selectedValue);
 
-        //console.log(`answers = ${quizData.answers}`)
 
         sessionStorage.setItem(QUIZ_DATA, JSON.stringify(quizData));
         setSelectedValue(-1);
 
-        const debug = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
-        //console.log(debug);
-        //console.log(debug.answers);
         if (quizData.answers.length>=quizData.questions.length)
         {
-            //console.log(`Sending handleComplete answers=${quizData.answers.length} questions=${quizData.questions.length}`);
             handleCompleted();
         }
     }
 
-    const [selectedValue, setSelectedValue] = useState(-1);
-    const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
     //console.log("Question Begin Render")
 
 

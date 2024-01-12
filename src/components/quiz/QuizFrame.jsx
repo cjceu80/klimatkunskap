@@ -115,6 +115,10 @@ function formatTime(timeInSeconds) {
   return `${minutes}:${seconds}`;
 };
 
+function handleSetSeconds(sec){
+  setSeconds(sec);
+}
+
     
 //Remain at the same state when refreshing and navigating
 const quizStatus = sessionStorage.getItem(QUIZ_STATUS);
@@ -140,6 +144,9 @@ if (quizViewState === QUIZ_STATUS_RUNNING && (seconds == null || isNaN(seconds))
 useEffect(() => {
   // Exit early if countdown is finished
   setWaterLevel(handleWaterLevel());
+
+    if (sessionStorage.getItem("hard") === "false")
+    return;
   
   //if (seconds <= 0 ) {
     if (sessionStorage.getItem(QUIZ_STATUS) !== QUIZ_STATUS_RUNNING){
@@ -172,8 +179,8 @@ useEffect(() => {
           {(quizViewState === "") && <Button onClick={handleStartQuizClick} className="button">Starta Quiz?</Button>}
           {quizViewState === QUIZ_STATUS_BEGIN && <QuizStartFrame callback={startQuiz}  />}
           {/*quizViewState === QUIZ_STATUS_END && <Button onClick={handleCompletedClick}>Avsluta Quiz Debugg?</Button>*/}
-          {(quizViewState === QUIZ_STATUS_RUNNING && seconds > 0) && <p>{formatTime(seconds)}</p>}
-          {quizViewState === QUIZ_STATUS_RUNNING && <QuizQuestion handleCompleted={handleCompleted} />}
+          {(quizViewState === QUIZ_STATUS_RUNNING && sessionStorage.getItem("hard") === "true" && seconds > 0) && <p>{formatTime(seconds)}</p>}
+          {quizViewState === QUIZ_STATUS_RUNNING && <QuizQuestion handleCompleted={handleCompleted} setSeconds={handleSetSeconds} seconds={seconds}/>}
         </Col>
       </Row>
       <Wave
