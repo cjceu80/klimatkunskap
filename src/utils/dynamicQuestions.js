@@ -4,8 +4,10 @@ import { getFormatedData } from "./Dataset4_Sea_Level";
 
 const multiples = [0.2, 0.4, 0.6, 0.8, 1.2, 1.5, 2, 2.5, 3, 5]
 
-
+//Provide array of random generated questions
 export function getDynamicQuestions(count){
+    
+    //Loops count times and 
     let questions = [];
     for (let i=0; i<count; i++){
         const rndQuestion = Math.floor(Math.random() * 3);
@@ -25,17 +27,14 @@ export function getDynamicQuestions(count){
 }
 
 
-export function makeQuestion(correct, text) {
+function makeQuestion(correct, text) {
    
     let tmpMultiples = [(multiples[Math.floor(Math.random() * multiples.length)]*correct).toFixed(2)];
-    console.log(tmpMultiples);
     while (tmpMultiples.length < 2) {
         let tmpIndex = Math.floor(Math.random() * multiples.length);
         if (tmpMultiples.indexOf(multiples[tmpIndex]) < 0){
             tmpMultiples.push((multiples[tmpIndex] * correct).toFixed(2))}
     }
-
-    console.log(tmpMultiples)
     
     const correctIndex=Math.floor(Math.random() * (tmpMultiples.length + 1))
     tmpMultiples.splice(correctIndex, 0, (correct).toFixed(2))
@@ -47,7 +46,7 @@ export function makeQuestion(correct, text) {
     }
 }
 
-export function tempDiff() {
+function tempDiff() {
     const data = getRawData()
     let firstYear = data[Math.floor(Math.random() * (data.length / 2) + data.length / 2 )];
     let secondYear = data[Math.floor(Math.random() * (data.length / 2))]
@@ -59,9 +58,8 @@ export function tempDiff() {
     return makeQuestion (correct, text);
 }
 
-export function resource(){
+function resource(){
     const data = getTotalRawData();
-    console.log(data)
     
     function getNonZero(key){
 
@@ -69,8 +67,6 @@ export function resource(){
         while (tmpYear[key] == 0)
         {
             tmpYear = data[Math.floor(Math.random() * (data.length))];
-            console.log(`tmpYear: ${tmpYear}`)
-            console.log(`key: ${key}`)
         }
         return tmpYear;
     }
@@ -103,7 +99,7 @@ export function resource(){
 
 }
 
-export function seaDiff(){
+function seaDiff(){
     const data = getFormatedData().data;
 
     const yearIndex = Math.floor(Math.random() * (data.length / 2 -10) + data.length / 2 -10);
@@ -112,17 +108,3 @@ export function seaDiff(){
 
     return makeQuestion(year.y - data[yearIndex + 10].y, text);
 }
-
-
-
-    //let secondYear = data[Math.floor(Math.random() * (data.length / 2))]
-    
-    //const text = `Hur stor var jordens temperaturskillnad i genomsnitt mellan år ${firstYear.Year} och ${secondYear.Year} i grader Celsius?`
-    
-   // const correct = Math.abs(firstYear.Mean-secondYear.Mean) ;
-
-    //return makeQuestion (correct, text);
-
-
-
-// const tmp =Math.floor(Math.random() * ((data.length + LOW_YEAR) / 2 - LOW_YEAR + 1) + LOW_YEAR)

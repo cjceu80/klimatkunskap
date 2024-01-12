@@ -46,7 +46,7 @@ export default function QuizFrame({ setQuizViewShown }) {
 
     //Set the variables for the quiz
     setQuizData(newQuizData);
-    setSeconds(60);
+    setSeconds(600);
     setQuizViewShown(QUIZ_STATUS_RUNNING);
     setQuizViewState(QUIZ_STATUS_RUNNING);
 
@@ -105,9 +105,9 @@ export default function QuizFrame({ setQuizViewShown }) {
   const base = 200;
 
   //Calculate step (per second) based on windowheight
-  const step = (window.innerHeight - base) / 60;
+  const step = (window.innerHeight - base) / 600;
   
-  return (200 + ((60 - sec) * step))
+  return (200 + ((600 - sec) * step))
 }
 
 //Called on the wave components style setup. Return waterlevel if running or start level if not
