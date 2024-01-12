@@ -157,16 +157,13 @@ const pageData = [
       },
       {
         caption: "Vill du veta mer?",
-        paragraphs: ["Länklista..."],
+        paragraphs: [" Om temperaturförändring på grund av utsläpp och upptag av växthusgaser i Sverige.","läs på följande  länk:"],
         links: [
           {
-            label: "",
-            url: "",
+            label: "Sveriges utsläpp och upptag av växthusgaser",
+            url: "https://www.naturvardsverket.se/data-och-statistik/klimat/sveriges-utslapp-och-upptag-av-vaxthusgaser/",
           },
-          {
-            label: "",
-            url: "",
-          },
+          
         ],
       },
     ],
