@@ -137,8 +137,9 @@ const pageData = [
         imageWidth: 3,
         caption: "Nämen se här!",
         paragraphs: [
-          "Diagrammet visar avvikelser i förhållande till temperaturgenomsnittet för perioden 1850-1900.",
-          "Global genomsnittlig yttemperatur i förhållande till genomsnittet 1850-1900 (Celisius)",
+          "Enligt diagrammet, effekterna av klimatförändringarna är omfattande och svåra att överblicka. ",
+          " Effekterna kan vara både direkta och indirekta. Jordbrukets produktion väntas minska i många regioner, men öka inom andra. ",
+          "Följden kan bli stora folkomflyttningar och konflikter om knappa mat- och vattenresurser."
         ],
         image: "/src/images/havsniva/DiagramPilUppat.png",
       },
