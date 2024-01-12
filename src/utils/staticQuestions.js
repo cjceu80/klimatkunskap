@@ -122,12 +122,12 @@ const questions = [
     ],
   },
   {
-    text: "Var kommer luftföroreningar ifrån?",
+    text: "Varför kan skyfallen förväntas bli kraftigare i framtiden?",
     correct:
-      "Luftföroreningar orsakas av fasta och flytande partiklar samt vissa gaser från källor som bil- och lastbilsavgaser, fabriker, damm, pollen, mögelsporer, vulkaner och skogsbränder.",
+      "Extremväder, som kraftiga skyfall, förväntas öka i framtiden.",
     alt: [
-      "Luftföroreningar är naturliga och har ingen mänsklig påverkan.",
-      "Luftföroreningar uppstår endast från fabriker och inte andra källor.",
+      "Skyfallen kommer att minska på grund av klimatförändringar.",
+      "Extremväder påverkar inte nederbörden.",
     ],
   },
   {
