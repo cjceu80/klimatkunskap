@@ -17,53 +17,62 @@ const QUIZ_STATUS_RUNNING = "running"
 
 
 export default function QuizStartFrame({callback}){
-    const navigate = useNavigate();
-
-    console.log("StartFrame Begin Render")
+    const navigate = useNavigate();  
     
-    
+    //Handle and setyp start of easy quiz.
     function handleStartEasyQuizClick(){
-        let questions = getQuestions(8)
+
+        //Initialize static questions
+        let questions = getQuestions(8);
+
+        //Blend with dynamic questions
         const dynamicQuestions = getDynamicQuestions(2);
         dynamicQuestions.forEach((value) => {
-        const index = Math.floor(Math.random() * (questions.length + 1));
-        questions.splice(index, 0, value);
-    });
-        const quizData = {
-            questions: questions,
-            answers: [],
-            endTime: -1,  
-        }
-        
-        console.log("Easy started");
-        console.log(quizData);
-        sessionStorage.setItem("hard", "false")
+            const index = Math.floor(Math.random() * (questions.length + 1));
+            questions.splice(index, 0, value);
+        });
 
-        callback(quizData);
-        navigate("/kunskapsportalen")
+    //Set variable that disable timer when easy
+    sessionStorage.setItem("hard", "false")
+    
+    //Blend with dynamic questions
+    const quizData = {
+        questions: questions,
+        answers: [],
+        endTime: -1,  
+    };
+
+    //Send quizData to parent and navigate to portal page
+    callback(quizData);
+    navigate("/kunskapsportalen");
     }
 
+    //Handle and setyp start of easy quiz.
     function handleStartHardQuizClick(){
-        let questions = getQuestions(10)
+
+        //Initialize static questions
+        let questions = getQuestions(10);
+
+        //Blend with dynamic questions
         const dynamicQuestions = getDynamicQuestions(5);
         dynamicQuestions.forEach((value) => {
-        const index = Math.floor(Math.random() * (questions.length + 1));
-        questions.splice(index, 0, value);
-}
-        )
-console.log(questions);
-
+            const index = Math.floor(Math.random() * (questions.length + 1));
+            questions.splice(index, 0, value);
+        });
+        
+        //Set variable that enable timer when hard
+        sessionStorage.setItem("hard", "true");
+        
+        //Blend with dynamic questions
         const quizData = {
             questions: questions,
             answers: [],
             endTime: new Date().valueOf() + 60000,
-        }
-        sessionStorage.setItem("hard", "true")
-        console.log("Hard started");
-        console.log(quizData);
-
+        };
+        
+        //Send quizData to parent and navigate to portal page
         callback(quizData);
-        navigate("/kunskapsportalen")
+        navigate("/kunskapsportalen");
     }
 
     return (
