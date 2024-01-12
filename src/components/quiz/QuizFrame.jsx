@@ -197,11 +197,7 @@ useEffect(() => {
  
     return (
       <Col xs={5} sm={4} lg={3} className="quiz_frame align-content-bottom justify-content-bottom top-0 end-0 position-fixed" style={{ height: window.innerHeight }} >
-        {<button className="button" onClick={(e)=> {e.preventDefault(); handleAbort(); navigate("/kunskapsportalen");} } >
-              Avbryt Quiz
-            </button>}
       <Row className='h-100 justify-content-md-center align-items-center px-2'>
-        <Row><Col></Col></Row>
         <Col className='zOnTop'>
         
           {/*<Button onClick={()=>{sessionStorage.clear(QUIZ_DATA); sessionStorage.clear(QUIZ_STATUS);}}>debug</Button>*/}

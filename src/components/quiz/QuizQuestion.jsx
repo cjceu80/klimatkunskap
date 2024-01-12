@@ -49,9 +49,6 @@ export default function QuizQuestion({handleCompleted, seconds, setSeconds, hand
 
             {quizData.questions[quizData.answers.length].alt.map((element, index) => <Form.Check type="radio" checked={selectedValue == index} onChange={() => setSelectedValue(index)} name="answer" label={element} key={index} />)}
             <Button type="submit" disabled={selectedValue < 0} className="button">Nästa fråga</Button>
-            {<button className="button" onClick={(e)=> {e.preventDefault(); handleAbort(); navigate("/kunskapsportalen");} } >
-              Avbryt Quiz
-            </button>}
         </Form>
     </>
     );
