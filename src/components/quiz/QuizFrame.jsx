@@ -15,9 +15,11 @@ const QUIZ_STATUS_BEGIN = "QuizBegin";
 const QUIZ_STATUS_END = "QuizEnd";
 const QUIZ_STATUS_RUNNING = "running"
 
+const CLOSE_ICON = "\u2716"; // Unicode character for a multiplication sign (X)
+
 //When all else fails, just run this.
 //debugReset(); 
-function debugReset(){
+function handleAbort(){
   sessionStorage.setItem(QUIZ_STATUS, "");
   sessionStorage.setItem(QUIZ_DATA, null)
 }
@@ -168,7 +170,7 @@ useEffect(() => {
   if (sessionStorage.getItem("hard") === "false")
   return;
 
-  //if (seconds <= 0 ) {
+  //Disable when no quiz is running
   if (sessionStorage.getItem(QUIZ_STATUS) !== QUIZ_STATUS_RUNNING){
     
     return;
@@ -195,13 +197,18 @@ useEffect(() => {
  
     return (
       <Col xs={5} sm={4} lg={3} className="quiz_frame align-content-bottom justify-content-bottom top-0 end-0 position-fixed" style={{ height: window.innerHeight }} >
+        {<button className="button" onClick={(e)=> {e.preventDefault(); handleAbort(); navigate("/kunskapsportalen");} } >
+              Avbryt Quiz
+            </button>}
       <Row className='h-100 justify-content-md-center align-items-center px-2'>
+        <Row><Col></Col></Row>
         <Col className='zOnTop'>
-          <Button onClick={()=>{sessionStorage.clear(QUIZ_DATA); sessionStorage.clear(QUIZ_STATUS);}}>debug</Button>
+        
+          {/*<Button onClick={()=>{sessionStorage.clear(QUIZ_DATA); sessionStorage.clear(QUIZ_STATUS);}}>debug</Button>*/}
           {(quizViewState === "") && <Button onClick={handleStartQuizClick} className="button">Starta Quiz?</Button>}
           {quizViewState === QUIZ_STATUS_BEGIN && <QuizStartFrame callback={startQuiz}  />}
           {(quizViewState === QUIZ_STATUS_RUNNING && sessionStorage.getItem("hard") === "true" && seconds > 0) && <p>{formatTime(seconds)}</p>}
-          {quizViewState === QUIZ_STATUS_RUNNING && <QuizQuestion handleCompleted={handleCompleted} setSeconds={handleSetSeconds} seconds={seconds}/>}
+          {quizViewState === QUIZ_STATUS_RUNNING && <QuizQuestion handleCompleted={handleCompleted} setSeconds={handleSetSeconds} handleAbort={handleAbort} seconds={seconds}/>}
         </Col>
       </Row>
       <Wave
