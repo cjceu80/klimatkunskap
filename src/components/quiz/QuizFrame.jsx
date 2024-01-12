@@ -18,7 +18,7 @@ const QUIZ_STATUS_RUNNING = "running"
 const WAVE_WIDTH = "100%";
 
 
-//debugReset();
+debugReset();
 function debugReset(){
   sessionStorage.setItem(QUIZ_STATUS, "");
   sessionStorage.setItem(QUIZ_DATA, null)

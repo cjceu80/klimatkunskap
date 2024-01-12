@@ -3,7 +3,7 @@ import { Button, Stack } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 import { getQuestions } from '../../utils/staticQuestions';
-import { tempDiff } from '../../utils/dynamicQuestions';
+import { getDynamicQuestions } from '../../utils/dynamicQuestions';
 
 //Storage item names
 const QUIZ_DATA = "quizData";
@@ -23,8 +23,14 @@ export default function QuizStartFrame({callback}){
     
     
     function handleStartEasyQuizClick(){
+        let questions = getQuestions(8)
+        const dynamicQuestions = getDynamicQuestions(2);
+        dynamicQuestions.forEach((value) => {
+        const index = Math.floor(Math.random() * (questions.length + 1));
+        questions.splice(index, 0, value);
+    });
         const quizData = {
-            questions: getQuestions(10),
+            questions: questions,
             answers: [],
             endTime: -1,  
         }
@@ -38,9 +44,17 @@ export default function QuizStartFrame({callback}){
     }
 
     function handleStartHardQuizClick(){
-        tempDiff();
+        let questions = getQuestions(10)
+        const dynamicQuestions = getDynamicQuestions(5);
+        dynamicQuestions.forEach((value) => {
+        const index = Math.floor(Math.random() * (questions.length + 1));
+        questions.splice(index, 0, value);
+}
+        )
+console.log(questions);
+
         const quizData = {
-            questions: getQuestions(15),
+            questions: questions,
             answers: [],
             endTime: new Date().valueOf() + 60000,
         }

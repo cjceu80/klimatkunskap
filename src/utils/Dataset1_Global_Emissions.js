@@ -1,3 +1,6 @@
+export function getTotalRawData(){
+  return data;
+}
 
 export function getRawYearData(year) {
   return data.find((dataYear) => dataYear.Year == year);
