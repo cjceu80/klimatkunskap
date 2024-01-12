@@ -77,7 +77,7 @@ const pageData = [
         imageWidth: 2,
         caption: "Såg du?",
         paragraphs: [
-          "I diagrammet kan man se hur mycket havsnivån stigit. Mellan 1980 och 2010 så har havsnivån stigit med t.ex. 0,8dm. Det är sedan dina föräldrar var född tills idag, galet va?",
+          "I diagrammet kan man se hur mycket havsnivån stigit. Mellan  1980 och 2010 så har havsnivån stigit med t.ex. 0,8dm. Det är sedan dina föräldrar var född tills idag, galet va?",
         ],
       },
       {
@@ -153,14 +153,14 @@ const pageData = [
         image: "/src/images/havsniva/ideLampa.png",
         imageWidth: 2,
         caption: "Såg du?",
-        paragraphs: ["I diagrammet kan man se "],
+        paragraphs: ["I diagrammet kan man se temperaturförändring i samband med utsläppsändringar mellan tidsperiod  1900 och 1980, vilket har orsakat oerhört mycket värmeeffekt på jorden."],
       },
       {
         caption: "Vill du veta mer?",
         paragraphs: [" Om temperaturförändring på grund av utsläpp och upptag av växthusgaser i Sverige.","läs på följande  länk:"],
         links: [
           {
-            label: "Sveriges utsläpp och upptag av växthusgaser",
+            label: "Sveriges utsläpp och upptag av växthusgaser",  
             url: "https://www.naturvardsverket.se/data-och-statistik/klimat/sveriges-utslapp-och-upptag-av-vaxthusgaser/",
           },
           
