@@ -2,8 +2,10 @@
 import React, { useState } from "react";
 import backgroundImg from "../images/Bakgrund_cleanArtboard_1.jpg";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
+import Login from "./Login";
 import leftImage from "../images/bakgrunder/fyrverkerier.png"; // left image path
 import rightImage from "../images/bakgrunder/trad.png"; // right image path
+import { useUserAuth } from "../utils/UserAuthContext";
 
 // Define a constant for storing quiz data in sessionStorage
 const QUIZ_DATA = "quizData";
@@ -30,11 +32,20 @@ export default function QuizEnd() {
 
   // Define the email state using the useState hook
   const [email, setEmail] = useState("");
+  const [loginActive, setLoginActive] = useState(false)
+  
+  const { logOut, user } = useUserAuth();
 
   // Event handler for changes to the email input
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
+
+  function toggleLogin()
+{
+  const oldState = loginActive;
+  setLoginActive(!oldState);
+}
 
   // Event handler for sending results and email
   const handleSendResult = () => {
@@ -80,10 +91,11 @@ export default function QuizEnd() {
                   style={{ marginBottom: "5px" }} 
                 />
               </Form.Group>
-              <Button
+ 
+                <Button
                 variant="success"
                 style={{ borderRadius: "50px" , marginBottom: "-15px"}}
-                onClick={handleSendResult}
+                onClick={() => {} }
               >
                 <h4>Skicka resultat</h4>
               </Button>
@@ -94,20 +106,40 @@ export default function QuizEnd() {
           {/* Right column for additional information and login button */}
           <Col lg={5} xl={5}>
             <Col xs={2} className="text-center mb-4">
-              <img src={rightImage} alt="Right Image" style={{ width: "100%", marginRight:"-600px",  }} />
+              {(!loginActive || user) &&<img src={rightImage} alt="Right Image" style={{ width: "100%", marginRight:"-600px",  }} />}
             </Col>
+            {!loginActive ?
+            
             <Card className="p-4" style={cardStyle}>
               <h4>Om du loggar in kan du spara eller dela ditt resultat</h4>
               
               <Button
                 variant="success"
                 style={{ borderRadius: "50px", marginBottom: "-1px" }}
-                onClick={()=>null} // Placeholder not causing issues
+                onClick={()=>toggleLogin()} // Placeholder not causing issues
               >
                <h4>Logga in</h4>
               </Button>
               <p></p>
-            </Card>
+            </Card> :
+            
+            (!user ?
+              <Card className=" top-0 end-0 position-relative" style={cardStyle}><Login /></Card>
+              :
+              <Card className="p-4" style={cardStyle}>
+                <h3>Du är nu inloggad som {user.email}</h3>
+                <p>Vill du registrera in ditt result?</p>
+ 
+                <Button
+                variant="success"
+                style={{ borderRadius: "50px" , marginBottom: "-15px"}}
+                onClick={() => {} }
+              >
+                <h4>Registrera resultat</h4>
+              </Button>
+              </Card>
+              )
+            }
           </Col>
         </Row>
       </Container>
