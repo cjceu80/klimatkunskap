@@ -15,7 +15,8 @@ const QUIZ_STATUS_BEGIN = "QuizBegin";
 const QUIZ_STATUS_END = "QuizEnd";
 const QUIZ_STATUS_RUNNING = "running"
 
-const CLOSE_ICON = "\u2716"; // Unicode character for a multiplication sign (X)
+//Length of quiz in seconds
+const QUIZ_LENGTH = 600;
 
 //When all else fails, just run this.
 //handleAbort(); 
@@ -46,7 +47,7 @@ export default function QuizFrame({ setQuizViewShown }) {
 
     //Set the variables for the quiz
     setQuizData(newQuizData);
-    setSeconds(600);
+    setSeconds(QUIZ_LENGTH);
     setQuizViewShown(QUIZ_STATUS_RUNNING);
     setQuizViewState(QUIZ_STATUS_RUNNING);
 
@@ -105,9 +106,9 @@ export default function QuizFrame({ setQuizViewShown }) {
   const base = 200;
 
   //Calculate step (per second) based on windowheight
-  const step = (window.innerHeight - base) / 600;
+  const step = (window.innerHeight - base) / QUIZ_LENGTH;
   
-  return (200 + ((600 - sec) * step))
+  return (200 + ((QUIZ_LENGTH - sec) * step))
 }
 
 //Called on the wave components style setup. Return waterlevel if running or start level if not
@@ -138,12 +139,10 @@ function handleSetSeconds(sec){
   setSeconds(sec);
 }
 
-console.log("begin render frame")
     
 //Remain at the same state when refreshing and navigating
 const quizStatus = sessionStorage.getItem(QUIZ_STATUS);
 
-console.log("begin check for not running state and running status")
 //Initial variable check and setup on starting to render
 if (quizViewState != QUIZ_STATUS_RUNNING && quizStatus === QUIZ_STATUS_RUNNING) {
   setQuizViewShown("");

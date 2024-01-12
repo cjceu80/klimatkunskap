@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 //Storage item names
 const QUIZ_DATA = "quizData";
 
+//Time punishment for error
+const QUIZ_PUNISHMENT = 10;
 
 export default function QuizQuestion({handleCompleted, seconds, setSeconds, handleAbort})
 { 
@@ -20,7 +22,7 @@ export default function QuizQuestion({handleCompleted, seconds, setSeconds, hand
         //Check for hard and decrease time to end if wrong answer is submitted
         if (sessionStorage.getItem("hard") === "true" && selectedValue != quizData.questions[quizData.answers.length].correctIndex)
         {
-            const tmpTime = seconds - 10;
+            const tmpTime = seconds - QUIZ_PUNISHMENT;
             setSeconds(tmpTime)
         }
         quizData.answers.push(selectedValue);
