@@ -18,7 +18,7 @@ const QUIZ_STATUS_RUNNING = "running"
 const CLOSE_ICON = "\u2716"; // Unicode character for a multiplication sign (X)
 
 //When all else fails, just run this.
-//debugReset(); 
+//handleAbort(); 
 function handleAbort(){
   sessionStorage.setItem(QUIZ_STATUS, "");
   sessionStorage.setItem(QUIZ_DATA, null)
@@ -47,6 +47,7 @@ export default function QuizFrame({ setQuizViewShown }) {
     //Set the variables for the quiz
     setQuizData(newQuizData);
     setSeconds(60);
+    setQuizViewShown(QUIZ_STATUS_RUNNING);
     setQuizViewState(QUIZ_STATUS_RUNNING);
 
     //Callback to app
@@ -111,7 +112,7 @@ export default function QuizFrame({ setQuizViewShown }) {
 
 //Called on the wave components style setup. Return waterlevel if running or start level if not
 function getWaterLevel() {
-  if (quizViewState === QUIZ_STATUS_RUNNING)
+  if (quizViewState === QUIZ_STATUS_RUNNING && sessionStorage.getItem("hard") === "true")
     return waterLevel;
   return 200;
 }
@@ -137,22 +138,17 @@ function handleSetSeconds(sec){
   setSeconds(sec);
 }
 
+console.log("begin render frame")
     
 //Remain at the same state when refreshing and navigating
 const quizStatus = sessionStorage.getItem(QUIZ_STATUS);
 
+console.log("begin check for not running state and running status")
 //Initial variable check and setup on starting to render
 if (quizViewState != QUIZ_STATUS_RUNNING && quizStatus === QUIZ_STATUS_RUNNING) {
   setQuizViewShown("");
   setQuizViewState(QUIZ_STATUS_RUNNING);
   setQuizData(JSON.parse(sessionStorage.getItem(QUIZ_DATA)));
-  
-  //A timeout for easy mode when the user have been away for long.
-  if (!quizData || quizData.endTime - new Date().valueOf() < -10000)
-  {
-    setQuizViewState("");
-  }
-  
 }
     
 //Catches some time errors and buggs when refreshing pages when running hard mode
