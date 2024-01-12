@@ -104,12 +104,12 @@ const questions = [
   },
   //Jag hittar inte svar till f;ljande 4 fr[gor p[ inneh[llssidan - Jonas
   {
-    text: "Varför är kol viktigt för jordens temperatur?",
+    text: "Har temperaturen förändrats på vår planet?",
     correct:
-      "Kol finns i koldioxid, en växthusgas som fångar värme nära jorden.",
+      "Ja, global medeltemperatur har ökat snabbare sedan 1970 än under de senaste 2 000 åren och är idag på en nivå som antagligen inte setts på 125 000 år.",
     alt: [
-      " Kol har ingen påverkan på jordens temperatur.",
-      "Kol gör att jorden blir kallare.",
+      "Nej, temperaturen på jorden förändras aldrig. ",
+      "Temperaturen har minskat stadigt de senaste decennierna.",
     ],
   },
   {
