@@ -137,9 +137,9 @@ const pageData = [
         imageWidth: 3,
         caption: "Nämen se här!",
         paragraphs: [
-          "Enligt diagrammet, effekterna av klimatförändringarna är omfattande och svåra att överblicka. ",
-          " Effekterna kan vara både direkta och indirekta. Jordbrukets produktion väntas minska i många regioner, men öka inom andra. ",
-          "Följden kan bli stora folkomflyttningar och konflikter om knappa mat- och vattenresurser."
+          " Diagrammet visar en lilafärgad kurvig linje, som representerar temperaturökningen i grader i förhållande till året, och en rödfärgad kurvig linje som visar utsläpp.",
+          " ",
+          ""
         ],
         image: "/src/images/havsniva/DiagramPilUppat.png",
       },
