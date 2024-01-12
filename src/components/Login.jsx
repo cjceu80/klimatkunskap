@@ -80,6 +80,13 @@ export default function Login({close}) {
       <div className="p-4 box mt-3 text-center">
         Har du inget konto? <Link to="/signup">Registrera konto</Link>
       </div>
+      <div className="p-4 box mt-3">
+    <h3>Behandling av personuppgifter</h3>
+    <p>
+      Vi tar din integritet på allvar. All hantering av personuppgifter sker i enlighet med gällande dataskyddslagar. Vi samlar endast in personuppgifter som är nödvändiga för att tillhandahålla våra tjänster och förbättra din användarupplevelse.
+    </p>
+  </div>
+
     </>
   );
 }
