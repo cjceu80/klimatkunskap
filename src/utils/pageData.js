@@ -313,10 +313,8 @@ const pageData = [
         ],
       },
       {
-        imageWidth: 3,
         caption: "Diagram!",
         graph: true,
-        paragraphs: [],
       },
       {
         image: "/src/images/havsniva/ideLampa.png",

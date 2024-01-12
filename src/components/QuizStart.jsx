@@ -9,7 +9,7 @@ export default function QuizStart() {
     const cardStyle = {
         background: "rgba(255, 255, 255, 0.7)", // 0.7 represents 70% transparency
         borderRadius: "25px",
-        height: "400px", 
+        height: "450px", 
         
       };
     return (
@@ -42,7 +42,8 @@ export default function QuizStart() {
                 <br/><br/>
                 <h2>Spelregler</h2>
                 <p>Antal frågor: 15 frågor</p>
-                <p>Du har 15 minuter på dig</p>
+                <p>Du har 10 minuter på dig</p>
+                <p>Fel svar straffas med 20 sekunder</p>
             </Card>
             </Col>
         </Row>

@@ -2,9 +2,10 @@
 import React, { useState } from "react";
 import backgroundImg from "../images/Bakgrund_cleanArtboard_1.jpg";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
+import Login from "./Login";
 import leftImage from "../images/bakgrunder/fyrverkerier.png"; // left image path
 import rightImage from "../images/bakgrunder/trad.png"; // right image path
-import Login from "./Login";
+import { useUserAuth } from "../utils/UserAuthContext";
 
 // Define a constant for storing quiz data in sessionStorage
 const QUIZ_DATA = "quizData";
@@ -29,32 +30,31 @@ export default function QuizEnd() {
     (val, index) => val == quizData.questions[index].correctIndex && correctCount++
   );
 
-  /* Define the email state using the useState hook
+  // Define the email state using the useState hook
   const [email, setEmail] = useState("");
+  const [loginActive, setLoginActive] = useState(false)
+  
+  const { logOut, user } = useUserAuth();
 
   // Event handler for changes to the email input
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
 
+  function toggleLogin()
+{
+  const oldState = loginActive;
+  setLoginActive(!oldState);
+}
+
   // Event handler for sending results and email
   const handleSendResult = () => {
     // Add code to handle sending results and email (placeholder: log to console)
     console.log("Resultat skickat till:", email);
   };
-*/
+
   sessionStorage.setItem(QUIZ_STATUS, "")
 
- // Email template for sending results via email with custom subject and body
-  const Mailto = ({ email, subject = '', body = '', children }) => {
-    let params = subject || body ? '?' : '';
-    if (subject) params += `subject=${encodeURIComponent(subject)}`;
-    if (body) params += `${subject ? '&' : ''}body=${encodeURIComponent(body)}`;
-
-    return <Button className="button" href={`mailto:${email}${params}`} style={{ borderRadius: "50px", marginBottom: "-15px" }}>{children}</Button>;
-  };
-  // Line to be sent with email to show how many correct answers user got
-  const sendCorrect = `Jag fick ${correctCount} rätt av ${quizData.questions.length} möjliga.`;
 
 
   // JSX structure for rendering the QuizEnd component
@@ -71,7 +71,7 @@ export default function QuizEnd() {
         <Row className="justify-content-md-center align-items-center h-100">
           {/* Left column for result display */}
           <Col xs={9} className="text-center mb-4">
-            <h1>Bra kämpat!</h1>
+            <h1>Bra jobbat!</h1>
             <p>Du fick {correctCount} av {quizData.questions.length} rätt!</p>
           </Col>
 
@@ -81,34 +81,65 @@ export default function QuizEnd() {
               <img src={leftImage} alt="Left Image" style={{ width: "100%" }} />
             </Col>
             <Card style={cardStyle} className="p-4">
-            <h4>Här kan du mejla ditt resultat till vem du vill</h4>
-               <Mailto email="" subject="Här är mina resultat i KlimatKunskap" body={sendCorrect}>
-                Mejla resultat!
-              </Mailto>
+              <Form.Group controlId="formEmail">
+               <h4><Form.Label>Din e-post</Form.Label></h4>
+                <Form.Control
+                  type="email"
+                  placeholder="Skriv din e-post här"
+                  value={email}
+                  onChange={handleEmailChange}
+                  style={{ marginBottom: "5px" }} 
+                />
+              </Form.Group>
+ 
+                <Button
+                variant="success"
+                style={{ borderRadius: "50px" , marginBottom: "-15px"}}
+                onClick={() => {} }
+              >
+                <h4>Skicka resultat</h4>
+              </Button>
               <p></p>
             </Card>
-
           </Col>
-
+          
           {/* Right column for additional information and login button */}
           <Col lg={5} xl={5}>
             <Col xs={2} className="text-center mb-4">
-              <img src={rightImage} alt="Right Image" style={{ width: "100%", marginRight: "-600px", }} />
+              {(!loginActive || user) &&<img src={rightImage} alt="Right Image" style={{ width: "100%", marginRight:"-600px",  }} />}
             </Col>
+            {!loginActive ?
+            
             <Card className="p-4" style={cardStyle}>
-              <h4>Loggar in för att spara ditt resultat</h4>
-
+              <h4>Om du loggar in kan du spara eller dela ditt resultat</h4>
+              
               <Button
                 variant="success"
                 style={{ borderRadius: "50px", marginBottom: "-1px" }}
-                onClick={()=>null} // Placeholder not causing issues
-                className="button"
+                onClick={()=>toggleLogin()} // Placeholder not causing issues
               >
-                <h4>login</h4>
+               <h4>Logga in</h4>
               </Button>
-
               <p></p>
-            </Card>
+            </Card> :
+            
+            (!user ?
+              <Card className=" top-0 end-0 position-relative" style={cardStyle}><Login /></Card>
+              :
+              <Card className="p-4" style={cardStyle}>
+                <h3>Du är nu inloggad som {user.email}</h3>
+                <p>Vill du registrera in ditt result?</p>
+ 
+                <Button
+                variant="success"
+                style={{ borderRadius: "50px" , marginBottom: "-15px"}}
+                onClick={() => {} }
+              >
+                <h4>Registrera resultat</h4>
+              </Button>
+              </Card>
+              )
+            }
           </Col>
         </Row>
       </Container>

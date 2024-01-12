@@ -82,9 +82,9 @@ export default function Login({close}) {
       </div>
       <div className="p-4 box mt-3">
     <h3>Behandling av personuppgifter</h3>
-    <p>
+    <p><small>
       Vi tar din integritet på allvar. All hantering av personuppgifter sker i enlighet med gällande dataskyddslagar. Vi samlar endast in personuppgifter som är nödvändiga för att tillhandahålla våra tjänster och förbättra din användarupplevelse.
-    </p>
+      </small></p>
   </div>
 
     </>

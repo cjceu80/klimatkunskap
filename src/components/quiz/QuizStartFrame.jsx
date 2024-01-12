@@ -67,7 +67,7 @@ export default function QuizStartFrame({callback}){
         const quizData = {
             questions: questions,
             answers: [],
-            endTime: new Date().valueOf() + 60000,
+            endTime: new Date().valueOf() + 20000,
         };
         
         //Send quizData to parent and navigate to portal page
