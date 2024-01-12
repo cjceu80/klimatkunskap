@@ -13,14 +13,11 @@ export default function QuizQuestion({handleCompleted, seconds, setSeconds})
     const [selectedValue, setSelectedValue] = useState(-1);
     const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
     
+    //Handle the next question button click
     function handleSubmit(e) {   
         e.preventDefault();   
         
-        console.log("nice try")
-            console.log(sessionStorage.getItem("hard"))
-            console.log(selectedValue)
-            console.log(quizData.questions[quizData.answers.length].correctIndex)
-        
+        //Check for hard and decrease time to end if wrong answer is submitted
         if (sessionStorage.getItem("hard") === "true" && selectedValue != quizData.questions[quizData.answers.length].correctIndex)
         {
             const tmpTime = seconds - 10;
@@ -28,23 +25,18 @@ export default function QuizQuestion({handleCompleted, seconds, setSeconds})
         }
         quizData.answers.push(selectedValue);
 
-
+        //Store quizData with new answer.
         sessionStorage.setItem(QUIZ_DATA, JSON.stringify(quizData));
+
+        //Unselect radiobutton
         setSelectedValue(-1);
 
+        //Callback to parent when all questions are answered
         if (quizData.answers.length>=quizData.questions.length)
         {
             handleCompleted();
         }
     }
-
-    //console.log("Question Begin Render")
-
-
-    //console.log(quizData);
-
-    //sessionStorage.setItem(QUIZ_DATA, null); sessionStorage.setItem(QUIZ_STATUS, null)
-   // {quizData.endTime != -1 && <CountdownTimer handleWaterLevel={handleWaterLevel} initialSeconds={120}/>}
 
     return (    
     <>
@@ -55,7 +47,6 @@ export default function QuizQuestion({handleCompleted, seconds, setSeconds})
             {quizData.questions[quizData.answers.length].alt.map((element, index) => <Form.Check type="radio" checked={selectedValue == index} onChange={() => setSelectedValue(index)} name="answer" label={element} key={index} />)}
             <Button type="submit" disabled={selectedValue < 0} className="button">Nästa fråga</Button>
         </Form>
-       {/* <button onClick={()=> {sessionStorage.setItem(QUIZ_DATA, null); sessionStorage.setItem(QUIZ_STATUS, null)}} className="button">Debug... Avbryt</button>*/}
     </>
     );
 }

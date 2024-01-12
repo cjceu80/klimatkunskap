@@ -223,7 +223,9 @@ const pageData = [
         image: "/src/images/havsniva/DiagramPilUppat.png",
         imageWidth: 3,
         caption: "Nämen se här!",
-        paragraphs: ["Nedan ser du hur det har förändrats historiskt"],
+        paragraphs: [
+          "Nedan i diagrammet kan du se hur användandet av total mängd fossilt bränsle har förändrats historiskt från 1800-talet till 2000-talet. Du kan ändra och se skillnaden själv genom att röra på den blåa pricken längst ner i diagrammet vänster till höger!",
+        ],
       },
       {
         image: "",
@@ -235,15 +237,18 @@ const pageData = [
         image: "/src/images/havsniva/ideLampa.png",
         imageWidth: 2,
         caption: "Såg du?",
-        paragraphs: ["I diagrammet kan man se"],
+        paragraphs: [
+          "I diagrammet kan man se statistik på totalt koldioxidutsläpp i ton mellan år 1880 till år 2010.",
+        ],
       },
       {
-        caption: "Vill du veta mer?",
-        paragraphs: ["Länklista"],
+        caption:
+          "Vill du veta mer om hur fossila bränslen orsakar klimatförändringar?",
+        paragraphs: [""],
         links: [
           {
-            label: "",
-            url: "",
+            label: "Klimatförändringar orsakade av människan - SMHI",
+            url: "https://www.smhi.se/kunskapsbanken/klimat/klimatpaverkan/klimatforandringar-orsakade-av-manniskan-1.3833",
           },
           {
             label: "",

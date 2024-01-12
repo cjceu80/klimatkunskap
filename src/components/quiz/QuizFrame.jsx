@@ -15,10 +15,8 @@ const QUIZ_STATUS_BEGIN = "QuizBegin";
 const QUIZ_STATUS_END = "QuizEnd";
 const QUIZ_STATUS_RUNNING = "running"
 
-const WAVE_WIDTH = "100%";
-
-
-debugReset();
+//When all else fails, just run this.
+//debugReset(); 
 function debugReset(){
   sessionStorage.setItem(QUIZ_STATUS, "");
   sessionStorage.setItem(QUIZ_DATA, null)
@@ -30,91 +28,109 @@ export default function QuizFrame({ setQuizViewShown }) {
   const [seconds, setSeconds] = useState();
   const [waterLevel, setWaterLevel] = useState(handleWaterLevel);
 
-
+  //Handle on click to the start quiz button.
   function handleStartQuizClick(e) {
+    //Callback to app that quest dificulty is beeing chosen
     setQuizViewShown(QUIZ_STATUS_BEGIN);
+    //Set the frame to show quest option buttons
     setQuizViewState(QUIZ_STATUS_BEGIN);
   }
 
+  //Starts the quiz, sent as callback to QuizStartFrame which provide a quizData object
   function startQuiz(newQuizData) {
+    //Store status for quiz to work while browsing
     sessionStorage.setItem(QUIZ_STATUS, QUIZ_STATUS_RUNNING);
     sessionStorage.setItem(QUIZ_DATA, JSON.stringify(newQuizData));
+
+    //Set the variables for the quiz
     setQuizData(newQuizData);
     setSeconds(60);
-    setQuizViewShown(QUIZ_STATUS_RUNNING);
     setQuizViewState(QUIZ_STATUS_RUNNING);
+
+    //Callback to app
+    setQuizViewShown(QUIZ_STATUS_RUNNING);
   }
 
+  //Callback function for when all questions are answered or internal when time runs out
   function handleCompleted() {
-    //console.log("Handle Completed recieved")
-    //console.log(`quizViewState = ${quizViewState}`)
+    //Stores data for the end result page
     sessionStorage.setItem(QUIZ_STATUS, QUIZ_STATUS_END)
     setQuizData(JSON.parse(sessionStorage.getItem(QUIZ_DATA)))
   
-
-    //console.log(quizData)
-
+    //Return water level to start
     if (quizViewState)
-    setWaterLevel(200);
-    //quizData.endTime = -1;
-    sessionStorage.setItem(QUIZ_STATUS, QUIZ_STATUS_END);
-   // sessionStorage.setItem(QUIZ_DATA, JSON.stringify(quizData));
+      setWaterLevel(200);
+
+    //Sends callback to app to change view
     setQuizViewShown(QUIZ_STATUS_END);
+
+    //Return quizframe to start
     setQuizViewState("");
   }
 
-  function handleCompletedClick() {
-    setQuizViewState("");
-    setQuizViewShown("");
-  }
-
+  //Handle the waterlevel by using time
  function handleWaterLevel() {
+
+  //Variable to store the time to return
   let sec;
+
+  //If useState of seconds is uninitialized it checks for quizdata in sessionstorage. If it is valid it is stored as quizdata.
+  //This prevents some buggs when refreshing pages during quiz.
   if (seconds == null) {{
       const tmpQizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA))
       if (tmpQizData != null)
         setQuizData(tmpQizData);
       }
 
-
+    //Check if quiz is running to set water start level
     if (sessionStorage.getItem(QUIZ_STATUS) == "")
       return 200;
 
+    //At times quizData.endTime is undefined on page refresh even though a quizdata exist. This prevent that from causing trouble
     try {
       sec = Math.trunc((quizData.endTime - new Date().valueOf() ) / 1000);
           
     } catch (error) {
       sec = seconds;
-    }
-      
+    }  
   }
   else {sec = seconds;}
 
+  //Starts calculating the level after initial variable checks
+
+  //Water start level
   const base = 200;
-    
+
+  //Calculate step (per second) based on windowheight
   const step = (window.innerHeight - base) / 60;
   
-
   return (200 + ((60 - sec) * step))
 }
 
+//Called on the wave components style setup. Return waterlevel if running or start level if not
 function getWaterLevel() {
-
   if (quizViewState === QUIZ_STATUS_RUNNING)
     return waterLevel;
   return 200;
 }
 
-// Format the remaining time (e.g., “00:05:10” for 5 minutes and 10 seconds)
+// Format the remaining time to minutes and seconds
 function formatTime(timeInSeconds) {
-  const roundedTime = Math.round(timeInSeconds)
+
+  //Remove fractions of seconds
+  const roundedTime = Math.round(timeInSeconds);
+
+  //Calculate minutes and format to two digits
   const minutes = Math.floor(roundedTime / 60)
     .toString()
     .padStart(2, "0");
+
+  //Calculate seconds and format to two digits
   const seconds = (roundedTime % 60).toString().padStart(2, "0");
   return `${minutes}:${seconds}`;
 };
 
+//Calback for quizquestion frame to change seconds on wrong answers
 function handleSetSeconds(sec){
   setSeconds(sec);
 }
@@ -122,19 +138,22 @@ function handleSetSeconds(sec){
     
 //Remain at the same state when refreshing and navigating
 const quizStatus = sessionStorage.getItem(QUIZ_STATUS);
+
+//Initial variable check and setup on starting to render
 if (quizViewState != QUIZ_STATUS_RUNNING && quizStatus === QUIZ_STATUS_RUNNING) {
   setQuizViewShown("");
   setQuizViewState(QUIZ_STATUS_RUNNING);
   setQuizData(JSON.parse(sessionStorage.getItem(QUIZ_DATA)));
   
+  //A timeout for easy mode when the user have been away for long.
   if (!quizData || quizData.endTime - new Date().valueOf() < -10000)
   {
-    //setQuizViewShown(QUIZ_STATUS_END);
     setQuizViewState("");
   }
   
 }
     
+//Catches some time errors and buggs when refreshing pages when running hard mode
 if (quizViewState === QUIZ_STATUS_RUNNING && (seconds == null || isNaN(seconds)) )
 {
   const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
@@ -142,18 +161,20 @@ if (quizViewState === QUIZ_STATUS_RUNNING && (seconds == null || isNaN(seconds))
 }
     
 useEffect(() => {
-  // Exit early if countdown is finished
+  //Set the waterlevel on each execution
   setWaterLevel(handleWaterLevel());
-
-    if (sessionStorage.getItem("hard") === "false")
-    return;
   
-  //if (seconds <= 0 ) {
-    if (sessionStorage.getItem(QUIZ_STATUS) !== QUIZ_STATUS_RUNNING){
+  //If easy mode is running the useEffect returns and is ignored
+  if (sessionStorage.getItem("hard") === "false")
+  return;
 
+  //if (seconds <= 0 ) {
+  if (sessionStorage.getItem(QUIZ_STATUS) !== QUIZ_STATUS_RUNNING){
+    
     return;
   }
-
+  
+  // Exit when countdown is finished
   if (seconds<=0){
     handleCompleted()
     return;
@@ -168,8 +189,9 @@ useEffect(() => {
   return () => clearInterval(timer);
   }, [seconds]
 );
-    
-    let style = { width: WAVE_WIDTH, transition: "height 1000ms", position: "absolute", bottom: 0, height: getWaterLevel() };
+
+  //style object for the wave components
+  let style = { width: "100%", transition: "height 1000ms", position: "absolute", bottom: 0, height: getWaterLevel() };
  
     return (
       <Col xs={5} sm={4} lg={3} className="quiz_frame align-content-bottom justify-content-bottom top-0 end-0 position-fixed" style={{ height: window.innerHeight }} >
@@ -178,7 +200,6 @@ useEffect(() => {
           <Button onClick={()=>{sessionStorage.clear(QUIZ_DATA); sessionStorage.clear(QUIZ_STATUS);}}>debug</Button>
           {(quizViewState === "") && <Button onClick={handleStartQuizClick} className="button">Starta Quiz?</Button>}
           {quizViewState === QUIZ_STATUS_BEGIN && <QuizStartFrame callback={startQuiz}  />}
-          {/*quizViewState === QUIZ_STATUS_END && <Button onClick={handleCompletedClick}>Avsluta Quiz Debugg?</Button>*/}
           {(quizViewState === QUIZ_STATUS_RUNNING && sessionStorage.getItem("hard") === "true" && seconds > 0) && <p>{formatTime(seconds)}</p>}
           {quizViewState === QUIZ_STATUS_RUNNING && <QuizQuestion handleCompleted={handleCompleted} setSeconds={handleSetSeconds} seconds={seconds}/>}
         </Col>
@@ -213,5 +234,3 @@ useEffect(() => {
 
   )
 }
-
-//{quizViewState === QUIZ_STATUS_RUNNING && <QuizQuestion question={quizData.questions[questionIndex]} />}
