@@ -138,8 +138,8 @@ const pageData = [
         caption: "Nämen se här!",
         paragraphs: [
           " Diagrammet visar en lilafärgad kurvig linje, som representerar temperaturökningen i grader i förhållande till året, och en rödfärgad kurvig linje som visar utsläpp.",
-          " ",
-          ""
+          
+    
         ],
         image: "/src/images/havsniva/DiagramPilUppat.png",
       },

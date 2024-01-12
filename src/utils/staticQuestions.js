@@ -131,12 +131,13 @@ const questions = [
     ],
   },
   {
-    text: "Vilken temperatur krävs för att marken ska anses som permafrost?",
+    text: "Vilken information ger diagrammet om temperatur och utsläpp?",
+      
     correct:
-      "Marken måste vara helt frusen vid 32°F (0°C) eller kallare i minst två år i sträck för att betraktas som permafrost.",
+      "Diagrammet ger information om temperaturökningen i grader i förhållande till året (lilafärgad linje) och utsläpp (rödfärgad linje).",
     alt: [
-      " Permafrost kan uppstå vid varma temperaturer över 50°F (10°C).",
-      "Marken behöver bara vara frusen i en månad för att vara permafrost.",
+      " Diagrammet visar endast utsläpp.",
+      "Diagrammet ger ingen information om temperatur eller utsläpp.",
     ],
   },
 
