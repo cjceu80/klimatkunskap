@@ -66,13 +66,13 @@ const questions = [
     ],
   },
   {
-    text: "Hur mycket har havsnivån stigit mellan 1980 och 2020 enligt diagrammet",
-    correct: "Havsnivån har ökat med ?? mm under den perioden",
+    text: "Hur mycket har havsnivån stigit mellan 1980 och 2008 enligt diagrammet",
+    correct: "Havsnivån har ökat med 1 cm under den perioden",
     alt: [
-      "Havsnivån har minskat med ?? mm under den perioden",
+      "Havsnivån har minskat med 10 mm under den perioden",
       "Ingen förändring har skett",
-      "Havsnivån har ökat med ?? mm under den perioden",
-      "Havsnivån har ökat med ?? mm under den perioden",
+      "Havsnivån har ökat med 15 mm under den perioden",
+      "Havsnivån har ökat med 2 cm under den perioden",
     ],
   },
 
