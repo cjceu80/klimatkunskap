@@ -2,7 +2,6 @@ import React from "react"; // Importera React-biblioteket
 import { Container, Row, Col, Card } from "react-bootstrap"; // Importera några grundläggande komponenter från React Bootstrap-biblioteket
 import backgroundImg from "../images/BakgrundHome.jpg"; // Importera bakgrundsbild
 
-const CARD_HEIGHT = 400; // Konstant för höjden på kortet
 
 // Funktion som representerar starten av quiz-komponenten
 export default function QuizStart() {

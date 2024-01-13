@@ -16,7 +16,7 @@ const QUIZ_STATUS_END = "QuizEnd";
 const QUIZ_STATUS_RUNNING = "running"
 
 //Length of quiz in seconds
-const QUIZ_LENGTH = 20;
+const QUIZ_LENGTH = 300;
 
 //When all else fails, just run this.
 //handleAbort(); 

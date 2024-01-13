@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export function getPageData(category) {
   const data = pageData.find((val) => val.id === category);
   if (!data) return null;
