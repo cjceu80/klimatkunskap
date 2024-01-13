@@ -150,16 +150,15 @@ const Home = () => {
             <br />
             <b>Välj en Kategori:</b>
             <p>
-              I menyn ser du olika kategorier som 'Hav', 'Djur', 'Väder' och
-              många fler. Varje kategori är fylld med spännande fakta och
+              I menyn ser du olika kategorier som 'Fossilt bränsle', 'Temperatur', 'Havsnivå' och
+              Glaciär. Varje kategori är fylld med spännande fakta och
               aktiviteter relaterade till just det ämnet.
             </p>
             <br />
             <b>Hitta Rätt Fakta: </b>
             <p>
-              När du har valt en kategori, får du en lista med olika ämnen att
-              utforska. Letar du efter något specifikt? Använd sökfunktionen för
-              att snabbt hitta det du behöver.
+              Med hjälp av Kunskapsportalen, Kan du se med hjälp av bild och text, vilka kategorier som går att utforska.
+              För snabbare navigering fungerar det att navigera sig genom informationssidorna direkt i hamburgarmenyn.
             </p>
             <br />
             <b>Navigera till Rätt Sida: </b>
