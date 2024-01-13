@@ -41,6 +41,8 @@ export function getUniques(dataArray, count) {
 }
 
 const questions = [
+
+  //Havsnivån 
   {
     text: "Varför blir havsnivån högre?",
     correct: "Isarna smälter och vattnet i haven stiger",
@@ -66,13 +68,13 @@ const questions = [
     ],
   },
   {
-    text: "Hur mycket har havsnivån stigit mellan 1980 och 2020 enligt diagrammet",
-    correct: "Havsnivån har ökat med ?? mm under den perioden",
+    text: "Hur mycket har havsnivån stigit mellan 1980 och 2008 enligt diagrammet",
+    correct: "Havsnivån har ökat med 2 cm under den perioden",
     alt: [
-      "Havsnivån har minskat med ?? mm under den perioden",
+      "Havsnivån har minskat med 10 mm under den perioden",
       "Ingen förändring har skett",
-      "Havsnivån har ökat med ?? mm under den perioden",
-      "Havsnivån har ökat med ?? mm under den perioden",
+      "Havsnivån har ökat med 15 mm under den perioden",
+      "Havsnivån har ökat med 1 cm under den perioden",
     ],
   },
 
@@ -102,7 +104,9 @@ const questions = [
       "Världen tvingas bygga fler badplatser och båttrafiken kommer att ersätta biltrafiken",
     ],
   },
-  //Jag hittar inte svar till f;ljande 4 fr[gor p[ inneh[llssidan - Jonas
+
+  //Temperatur
+ 
   {
     text: "Har temperaturen förändrats på vår planet?",
     correct:
@@ -113,12 +117,12 @@ const questions = [
     ],
   },
   {
-    text: "Varför har koncentrationen av växthusgaser ökat?",
+    text: "Hur länge har koncentrationen av koldioxid varit på dagens nivå?",
     correct:
-      "Koncentrationen har ökat främst på grund av fossila bränslen och förändrad markanvändning.",
+      " Koncentrationen har ökat till nivåer utan motsvarighet på minst 800 000 år.",
     alt: [
-      "Koncentrationen har minskat under de senaste åren.",
-      "Koncentrationen har ökat på grund av naturliga processer.",
+      "Koncentrationen har varit konstant de senaste 100 åren.",
+      "Koncentrationen har ökat under de senaste 100 åren.",
     ],
   },
   {
@@ -131,12 +135,13 @@ const questions = [
     ],
   },
   {
-    text: "Vilken temperatur krävs för att marken ska anses som permafrost?",
+    text: "Vilken effekt har utsläppsändringarna haft på temperaturen mellan 1900 och 1980?",
+      
     correct:
-      "Marken måste vara helt frusen vid 32°F (0°C) eller kallare i minst två år i sträck för att betraktas som permafrost.",
+      "En koppling mellan utsläppsändringar och temperaturförändringar har orsakat oerhört mycket värmeeffekt på jorden under denna tidsperiod.",
     alt: [
-      " Permafrost kan uppstå vid varma temperaturer över 50°F (10°C).",
-      "Marken behöver bara vara frusen i en månad för att vara permafrost.",
+      " Det visas endast väderförhållanden mellan 1980 och 2000.",
+      "Det finns ingen påverkan av utsläpp på temperaturen.",
     ],
   },
 
