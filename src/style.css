@@ -42,7 +42,7 @@ h4 {
   height: 54px;
   left: 30px;
   color: white;
-
+  border: 0;
   background: #24b38d !important;
   border-radius: 25px;
 }

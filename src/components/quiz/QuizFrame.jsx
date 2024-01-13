@@ -15,10 +15,11 @@ const QUIZ_STATUS_BEGIN = "QuizBegin";
 const QUIZ_STATUS_END = "QuizEnd";
 const QUIZ_STATUS_RUNNING = "running"
 
-const CLOSE_ICON = "\u2716"; // Unicode character for a multiplication sign (X)
+//Length of quiz in seconds
+const QUIZ_LENGTH = 300;
 
 //When all else fails, just run this.
-//debugReset(); 
+//handleAbort(); 
 function handleAbort(){
   sessionStorage.setItem(QUIZ_STATUS, "");
   sessionStorage.setItem(QUIZ_DATA, null)
@@ -46,7 +47,8 @@ export default function QuizFrame({ setQuizViewShown }) {
 
     //Set the variables for the quiz
     setQuizData(newQuizData);
-    setSeconds(60);
+    setSeconds(QUIZ_LENGTH);
+    setQuizViewShown(QUIZ_STATUS_RUNNING);
     setQuizViewState(QUIZ_STATUS_RUNNING);
 
     //Callback to app
@@ -104,14 +106,14 @@ export default function QuizFrame({ setQuizViewShown }) {
   const base = 200;
 
   //Calculate step (per second) based on windowheight
-  const step = (window.innerHeight - base) / 60;
+  const step = (window.innerHeight - base) / QUIZ_LENGTH;
   
-  return (200 + ((60 - sec) * step))
+  return (200 + ((QUIZ_LENGTH - sec) * step))
 }
 
 //Called on the wave components style setup. Return waterlevel if running or start level if not
 function getWaterLevel() {
-  if (quizViewState === QUIZ_STATUS_RUNNING)
+  if (quizViewState === QUIZ_STATUS_RUNNING && sessionStorage.getItem("hard") === "true")
     return waterLevel;
   return 200;
 }
@@ -146,13 +148,6 @@ if (quizViewState != QUIZ_STATUS_RUNNING && quizStatus === QUIZ_STATUS_RUNNING) 
   setQuizViewShown("");
   setQuizViewState(QUIZ_STATUS_RUNNING);
   setQuizData(JSON.parse(sessionStorage.getItem(QUIZ_DATA)));
-  
-  //A timeout for easy mode when the user have been away for long.
-  if (!quizData || quizData.endTime - new Date().valueOf() < -10000)
-  {
-    setQuizViewState("");
-  }
-  
 }
     
 //Catches some time errors and buggs when refreshing pages when running hard mode
@@ -198,7 +193,7 @@ useEffect(() => {
     return (
       <Col xs={5} sm={4} lg={3} className="quiz_frame align-content-bottom justify-content-bottom top-0 end-0 position-fixed" style={{ height: window.innerHeight }} >
       <Row className='h-100 justify-content-md-center align-items-center px-2'>
-        <Col className='zOnTop'>
+        <Col className='zOnTop px-4'>
         
           {/*<Button onClick={()=>{sessionStorage.clear(QUIZ_DATA); sessionStorage.clear(QUIZ_STATUS);}}>debug</Button>*/}
           {(quizViewState === "") && <Button onClick={handleStartQuizClick} className="button">Starta Quiz?</Button>}

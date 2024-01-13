@@ -5,7 +5,6 @@ import utforskaImg from "../images/ipad.png";
 import interageraImg from "../images/kompass.png";
 import spelaImg from "../images/gamepad.png";
 import "../style.css"; // Import external CSS file
-//import { Link, Element, animateScroll as scroll } from "react-scroll";
 
 const Home = () => {
   const cardStyle = {

@@ -5,16 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import { getQuestions } from '../../utils/staticQuestions';
 import { getDynamicQuestions } from '../../utils/dynamicQuestions';
 
-//Storage item names
-const QUIZ_DATA = "quizData";
-const QUIZ_STATUS = "quizStatus"
-
-//State names
-const QUIZ_STATUS_BEGIN = "QuizBegin";
-const QUIZ_STATUS_END = "QuizEnd";
-const QUIZ_STATUS_RUNNING = "running"
-
-
 
 export default function QuizStartFrame({callback}){
     const navigate = useNavigate();  
@@ -67,7 +57,7 @@ export default function QuizStartFrame({callback}){
         const quizData = {
             questions: questions,
             answers: [],
-            endTime: new Date().valueOf() + 60000,
+            endTime: new Date().valueOf() + 300000,
         };
         
         //Send quizData to parent and navigate to portal page

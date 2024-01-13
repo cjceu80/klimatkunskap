@@ -7,7 +7,7 @@ import { getFormatedData } from "../../utils/Dataset3_Glaciers";
 
 export default function Glaciers(){
         const data = [getFormatedData(), getFormatedDataFrom(1945)];
-        console.log(data)
+        
     return(
         <Row>
             <Col style={{height: 400}}>

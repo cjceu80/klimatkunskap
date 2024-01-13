@@ -6,7 +6,6 @@ import logoImg from "./images/logga7.png";
 
 import HeaderNav from "./components/HeaderNav";
 import QuizFrame from "./components/quiz/QuizFrame";
-import { QuizContextProvider } from "./utils/QuizContext";
 import Login from "./components/Login";
 import QuizStart from "./components/QuizStart";
 import QuizEnd from "./components/QuizEnd";
@@ -28,15 +27,6 @@ export default function App() {
   const handleShow = () => setShow(true);
   const handleQuizViewShown = (val) => setQuizViewShown(val);
 
-  function determineQuizState() {
-    const quizData = setQuizData(JSON.parse(sessionStorage.getItem(QUIZ_DATA)));
-    if (!quizData || quizData.endTime - new Date().valueOf() < -10000)
-      {
-        setQuizViewShown(QUIZ_STATUS_END);
-      }
-
-  }
-
   return (
     <div>
       <img
@@ -52,7 +42,7 @@ export default function App() {
         }}
       />
 
-      <QuizContextProvider>
+
         <HeaderNav style={{ position: "fixed" }} login={handleShow} />
         <QuizFrame login={handleShow} setQuizViewShown={handleQuizViewShown} />
         <Container fluid>
@@ -75,7 +65,7 @@ export default function App() {
           <Offcanvas.Header closeButton />
           <Login close={handleClose} />
         </Offcanvas>
-      </QuizContextProvider>
+
     </div>
   );
 }

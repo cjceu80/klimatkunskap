@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export function getPageData(category) {
   const data = pageData.find((val) => val.id === category);
   if (!data) return null;
@@ -77,7 +75,7 @@ const pageData = [
         imageWidth: 2,
         caption: "Såg du?",
         paragraphs: [
-          "I diagrammet kan man se hur mycket havsnivån stigit. Mellan 1980 och 2010 så har havsnivån stigit med t.ex. 0,8dm. Det är sedan dina föräldrar var född tills idag, galet va?",
+          "I diagrammet kan man se hur mycket havsnivån stigit. Mellan  1980 och 2010 så har havsnivån stigit med t.ex. 0,8dm. Det är sedan dina föräldrar var född tills idag, galet va?",
         ],
       },
       {
@@ -137,9 +135,9 @@ const pageData = [
         imageWidth: 3,
         caption: "Nämen se här!",
         paragraphs: [
-          "Enligt diagrammet, effekterna av klimatförändringarna är omfattande och svåra att överblicka. ",
-          " Effekterna kan vara både direkta och indirekta. Jordbrukets produktion väntas minska i många regioner, men öka inom andra. ",
-          "Följden kan bli stora folkomflyttningar och konflikter om knappa mat- och vattenresurser."
+          " Diagrammet visar en lilafärgad kurvig linje, som representerar temperaturökningen i grader i förhållande till året, och en rödfärgad kurvig linje som visar utsläpp.",
+          
+    
         ],
         image: "/src/images/havsniva/DiagramPilUppat.png",
       },
@@ -153,20 +151,17 @@ const pageData = [
         image: "/src/images/havsniva/ideLampa.png",
         imageWidth: 2,
         caption: "Såg du?",
-        paragraphs: ["I diagrammet kan man se "],
+        paragraphs: ["I diagrammet kan man se temperaturförändring i samband med utsläppsändringar mellan tidsperiod  1900 och 1980, vilket har orsakat oerhört mycket värmeeffekt på jorden."],
       },
       {
         caption: "Vill du veta mer?",
-        paragraphs: ["Länklista..."],
+        paragraphs: [" Om temperaturförändring på grund av utsläpp och upptag av växthusgaser i Sverige.","läs på följande  länk:"],
         links: [
           {
-            label: "",
-            url: "",
+            label: "Sveriges utsläpp och upptag av växthusgaser",  
+            url: "https://www.naturvardsverket.se/data-och-statistik/klimat/sveriges-utslapp-och-upptag-av-vaxthusgaser/",
           },
-          {
-            label: "",
-            url: "",
-          },
+          
         ],
       },
     ],
@@ -313,10 +308,8 @@ const pageData = [
         ],
       },
       {
-        imageWidth: 3,
         caption: "Diagram!",
         graph: true,
-        paragraphs: [],
       },
       {
         image: "/src/images/havsniva/ideLampa.png",

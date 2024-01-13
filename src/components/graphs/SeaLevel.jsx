@@ -15,7 +15,7 @@ export default function SeaLevel(){
           margin={{ top: 10, right: 160, bottom: 50, left: 60 }}
           xScale={{ type: 'linear', stacked: false, min: 1880, max: 2010 }}
           yScale={{ type: 'linear', stacked: false, min: "auto", max: "auto" }}
-          yFormat=" >-.1f"
+          yFormat=" >-.2f"
           curve="monotoneX"
           axisTop={null}
           axisRight={{

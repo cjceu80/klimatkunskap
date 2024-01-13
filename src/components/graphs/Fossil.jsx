@@ -81,7 +81,7 @@ export default function Fossil(){
         </Row>
         <Row>
             <Col className="pb-2">
-                <Form.Range min={1880} max={2010} value={selectedYear} onChange={(e) => setSelectedYear(e.target.value)}/>
+                <Form.Range min={1751} max={2010} value={selectedYear} onChange={(e) => setSelectedYear(e.target.value)}/>
             </Col>
         </Row>
             </>

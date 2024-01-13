@@ -1,23 +1,29 @@
+//Return the full formated dataset
 export function getTotalRawData(){
   return data;
 }
 
+//Return data for provided year
 export function getRawYearData(year) {
   return data.find((dataYear) => dataYear.Year == year);
 }
 
+//get an array of only the total values
 export function getTotalData(){
   let newData = [];
-  data.forEach((value)=> { value.Year >= 1880 && newData.push( {x: value.Year, y: value.Total / 4000})})
+  data.forEach((value)=> { value.Year >= 1751 && newData.push( {x: value.Year, y: value.Total / 4000})})
 
   return { id: "Utsläpp", data: newData}
 }
 
+//Get formated data by year
 export function getYearData(year) {
   const rawYear = data.find((dataYear) => dataYear.Year == year);
+  //Return if year doesnt exist
   if (!rawYear) return;
   let newData = [];
 
+  //Translation
   for (const [key, value] of Object.entries(rawYear)) {
     if (key != 'Year' && key != 'Total' && key != 'Per Capita') {
       let translated = key;
@@ -29,20 +35,26 @@ export function getYearData(year) {
       newData.push(yearValue);
     }
   }
-
   return newData;
 }
 
+//Get a total combined value for given year
 export function getYearTotal(year) {
   const rawYear = data.find((dataYear) => dataYear.Year == year);
+
+  //return if year not existing
   if (!rawYear) return;
+  
   return [{ id: 'total', total: rawYear.Total }];
 }
 
+//Finds and return highest year data
 export function highestSource() {
   return data[data.length - 1].Total;
 }
 
+
+//Provided data
 const data = [
   {
     Cement: 0.0,

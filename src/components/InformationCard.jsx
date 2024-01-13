@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Card, CardImg, Col, Row } from "react-bootstrap";
 import Graph from "./graphs/Graph";
 
