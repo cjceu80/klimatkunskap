@@ -199,7 +199,7 @@ useEffect(() => {
           {(quizViewState === "") && <Button onClick={handleStartQuizClick} className="button">Starta Quiz?</Button>}
           {quizViewState === QUIZ_STATUS_BEGIN && <QuizStartFrame callback={startQuiz}  />}
           {(quizViewState === QUIZ_STATUS_RUNNING && sessionStorage.getItem("hard") === "true" && seconds > 0) && <p>{formatTime(seconds)}</p>}
-          {quizViewState === QUIZ_STATUS_RUNNING && <QuizQuestion handleCompleted={handleCompleted} setSeconds={handleSetSeconds} handleAbort={handleAbort} seconds={seconds}/>}
+          {quizViewState === QUIZ_STATUS_RUNNING && <QuizQuestion handleCompleted={handleCompleted} setSeconds={handleSetSeconds} seconds={seconds}/>}
         </Col>
       </Row>
       <Wave

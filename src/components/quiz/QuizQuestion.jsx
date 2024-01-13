@@ -9,7 +9,7 @@ const QUIZ_DATA = "quizData";
 //Time punishment for error
 const QUIZ_PUNISHMENT = 20;
 
-export default function QuizQuestion({handleCompleted, seconds, setSeconds, handleAbort})
+export default function QuizQuestion({handleCompleted, seconds, setSeconds})
 { 
     const navigate = useNavigate();
     const [selectedValue, setSelectedValue] = useState(-1);

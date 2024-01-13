@@ -5,26 +5,28 @@ import { Button } from 'react-bootstrap';
 import { useUserAuth } from '../utils/UserAuthContext';
 
 //Handle the signup process.
-const Signup = () => {
+const Signup = ({handleSignupShown}) => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [password, setPassword] = useState('');
   const { signUp } = useUserAuth();
   let navigate = useNavigate();
 
+console.log(handleSignupShown)
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     try {
       await signUp(email, password);
-      navigate('/');
+      //navigate('/');
     } catch (err) {
       setError(err.message);
     }
   };
 
   return (
-    <>
+    <div>
       <div className="p-4 box">
         <h2 className="mb-3">Firebase/ React Auth Signup</h2>
 
@@ -55,9 +57,9 @@ const Signup = () => {
         </Form>
       </div>
       <div className="p-4 box mt-3 text-center">
-        Already have an account? <Link to="/">Log In</Link>
+        Already have an account? <a onClick={ () => handleSignupShown(false)}>Log In</a>
       </div>
-    </>
+    </div>
   );
 };
 
