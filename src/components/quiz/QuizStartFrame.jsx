@@ -23,10 +23,10 @@ export default function QuizStartFrame({callback}){
     function handleStartEasyQuizClick(){
 
         //Initialize static questions
-        let questions = getQuestions(8);
+        let questions = getQuestions(1);
 
         //Blend with dynamic questions
-        const dynamicQuestions = getDynamicQuestions(2);
+        const dynamicQuestions = getDynamicQuestions(10);
         dynamicQuestions.forEach((value) => {
             const index = Math.floor(Math.random() * (questions.length + 1));
             questions.splice(index, 0, value);

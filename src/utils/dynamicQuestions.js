@@ -3,7 +3,7 @@ import { getRawData } from "./Dataset2_Global_Temp";
 import { getFormatedData } from "./Dataset4_Sea_Level";
 
 //The multiples used for random answers. Correct answer as a multiple of 1
-const multiples = [0.2, 0.5, 0.7, 0.8, 1.2, 1.5, 2, 2.5, 3, 5]
+const multiples = [0.2, 0.5, 0.7, 1.2, 1.5, 2, 2.5, 3, 5]
 
 //Provide array of random generated questions
 export function getDynamicQuestions(count){
@@ -31,7 +31,7 @@ export function getDynamicQuestions(count){
 function makeQuestion(correct, text) {
    //Set up variable and first multiple
     let tmpAnswers = [multiples[Math.floor(Math.random() * multiples.length)]];
-
+    console.log(correct);       
     //Loops untill there are two multiples
     while (tmpAnswers.length < 2) {
         let tmpIndex = Math.floor(Math.random() * multiples.length);
@@ -42,21 +42,41 @@ function makeQuestion(correct, text) {
     }
 
     //Do the multiplication to get the propper wrong values
+    let answers = [];
     tmpAnswers.forEach((val, index) => {
-        tmpAnswers[index] = (val * correct).toFixed(2)
-    });
+        answers[index] =formatNumbers(val * correct)});
     
     //Adds the correct value randomly
     const correctIndex=Math.floor(Math.random() * (tmpAnswers.length + 1))
-    tmpAnswers.splice(correctIndex, 0, (correct).toFixed(2))
+    answers.splice(correctIndex, 0, formatNumbers(correct))
 
     //Return a question object
     return{
         correctIndex: correctIndex,
         text: text,
-        alt: tmpAnswers,
+        alt: answers,
     }
 }
+
+function formatNumbers(number){
+    if (number > 1000)
+        return Math.round(number / 1000) * 1000;
+    else if (number > 100)
+        return Math.round(number / 100) * 100;
+    else if (number > 10)
+        return Math.round(number);
+    else if (number > 1)
+        return Math.round(number * 10) / 10;
+/*    else if (number > 0.1)
+        return Math.round(number * 100) / 100;
+    else if (number > 0.01)
+        return Math.round(number * 1000) / 1000;
+    else if (number > 0.001)
+        return Math.round(number * 10000) / 10000;*/
+    else 
+        return (number).toFixed(2);
+}
+
 
 //Creates a question about temperature changes through the ages
 function tempDiff() {
@@ -71,6 +91,7 @@ function tempDiff() {
     
     //Absolute value of difference
     const correct = Math.abs(firstYear.Mean-secondYear.Mean) ;
+    console.log(`first: ${firstYear.Mean}, second: ${secondYear.Mean}, Diff: ${correct}`)
 
     return makeQuestion (correct, text);
 }
@@ -128,7 +149,7 @@ function seaDiff(){
     //first year upp to 10 from the last year of data (each year contain 2 entries hence 20)
     const yearIndex = Math.floor(Math.random() * (data.length / 2 -20) + data.length / 2 -20);
     const year = data[yearIndex]
-    const text = `Hur stor var jordens temperaturskillnad i genomsnitt mellan år ${year.x} och ${year.x + 10} i grader Celsius?`
+    const text = `Var skillnaden i genomsnittlig vattennivå år ${year.x} jämfört med ${year.x + 10} i millimeter (mm)?`
 
     return makeQuestion(year.y - data[yearIndex + 10].y, text);
 }

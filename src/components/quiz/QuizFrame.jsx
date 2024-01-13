@@ -193,7 +193,7 @@ useEffect(() => {
     return (
       <Col xs={5} sm={4} lg={3} className="quiz_frame align-content-bottom justify-content-bottom top-0 end-0 position-fixed" style={{ height: window.innerHeight }} >
       <Row className='h-100 justify-content-md-center align-items-center px-2'>
-        <Col className='zOnTop'>
+        <Col className='zOnTop px-4'>
         
           {/*<Button onClick={()=>{sessionStorage.clear(QUIZ_DATA); sessionStorage.clear(QUIZ_STATUS);}}>debug</Button>*/}
           {(quizViewState === "") && <Button onClick={handleStartQuizClick} className="button">Starta Quiz?</Button>}

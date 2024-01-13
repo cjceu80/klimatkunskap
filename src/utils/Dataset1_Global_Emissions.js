@@ -11,7 +11,7 @@ export function getRawYearData(year) {
 //get an array of only the total values
 export function getTotalData(){
   let newData = [];
-  data.forEach((value)=> { value.Year >= 1880 && newData.push( {x: value.Year, y: value.Total / 4000})})
+  data.forEach((value)=> { value.Year >= 1751 && newData.push( {x: value.Year, y: value.Total / 4000})})
 
   return { id: "Utsläpp", data: newData}
 }

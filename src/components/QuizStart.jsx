@@ -9,7 +9,7 @@ export default function QuizStart() {
     const cardStyle = {
         background: "rgba(255, 255, 255, 0.7)", // 0.7 represents 70% transparency
         borderRadius: "25px",
-        height: "450px", 
+        height: "45 0px", 
         
       };
     return (
