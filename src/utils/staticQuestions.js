@@ -117,12 +117,12 @@ const questions = [
     ],
   },
   {
-    text: "Varför har koncentrationen av växthusgaser ökat?",
+    text: "Hur länge har koncentrationen av koldioxid varit på dagens nivå?",
     correct:
-      "Koncentrationen har ökat främst på grund av fossila bränslen och förändrad markanvändning.",
+      " Koncentrationen har ökat till nivåer utan motsvarighet på minst 800 000 år.",
     alt: [
-      "Koncentrationen har minskat under de senaste åren.",
-      "Koncentrationen har ökat på grund av naturliga processer.",
+      "Koncentrationen har varit konstant de senaste 100 åren.",
+      "Koncentrationen har ökat under de senaste 100 åren.",
     ],
   },
   {
