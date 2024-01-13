@@ -135,13 +135,13 @@ const questions = [
     ],
   },
   {
-    text: "Vilken information ger diagrammet om temperatur och utsläpp?",
+    text: "Vilken effekt har utsläppsändringarna haft på temperaturen mellan 1900 och 1980?",
       
     correct:
-      "Diagrammet ger information om temperaturökningen i grader i förhållande till året (lilafärgad linje) och utsläpp (rödfärgad linje).",
+      "En koppling mellan utsläppsändringar och temperaturförändringar har orsakat oerhört mycket värmeeffekt på jorden under denna tidsperiod.",
     alt: [
-      " Diagrammet visar endast utsläpp.",
-      "Diagrammet ger ingen information om temperatur eller utsläpp.",
+      " Det visas endast väderförhållanden mellan 1980 och 2000.",
+      "Det finns ingen påverkan av utsläpp på temperaturen.",
     ],
   },
 
