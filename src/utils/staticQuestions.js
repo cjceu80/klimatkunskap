@@ -41,7 +41,7 @@ export function getUniques(dataArray, count) {
 }
 
 const questions = [
-  
+
   //Havsnivån 
   {
     text: "Varför blir havsnivån högre?",
@@ -106,7 +106,7 @@ const questions = [
   },
 
   //Temperatur
-  //Jag hittar inte svar till f;ljande 4 fr[gor p[ inneh[llssidan - Jonas
+ 
   {
     text: "Har temperaturen förändrats på vår planet?",
     correct:
