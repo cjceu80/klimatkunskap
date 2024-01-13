@@ -41,6 +41,8 @@ export function getUniques(dataArray, count) {
 }
 
 const questions = [
+  
+  //Havsnivån 
   {
     text: "Varför blir havsnivån högre?",
     correct: "Isarna smälter och vattnet i haven stiger",
@@ -102,6 +104,8 @@ const questions = [
       "Världen tvingas bygga fler badplatser och båttrafiken kommer att ersätta biltrafiken",
     ],
   },
+
+  //Temperatur
   //Jag hittar inte svar till f;ljande 4 fr[gor p[ inneh[llssidan - Jonas
   {
     text: "Har temperaturen förändrats på vår planet?",
