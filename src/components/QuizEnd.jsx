@@ -30,16 +30,21 @@ export default function QuizEnd() {
     (val, index) => val == quizData.questions[index].correctIndex && correctCount++
   );
 
-  // Define the email state using the useState hook
-  const [email, setEmail] = useState("");
+  // Toggles login or submit
   const [loginActive, setLoginActive] = useState(false)
-  
-  const { logOut, user } = useUserAuth();
+  const { user } = useUserAuth();
 
-  // Event handler for changes to the email input
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+// Send result MailTo handeling
+  const Mailto = ({ subject = '', body = '', children }) => {
+    let params = subject || body ? '?' : '';
+    if (subject) params += `subject=${encodeURIComponent(subject)}`;
+    if (body) params += `${subject ? '&' : ''}body=${encodeURIComponent(body)}`;
+
+    return <Button className="button" href={`mailto:${''}${params}`} style={{ borderRadius: "50px", marginBottom: "-15px" }}>{children}</Button>;
   };
+
+  const sendCorrect = `Jag fick ${correctCount} rätt av ${quizData.questions.length} möjliga.`;
+
 
   function toggleLogin()
 {
@@ -47,11 +52,7 @@ export default function QuizEnd() {
   setLoginActive(!oldState);
 }
 
-  // Event handler for sending results and email
-  const handleSendResult = () => {
-    // Add code to handle sending results and email (placeholder: log to console)
-    console.log("Resultat skickat till:", email);
-  };
+
 
   sessionStorage.setItem(QUIZ_STATUS, "")
 
@@ -81,25 +82,11 @@ export default function QuizEnd() {
               <img src={leftImage} alt="Left Image" style={{ width: "100%" }} />
             </Col>
             <Card style={cardStyle} className="p-4">
-              <Form.Group controlId="formEmail">
-               <h4><Form.Label>Din e-post</Form.Label></h4>
-                <Form.Control
-                  type="email"
-                  placeholder="Skriv din e-post här"
-                  value={email}
-                  onChange={handleEmailChange}
-                  style={{ marginBottom: "5px" }} 
-                />
-              </Form.Group>
- 
-                <Button
-                variant="success"
-                style={{ borderRadius: "50px" , marginBottom: "-15px"}}
-                onClick={() => {} }
-              >
-                <h4>Skicka resultat</h4>
-              </Button>
-              <p></p>
+            <h4>Vill du mejla ditt resultat?</h4>
+              <Mailto email="" subject="Här är mina resultat i KlimatKunskap" body={sendCorrect}>
+                Mejla resultat!
+              </Mailto>
+              <p></p><p></p>
             </Card>
           </Col>
           
@@ -111,9 +98,10 @@ export default function QuizEnd() {
             {!loginActive ?
             
             <Card className="p-4" style={cardStyle}>
-              <h4>Om du loggar in kan du spara eller dela ditt resultat</h4>
+              <h4>Logga in f;r att spara ditt resultat</h4>
               
               <Button
+              className="button"
                 variant="success"
                 style={{ borderRadius: "50px", marginBottom: "-1px" }}
                 onClick={()=>toggleLogin()} // Placeholder not causing issues
@@ -131,6 +119,7 @@ export default function QuizEnd() {
                 <p>Vill du registrera in ditt result?</p>
  
                 <Button
+                className="button"
                 variant="success"
                 style={{ borderRadius: "50px" , marginBottom: "-15px"}}
                 onClick={() => {} }
