@@ -8,6 +8,7 @@ import temperatureImg from "../images/temperature 1.svg";
 import "../style.css";
 
 export default function ContentPortal() {
+  // Styles for the cards and card images
   const cardStyle = {
     background: "rgba(255, 255, 255, 0.7)", // 0.7 represents 70% transparency
     borderRadius: "25px",
@@ -19,8 +20,11 @@ export default function ContentPortal() {
 
   return (
     <div className="bgContentPortal">
+      {/* Main container for the content */}
       <Container fluid className="h-100 pageContainer mb-5 align-items-center">
-        <Row style={{paddingTop: 100}} className="flex align-items-center">
+        {/* First row with two columns */}
+        <Row style={{ paddingTop: 100 }} className="flex align-items-center">
+          {/* First column */}
           <Col
             xs={6}
             md={6}
@@ -31,6 +35,7 @@ export default function ContentPortal() {
               href="/kunskapsportalen/?kategori=fossilt"
               style={{ textDecoration: "none" }}
             >
+              {/* Card for the first category */}
               <Card className="h-100 w-100 custom-card" style={cardStyle}>
                 <Card.Body className="h-100">
                   <div className="placeholder" />
@@ -47,7 +52,7 @@ export default function ContentPortal() {
               </Card>
             </a>
           </Col>
-
+          {/* Second column */}
           <Col
             xs={6}
             md={6}
@@ -58,6 +63,7 @@ export default function ContentPortal() {
               href="/kunskapsportalen/?kategori=temperatur"
               style={{ textDecoration: "none" }}
             >
+              {/* Card for the second category */}
               <Card className="h-100 w-100 custom-card" style={cardStyle}>
                 <Card.Body className="h-100">
                   <div className="placeholder" />
@@ -75,8 +81,9 @@ export default function ContentPortal() {
             </a>
           </Col>
         </Row>
-
+        {/* Second row with two columns */}
         <Row className="align-items-end justify-content-center">
+          {/* Third column */}
           <Col
             xs={6}
             md={6}
@@ -87,6 +94,7 @@ export default function ContentPortal() {
               href="/kunskapsportalen/?kategori=havsniva"
               style={{ textDecoration: "none" }}
             >
+              {/* Card for the third category */}
               <Card className="h-100 w-100 custom-card" style={cardStyle}>
                 <Card.Body className="h-100">
                   <div className="placeholder" />
@@ -103,7 +111,7 @@ export default function ContentPortal() {
               </Card>
             </a>
           </Col>
-
+          {/* Fourth column */}
           <Col
             xs={6}
             md={6}
@@ -114,6 +122,7 @@ export default function ContentPortal() {
               href="/kunskapsportalen/?kategori=glaciar"
               style={{ textDecoration: "none" }}
             >
+              {/* Card for the fourth category */}
               <Card className="h-100 w-100 custom-card" style={cardStyle}>
                 <Card.Body className="h-100">
                   <div className="placeholder" />
