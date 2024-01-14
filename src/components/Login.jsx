@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import { Form, Alert } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import GoogleButton from 'react-google-button';
 import { useUserAuth } from '../utils/UserAuthContext';
-import Signup from './Signup';
 
 //Render login form and handle login functionality
 export default function Login({close}) {
@@ -14,15 +12,13 @@ export default function Login({close}) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const { logIn, googleSignIn, signUp } = useUserAuth();
-  
-  const navigate = useNavigate();
+
 
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
     setError('');
     try {
       await signUp(email, password);
-      //navigate('/');
       close();
     } catch (err) {
       setError(err.message);
@@ -34,7 +30,6 @@ export default function Login({close}) {
     setError('');
     try {
       await logIn(email, password);
-      //navigate('/home');
       close();
     } catch (err) {
       setError(err.message);
@@ -46,7 +41,6 @@ export default function Login({close}) {
     e.preventDefault();
     try {
       await googleSignIn();
-      //navigate('/home');
       close();
     } catch (error) {
       console.log(error.message);
@@ -56,8 +50,11 @@ export default function Login({close}) {
   return (
     <>
 
-    {signupShown === true
-    ? <div>
+    {signupShown === true //test to se if signup should be rendered
+
+    ? //render signup
+
+    <div>
     <div className="p-4 box">
       <h2 className="mb-3">Firebase/ React Auth Signup</h2>
 
@@ -92,7 +89,7 @@ export default function Login({close}) {
     </div>
   </div>
   
-  :
+  : //Render login page
 
     <div>
       <div className="p-4 box">

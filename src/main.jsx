@@ -7,7 +7,6 @@ import Home from './components/Home';
 import About from './components/About';
 import Feedback from './components/Feedback';
 import MainContent, { loader as contentLoader} from './components/MainContent';
-import Signup from './components/Signup';
 import { UserAuthContextProvider } from './utils/UserAuthContext';
 
 const router = createBrowserRouter([
@@ -35,10 +34,6 @@ const router = createBrowserRouter([
         element: <About />,
       },
     ],
-  },
-  {
-    path: '/signup',
-    element: <Signup />,
   },
 ]);
 
