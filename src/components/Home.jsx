@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import backgroundImg from "../images/BakgrundHome.jpg";
 import utforskaImg from "../images/ipad.png";
@@ -52,7 +51,7 @@ const Home = () => {
                   </Card.Title>
                   <Card.Img
                     variant="top"
-                    src={utforskaImg} //URL of the image
+                    src={utforskaImg}
                     style={cardImageStyle}
                     className="mb-3"
                   />
@@ -79,7 +78,7 @@ const Home = () => {
                   </Card.Title>
                   <Card.Img
                     variant="top"
-                    src={interageraImg} //URL of the image
+                    src={interageraImg}
                     style={cardImageStyle}
                     className="mb-3"
                   />
@@ -102,7 +101,7 @@ const Home = () => {
                   </Card.Title>
                   <Card.Img
                     variant="top"
-                    src={spelaImg} //URL of the image
+                    src={spelaImg} 
                     style={cardImageStyle}
                     className="mb-3"
                   />
@@ -129,7 +128,7 @@ const Home = () => {
           <Col>
             <Card.Img
               variant="top"
-              src={utforskaImg} //URL of the image
+              src={utforskaImg}
               style={cardImageStyle}
               className="mb-3"
             />
@@ -239,7 +238,7 @@ const Home = () => {
           <Col>
             <Card.Img
               variant="top"
-              src={spelaImg} //URL of the image
+              src={spelaImg}
               style={cardImageStyle}
               className="mb-3"
             />

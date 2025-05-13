@@ -3,7 +3,6 @@ import { Row, Col, Form } from "react-bootstrap";
 import { ResponsivePieCanvas } from "@nivo/pie";
 import {  ResponsiveBarCanvas } from "@nivo/bar";
 import * as fossil from '../../utils/Dataset1_Global_Emissions';
-import { bottom } from "@popperjs/core";
 
 
 const data = [{id: "cement", label: "Cement", value: 100},

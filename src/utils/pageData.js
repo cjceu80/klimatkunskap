@@ -13,12 +13,12 @@ const pageData = [
     name: "Havsnivå",
     bakground: [
       {
-        image: "/src/images/bakgrunder/havsniva.jpg",
+        image: "https://candow.eu/assets/klimat/bakgrunder/havsniva.jpg",
       },
     ],
     cards: [
       {
-        image: "/src/images/havsniva/VattenVagor.png",
+        image: "https://candow.eu/assets/klimat/havsniva/VattenVagor.png",
         imageWidth: 3,
         caption: "Varför blir havsnivån högre?",
         paragraphs: [
@@ -27,7 +27,7 @@ const pageData = [
         ],
       },
       {
-        image: "/src/images/havsniva/jordglobTempVarning.png",
+        image: "https://candow.eu/assets/klimat/havsniva/jordglobTempVarning.png",
         imageWidth: 3,
         caption: "Påverkar global uppvärmning?",
         paragraphs: [
@@ -36,7 +36,7 @@ const pageData = [
         ],
       },
       {
-        image: "/src/images/havsniva/questionMark.png",
+        image: "https://candow.eu/assets/klimat/havsniva/questionMark.png",
         imageWidth: 2,
         caption: "Vem har koll?",
         paragraphs: [
@@ -44,7 +44,7 @@ const pageData = [
         ],
       },
       {
-        image: "/src/images/havsniva/ruler.png",
+        image: "https://candow.eu/assets/klimat/havsniva/ruler.png",
         imageWidth: 3,
         caption: "Hur mycket stiger havet?",
         paragraphs: [
@@ -53,7 +53,7 @@ const pageData = [
         ],
       },
       {
-        image: "/src/images/havsniva/DiagramPilUppat.png",
+        image: "https://candow.eu/assets/klimat/havsniva/DiagramPilUppat.png",
         imageWidth: 3,
         caption: "Nämen se här!",
         paragraphs: [
@@ -71,7 +71,7 @@ const pageData = [
         paragraphs: [],
       },
       {
-        image: "/src/images/havsniva/ideLampa.png",
+        image: "https://candow.eu/assets/klimat/havsniva/ideLampa.png",
         imageWidth: 2,
         caption: "Såg du?",
         paragraphs: [
@@ -102,7 +102,7 @@ const pageData = [
     name: "Temperaturförändring",
     bakground: [
       {
-        image: "/src/images/bakgrunder/temp.jpg",
+        image: "https://candow.eu/assets/klimat/bakgrunder/temp.jpg",
       },
     ],
     cards: [
@@ -112,7 +112,7 @@ const pageData = [
           "Har du någonsin undrat om temperaturen förändras på vår planet? Låt oss utforska detta tillsammans!",
           "Global medeltemperatur har ökat snabbare sedan 1970 än under de senaste 2 000 åren och är idag på en nivå som antagligen inte setts på 125 000 år.",
         ],
-        image: "/src/images/temp/tempWarning.png",
+        image: "https://candow.eu/assets/klimat/temp/tempWarning.png",
         imageWidth: 5,
       },
       {
@@ -120,7 +120,7 @@ const pageData = [
         paragraphs: [
           "Koncentrationen av växthusgaser, särskilt koldioxid, har ökat till nivåer utan motsvarighet på minst 800 000 år, med en ökning på cirka 50 procent jämfört med förindustriell tid, huvudsakligen på grund av fossila bränslen och förändrad markanvändning.",
         ],
-        image: "/src/images/temp/tempHighHeat.png",
+        image: "https://candow.eu/assets/klimat/temp/tempHighHeat.png",
         imageWidth: 5,
       },
       {
@@ -128,7 +128,7 @@ const pageData = [
         paragraphs: [
           "Mycket talar för att till exempel skyfallen kommer att bli kraftigare i framtiden. Extrem nederbörd som faller under en kort tid kan ge problem med översvämningar.",
         ],
-        image: "/src/images/temp/extremVader.png",
+        image: "https://candow.eu/assets/klimat/temp/extremVader.png",
         imageWidth: 6,
       },
       {
@@ -139,7 +139,7 @@ const pageData = [
           
     
         ],
-        image: "/src/images/havsniva/DiagramPilUppat.png",
+        image: "https://candow.eu/assets/klimat/havsniva/DiagramPilUppat.png",
       },
 
       {
@@ -148,7 +148,7 @@ const pageData = [
         graph: true,
       },
       {
-        image: "/src/images/havsniva/ideLampa.png",
+        image: "https://candow.eu/assets/klimat/havsniva/ideLampa.png",
         imageWidth: 2,
         caption: "Såg du?",
         paragraphs: ["I diagrammet kan man se temperaturförändring i samband med utsläppsändringar mellan tidsperiod  1900 och 1980, vilket har orsakat oerhört mycket värmeeffekt på jorden."],
@@ -174,12 +174,12 @@ const pageData = [
     name: "Fossilt bränsle",
     background: [
       {
-        image: "/src/images/fossil/fossil.jpg",
+        image: "https://candow.eu/assets/klimat/fossil/fossil.jpg",
       },
     ],
     cards: [
       {
-        image: "/src/images/fossil/fabrik.png",
+        image: "https://candow.eu/assets/klimat/fossil/fabrik.png",
         imageWidth: 4,
         caption: "Välkommen till Fossiltbränsle-sidan",
         paragraphs: [
@@ -187,7 +187,7 @@ const pageData = [
         ],
       },
       {
-        image: "/src/images/fossil/oljefat.png",
+        image: "https://candow.eu/assets/klimat/fossil/oljefat.png",
         imageWidth: 7,
         caption: "Vad är Fossila Bränslen?",
         paragraphs: [
@@ -196,7 +196,7 @@ const pageData = [
       },
 
       {
-        image: "/src/images/fossil/miljoskydd.png",
+        image: "https://candow.eu/assets/klimat/fossil/miljoskydd.png",
         imageWidth: 5,
         caption: "Vad kan fossila bränslen orsaka?",
         paragraphs: [
@@ -207,7 +207,7 @@ const pageData = [
       },
 
       {
-        image: "/src/images/fossil/globaluppvarmning.png",
+        image: "https://candow.eu/assets/klimat/fossil/globaluppvarmning.png",
         imageWidth: 4,
         caption: "Varför pratar vi om fossila bränslen?",
         paragraphs: [
@@ -216,7 +216,7 @@ const pageData = [
       },
 
       {
-        image: "/src/images/havsniva/DiagramPilUppat.png",
+        image: "https://candow.eu/assets/klimat/havsniva/DiagramPilUppat.png",
         imageWidth: 3,
         caption: "Nämen se här!",
         paragraphs: [
@@ -230,7 +230,7 @@ const pageData = [
         graph: true,
       },
       {
-        image: "/src/images/havsniva/ideLampa.png",
+        image: "https://candow.eu/assets/klimat/havsniva/ideLampa.png",
         imageWidth: 2,
         caption: "Såg du?",
         paragraphs: [
@@ -262,12 +262,12 @@ const pageData = [
     name: "Glaciär",
     bakground: [
       {
-        image: "/src/images/bakgrunder/glaciar.jpg",
+        image: "https://candow.eu/assets/klimat/bakgrunder/glaciar.jpg",
       },
     ],
     cards: [
       {
-        image: "/src/images/Glaciar/natural-disaster-5545300_1280.png",
+        image: "https://candow.eu/assets/klimat/Glaciar/natural-disaster-5545300_1280.png",
         imageWidth: 3,
         caption: "Välkommen till Glaciärernas Värld!",
         paragraphs: [
@@ -276,7 +276,7 @@ const pageData = [
         ],
       },
       {
-        image: "/src/images/Glaciar/polar-bear-6733146_1280.jpg",
+        image: "https://candow.eu/assets/klimat/Glaciar/polar-bear-6733146_1280.jpg",
         imageWidth: 3,
         caption: "Vad är en glaciär?",
         paragraphs: [
@@ -284,7 +284,7 @@ const pageData = [
         ],
       },
       {
-        image: "/src/images/Glaciar/earth-5545293_1280.png",
+        image: "https://candow.eu/assets/klimat/Glaciar/earth-5545293_1280.png",
         imageWidth: 2,
         caption: "Varför smälter glaciärerna? ",
         paragraphs: [
@@ -292,7 +292,7 @@ const pageData = [
         ],
       },
       {
-        image: "/src/images/Glaciar/natural-disaster-5545297_1280.png",
+        image: "https://candow.eu/assets/klimat/Glaciar/natural-disaster-5545297_1280.png",
         imageWidth: 3,
         caption: "Varför är detta ett problem?",
         paragraphs: [
@@ -300,7 +300,7 @@ const pageData = [
         ],
       },
       {
-        image: "/src/images/havsniva/DiagramPilUppat.png",
+        image: "https://candow.eu/assets/klimat/havsniva/DiagramPilUppat.png",
         imageWidth: 3,
         caption: "Nämen se här!",
         paragraphs: [
@@ -312,7 +312,7 @@ const pageData = [
         graph: true,
       },
       {
-        image: "/src/images/havsniva/ideLampa.png",
+        image: "https://candow.eu/assets/klimat/havsniva/ideLampa.png",
         imageWidth: 2,
         caption: "Såg du?",
         paragraphs: [
@@ -325,7 +325,7 @@ const pageData = [
         links: [
           {
             label: "Läs mer om temperaturskillnader",
-            to: "/kunskapsportalen/?kategori=temperatur",
+            to: "/klimat/kunskapsportalen/?kategori=temperatur",
           },
           {
             label: "Landhöjning och vattenstånd - SMHI",

@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import { Navbar, NavDropdown, Container, Col, Row } from "react-bootstrap";
+import { useState } from "react";
+import PropTypes from 'prop-types'
+import { Navbar, NavDropdown, Col, Row } from "react-bootstrap";
 import LoginNav from "./LoginNav";
 import "../styles/nav.css";
+import { useNavigate } from "react-router";
 
 // Hamburger icon Unicode character
 const hamburgerIcon = "\u2630"; // Unicode character for three horizontal lines
@@ -10,6 +12,7 @@ const closeIcon = "\u2716"; // Unicode character for a multiplication sign (X)
 // Dropdown menu for navigation
 export default function HeaderNav({ login }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -33,16 +36,16 @@ export default function HeaderNav({ login }) {
             <Navbar.Collapse id="navbarScrollingDropdown">
               {isDropdownOpen && (
                 <div className="custom-dropdown card full-height-card">
-                  <NavDropdown.Item href="/">Startsida</NavDropdown.Item>
+                  <NavDropdown.Item href="/klimat">Startsida</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="/kunskapsportalen">Kunskapsportalen</NavDropdown.Item>
-                  <NavDropdown.Item href="/kunskapsportalen/?kategori=fossilt">Fossilt Bränsle</NavDropdown.Item>
-                  <NavDropdown.Item href="/kunskapsportalen/?kategori=temperatur">Temperatur</NavDropdown.Item>
-                  <NavDropdown.Item href="/kunskapsportalen/?kategori=havsniva">Havsnivå</NavDropdown.Item>
-                  <NavDropdown.Item href="/kunskapsportalen/?kategori=glaciar">Glaciär</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigate("/klimat/kunskapsportalen")}>Kunskapsportalen</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigate("/klimat/kunskapsportalen/?kategori=fossilt")}>Fossilt Bränsle</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigate("/klimat/kunskapsportalen/?kategori=temperatur")}>Temperatur</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigate("/klimat/kunskapsportalen/?kategori=havsniva")}>Havsnivå</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigate("/klimat/kunskapsportalen/?kategori=glaciar")}>Glaciär</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="/omoss">Om oss</NavDropdown.Item>
-                  <NavDropdown.Item href="/feedback">Ge feedback</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigate("/klimat/omoss")}>Om oss</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigate("/klimat/feedback")}>Ge feedback</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <LoginNav login={login} />
                 </div>
@@ -53,4 +56,8 @@ export default function HeaderNav({ login }) {
       </Row>
     </div>
   );
+}
+
+HeaderNav.propTypes = {
+  login: PropTypes.func.isRequired
 }

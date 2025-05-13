@@ -1,7 +1,7 @@
 // Import necessary dependencies from React, Bootstrap, and image files
-import React, { useState } from "react";
+import { useState } from "react";
 import backgroundImg from "../images/Bakgrund_cleanArtboard_1.jpg";
-import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import Login from "./Login";
 import leftImage from "../images/bakgrunder/fyrverkerier.png"; // left image path
 import rightImage from "../images/bakgrunder/trad.png"; // right image path
@@ -22,7 +22,7 @@ export default function QuizEnd() {
   };
 
   // Retrieve quiz data from sessionStorage
-  const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));;
+  const quizData = JSON.parse(sessionStorage.getItem(QUIZ_DATA));
 
   // Calculate the number of correct answers
   let correctCount = 0;

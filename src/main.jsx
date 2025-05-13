@@ -11,26 +11,26 @@ import { UserAuthContextProvider } from './utils/UserAuthContext';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/klimat',
     element: <App />,
 
     children: [
       { index: true, element: <Home />,},
       {
-        path: '/home',
+        path: 'home/',
         element: <Home />,
       },
       {
-        path: '/feedback',
+        path: 'feedback/',
         element: <Feedback />,
       },
       {
-        path: '/kunskapsportalen/',
+        path: 'kunskapsportalen/',
         element: <MainContent />,
         loader: contentLoader,
       },
       {
-        path: '/omoss',
+        path: 'omoss/',
         element: <About />,
       },
     ],

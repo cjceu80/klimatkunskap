@@ -34,7 +34,7 @@ export default function QuizStartFrame({callback}){
 
     //Send quizData to parent and navigate to portal page
     callback(quizData);
-    navigate("/kunskapsportalen");
+    navigate("/klimat/kunskapsportalen");
     }
 
     //Handle and setyp start of easy quiz.
@@ -62,7 +62,7 @@ export default function QuizStartFrame({callback}){
         
         //Send quizData to parent and navigate to portal page
         callback(quizData);
-        navigate("/kunskapsportalen");
+        navigate("/klimat/kunskapsportalen");
     }
 
     return (

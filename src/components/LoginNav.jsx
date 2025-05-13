@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { NavDropdown, Dropdown } from 'react-bootstrap';
 import { useUserAuth } from '../utils/UserAuthContext';
@@ -12,7 +12,7 @@ export default function LoginNav({login}) {
     const handleLogout = async () => {
         try {
             await logOut();
-            navigate('/');
+            navigate('/klimat/');
         } catch (error) {
             console.log(error.message);
         }
@@ -27,4 +27,6 @@ export default function LoginNav({login}) {
 }
 
 
-    
+LoginNav.propTypes = {
+    login: PropTypes.func.isRequired
+  }

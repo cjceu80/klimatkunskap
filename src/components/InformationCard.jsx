@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Card, CardImg, Col, Row } from "react-bootstrap";
 import Graph from "./graphs/Graph";
 
@@ -64,4 +65,8 @@ export default function InformationCard(props) {
     );
 }
 
-//`w-75 align-self-${align} justify-self-${align} text-${align}`
+InformationCard.propTypes = {
+    index: PropTypes.number.isRequired,
+    cardData: PropTypes.object.isRequired,
+    category: PropTypes.string.isRequired
+  }

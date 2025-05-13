@@ -1,4 +1,3 @@
-import React from "react"; // Importera React-biblioteket
 import { Container, Row, Col, Card } from "react-bootstrap"; // Importera några grundläggande komponenter från React Bootstrap-biblioteket
 import backgroundImg from "../images/BakgrundHome.jpg"; // Importera bakgrundsbild
 

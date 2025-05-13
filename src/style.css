@@ -64,14 +64,14 @@ h4 {
 
 /*två likadana? Göra en gemensam kan vara en idé*/
 .bgContentPortal {
-  background-image: url(./images/Bakgrund_cleanArtboard_1.jpg);
+  background-image: url(/klimat/src/images/Bakgrund_cleanArtboard_1.jpg);
   position: relative;
   height: 100vh;
   background-size: cover;
 }
 
 .Bg_image_Om_Oss {
-  background-image: url(./images/Bakgrund_cleanArtboard_1.jpg);
+  background-image: url(/klimat/src/images/Bakgrund_cleanArtboard_1.jpg);
   position: relative;
   height: 100vh;
   background-size: cover;

@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from 'prop-types';
 import { Navigate } from "react-router-dom";
 import { useUserAuth } from "../utils/UserAuthContext";
 
@@ -9,9 +9,13 @@ const ProtectedRoute = ({ children }) => {
 
   console.log("Check user in Private: ", user);
   if (!user) {
-    return <Navigate to="/" />;
+    return <Navigate to="/klimat" />;
   }
   return children;
 };
 
 export default ProtectedRoute;
+
+ProtectedRoute.propTypes = {
+  children: PropTypes.node.isRequired
+}

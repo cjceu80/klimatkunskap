@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import { Container } from "react-bootstrap";
 import InformationCard from './InformationCard';
 
@@ -9,7 +9,7 @@ export default function Information(props) {
 
   return (
     <div style={{
-      backgroundImage: `url(/src/images/bakgrunder/${pageData.id}.jpg)`,
+      backgroundImage: `url(https://candow.eu/assets/klimat/bakgrunder/${pageData.id}.jpg)`,
       backgroundSize: "cover",
       
       position: "relative",
@@ -23,4 +23,8 @@ export default function Information(props) {
     </Container>
     </div>
   );
+}
+
+Information.propTypes = {
+  data: PropTypes.object.isRequired
 }

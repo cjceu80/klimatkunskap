@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import fossiltImg from "../images/fossil-fuel 1.svg";
 import meltingImg from "../images/melting 1.svg";
@@ -6,6 +5,7 @@ import waterlevelImg from "../images/water-level 1.svg";
 import temperatureImg from "../images/temperature 1.svg";
 
 import "../style.css";
+import { useNavigate } from "react-router";
 
 export default function ContentPortal() {
   // Styles for the cards and card images
@@ -17,6 +17,8 @@ export default function ContentPortal() {
     height: "80px", // Set a specific height for the images
     objectFit: "contain", // Use "cover" to maintain aspect ratio and cover the entire container
   };
+
+  const navigate = useNavigate();
 
   return (
     <div className="bgContentPortal">
@@ -32,7 +34,7 @@ export default function ContentPortal() {
             style={{ marginLeft: "0px" }}
           >
             <a
-              href="/kunskapsportalen/?kategori=fossilt"
+              onClick={() => navigate("/klimat/kunskapsportalen/?kategori=fossilt")}
               style={{ textDecoration: "none" }}
             >
               {/* Card for the first category */}
@@ -60,7 +62,7 @@ export default function ContentPortal() {
             style={{ marginRight: "0px" }}
           >
             <a
-              href="/kunskapsportalen/?kategori=temperatur"
+              onClick={() => navigate("/klimat/kunskapsportalen/?kategori=temperatur")}
               style={{ textDecoration: "none" }}
             >
               {/* Card for the second category */}
@@ -91,7 +93,7 @@ export default function ContentPortal() {
             style={{ marginLeft: "0px" }}
           >
             <a
-              href="/kunskapsportalen/?kategori=havsniva"
+              onClick={() => navigate("/klimat/kunskapsportalen/?kategori=havsniva")}
               style={{ textDecoration: "none" }}
             >
               {/* Card for the third category */}
@@ -119,7 +121,7 @@ export default function ContentPortal() {
             style={{ marginRight: "0px" }}
           >
             <a
-              href="/kunskapsportalen/?kategori=glaciar"
+              onClick={() => navigate("/klimat/kunskapsportalen/?kategori=glaciar")}
               style={{ textDecoration: "none" }}
             >
               {/* Card for the fourth category */}

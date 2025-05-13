@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Form, Alert } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import GoogleButton from 'react-google-button';
@@ -142,4 +143,9 @@ export default function Login({close}) {
 }
     </>
   );
+}
+
+
+Login.propTypes = {
+  close: PropTypes.func.isRequired
 }
